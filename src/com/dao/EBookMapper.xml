@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.EBookMapper">
+
+	<!-- 爬虫使用 -->
+	<insert id="insertEBook" parameterType="com.entity.EBook">
+			insert into ebook (eid,ISBN,name,author,translator,category,
+			publishingHouse,provider,words,imgAddress,infoAddress,scoreAddress,
+			description,ratingValue,classifyMain,bestRating,worstRating,reviewCount)
+			values(#{eid},#{ISBN},#{name},#{author},#{translator},#{category},
+			#{publishingHouse},#{provider},#{words},#{imgAddress},#{infoAddress},#{scoreAddress},
+			#{description},#{ratingValue},#{classifyMain},#{bestRating},#{worstRating},#{reviewCount})
+	</insert>
+
+	<!-- 电子书基本信息查询 -->
+	<select id="selectAllEBook" resultType="com.entity.EBook">
+			select * from ebook
+	</select>
+	<select id="selectEBookSimpleInfo" resultType="com.entity.EBook">
+			select eid,name,author,publishingHouse,provider,words,imgAddress,score,classifyMain
+			from ebook
+			where eid = #{eid}
+	</select>
+	<select id="selectEBookByEid" resultType="com.entity.EBook">
+			select eid,ISBN,name,author,translator,category,publishingHouse,provider,words,imgAddress,infoAddress,scoreAddress,description,score,classifyMain
+			from ebook
+			where eid = #{eid}
+	</select>
+	
+	<!-- 电子书高级查询 -->
+	<select id="getEBookCount" resultType="int">
+	    select count(*) from ebook
+	</select>
+	
+	<!-- 电子书排行榜制作 -->
+	<select id="makeebooktop" resultType="int">
+	    select count(*) from ebook
+	</select>
+	
+</mapper>

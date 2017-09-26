@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.DeptMapper">
+
+	<select id="getDeptCount" resultType="int">
+	    select count(*) from dept
+	</select>
+	<!-- 类的属性和表的列名是一致的，所以可以正常运行 -->
+	<select id="selectAllDept" resultType="com.entity.Dept">
+			select * from dept
+	</select>
+	<select id="selectDept" resultType="com.entity.Dept">
+			select deptno,dname,loc,salary from dept where deptno = #{deptno}
+	</select>
+	<insert id="insertDept" parameterType="com.entity.Dept">
+	   insert into dept(deptno,dname,loc,salary) values(#{deptno},#{dname},#{loc},#{salary})
+	</insert>
+	
+	<delete id="delDept" parameterType="int">
+	   delete from dept where deptno=#{deptno}
+	</delete>
+	<!-- 更新 -->
+	<update id="updateDept" parameterType="com.entity.Dept" >
+	  update dept set dname=#{dname},loc=#{loc},salary=#{salary} where deptno=#{deptno}
+	</update>
+	
+	
+	
+</mapper>
