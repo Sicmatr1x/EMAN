@@ -8,6 +8,8 @@ public interface EBookDao {
 	
 	public EBook queryEBookByEid(int eid);
 	
+	public List<EBook> queryAllEBookLimit(Integer start);
+	
 	public List<EBook> queryEBookSimpleInfo();
 	
 	public List<EBook> quertyAllEBook();

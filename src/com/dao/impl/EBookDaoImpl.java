@@ -1,6 +1,8 @@
 package com.dao.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
@@ -36,6 +38,16 @@ public class EBookDaoImpl implements EBookDao{
 	@Override
 	public List<EBook> queryEBookSimpleInfo() {
 		List<EBook> list = sqlSession.selectList("selectEBookSimpleInfo");
+		return list;
+	}
+
+	@Override
+	public List<EBook> queryAllEBookLimit(Integer start) {
+		Integer size = 20;
+		Map<String, Integer> args = new HashMap<String, Integer>();
+		args.put("start", start);
+		args.put("size", size);
+		List<EBook> list = sqlSession.selectList("selectAllEBookLimit", args);
 		return list;
 	}
 

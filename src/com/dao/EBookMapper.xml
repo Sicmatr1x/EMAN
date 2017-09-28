@@ -18,6 +18,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectAllEBook" resultType="com.entity.EBook">
 			select * from ebook
 	</select>
+	<select id="selectAllEBookLimit" parameterType="Map" resultType="com.entity.EBook">
+			select *
+			from ebook
+			limit #{start,jdbcType=INTEGER},#{size,jdbcType=INTEGER}
+	</select>
 	<select id="selectEBookSimpleInfo" resultType="com.entity.EBook">
 			select eid,name,author,publishingHouse,provider,words,imgAddress,score,classifyMain
 			from ebook

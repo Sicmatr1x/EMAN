@@ -33,4 +33,15 @@ public class EBookServiceImpl implements EBookService {
 		return this.eBookDao.quertyAllEBook();
 	}
 
+	@Override
+	public List<EBook> queryAllEBookLimit(int start) {
+		List<EBook> list = this.eBookDao.queryAllEBookLimit(start);
+		for(EBook book : list){
+			int end = book.getImgAddress().indexOf("?v=");
+			String tString = book.getImgAddress().substring(0, end);
+			book.setImgAddress(tString);
+		}
+		return list;
+	}
+
 }

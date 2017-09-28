@@ -9,4 +9,6 @@ public interface EBookService {
 	public EBook queryEBookByEid(int eid);
 	
 	public List<EBook> quertyAllEBook();
+	
+	public List<EBook> queryAllEBookLimit(int start);
 }

@@ -24,12 +24,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     This is my JSP page. <br>
     <a href="dept/queryAllDept.htm">dept/queryAllDept.htm</a><br/>
 	<p>dept/queryDept.htm</p>
-    <form name="form5" action="dept/queryDept.htm" method="post">
+    <form name="form1" action="dept/queryDept.htm" method="post">
     	<input type="text" name="deptno">
     	<input type="submit" value="提交"><br/>
     </form>
     <p>dept/editDeptSalary.htm</p>
-    <form name="form6" action="dept/editDeptSalary.htm" method="post">
+    <form name="form2" action="dept/editDeptSalary.htm" method="post">
     	deptno<input type="text" name="deptno">
     	loc<input type="text" name="loc">
     	salary<input type="text" name="salary">
@@ -37,5 +37,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </form>
 	This is my JSP page. <br>
 	<a href="ebook/queryAllEBook.htm">ebook/queryAllEBook.htm</a><br/>
+	<p>ebook/queryAllEBookLimit.htm</p>
+	<form name="form3" action="ebook/queryAllEBookLimit.htm" method="get">
+    	<input type="text" name="start">
+    	<input type="submit" value="提交"><br/>
+    </form>
   </body>
 </html>

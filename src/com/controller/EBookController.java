@@ -35,6 +35,14 @@ public class EBookController {
 		return "showAllEBook";
 	}
 	
+	@RequestMapping("/queryAllEBookLimit.htm")
+	public String queryAllEBook(@RequestParam(value="start")int start, HttpServletRequest request){
+		List<EBook> list = eBookService.queryAllEBookLimit(start);
+		request.setAttribute("list", list);
+		request.setAttribute("start", start+20);
+		return "showAllEBook";
+	}
+	
 	@RequestMapping("/queryEBook.htm")
 	public String queryEBook(@RequestParam(value="eid")int eid, HttpServletRequest request){
 		EBook eBook = eBookService.queryEBookByEid(eid);
