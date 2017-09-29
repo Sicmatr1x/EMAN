@@ -43,6 +43,8 @@ public class EBookDaoImpl implements EBookDao{
 
 	@Override
 	public List<EBook> queryAllEBookLimit(Integer start) {
+		if(start < 0 || start == null)
+			start = 0;
 		Integer size = 20;
 		Map<String, Integer> args = new HashMap<String, Integer>();
 		args.put("start", start);

@@ -36,7 +36,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	<input type="submit" value="提交"><br/>
     </form>
 	This is my JSP page. <br>
+	<a href="ebook/test.htm">ebook/test.htm</a><br/>
 	<a href="ebook/queryAllEBook.htm">ebook/queryAllEBook.htm</a><br/>
+	<a href="ebook/allEBook.htm">ebook/allEBook.htm</a><br/>
 	<p>ebook/queryAllEBookLimit.htm</p>
 	<form name="form3" action="ebook/queryAllEBookLimit.htm" method="get">
     	<input type="text" name="start">
