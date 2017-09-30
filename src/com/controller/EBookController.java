@@ -1,6 +1,7 @@
 package com.controller;
 
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -42,6 +43,16 @@ public class EBookController {
 	}
 	
 	/**
+	 * http://localhost:8080/EMAN/ebook/EBookList.htm
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping("/EBookList.htm")
+	public String eBookList(HttpServletRequest request){
+		return "EBookList";
+	}
+	
+	/**
 	 * http://localhost:8080/EMAN/ebook/queryAllEBook.htm
 	 * @param request
 	 * @return
@@ -68,7 +79,14 @@ public class EBookController {
 	 */
 	@RequestMapping("/queryAllEBookLimitJson.htm")
 	@ResponseBody
-	public void queryAllEBookJson(@RequestParam(value="start")int start, PrintWriter out){
+	public void queryAllEBookJson(@RequestParam(value="start")int start, PrintWriter out, HttpServletRequest request){
+		try {
+			request.setCharacterEncoding("utf-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("/queryAllEBookLimitJson.htm?start=" + start);
 		List<EBook> list = eBookService.queryAllEBookLimit(start);
 		String json;
 		json = JSONConverter.convertToJSONString(list);
