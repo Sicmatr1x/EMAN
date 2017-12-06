@@ -21,26 +21,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    This is my JSP page. <br>
-    <a href="dept/queryAllDept.htm">dept/queryAllDept.htm</a><br/>
-	<p>dept/queryDept.htm</p>
-    <form name="form1" action="dept/queryDept.htm" method="post">
-    	<input type="text" name="deptno">
-    	<input type="submit" value="提交"><br/>
-    </form>
-    <p>dept/editDeptSalary.htm</p>
-    <form name="form2" action="dept/editDeptSalary.htm" method="post">
-    	deptno<input type="text" name="deptno">
-    	loc<input type="text" name="loc">
-    	salary<input type="text" name="salary">
-    	<input type="submit" value="提交"><br/>
-    </form>
 	This is my JSP page. <br>
 	<a href="ebook/test.htm">ebook/test.htm</a><br/>
 	<a href="ebook/queryAllEBook.htm">ebook/queryAllEBook.htm</a><br/>
 	<a href="ebook/allEBook.htm">ebook/allEBook.htm</a><br/>
 	<p>ebook/queryAllEBookLimit.htm</p>
 	<form name="form3" action="ebook/queryAllEBookLimit.htm" method="get">
+    	<input type="text" name="start">
+    	<input type="submit" value="提交"><br/>
+    </form>
+    <p>ebook/topList.htm</p>
+	<form name="form4" action="ebook/topList.htm" method="get">
     	<input type="text" name="start">
     	<input type="submit" value="提交"><br/>
     </form>

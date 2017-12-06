@@ -15,7 +15,7 @@ public class EBook {
 	 * 书名
 	 * eg:三体全集
 	 */
-	private String name;
+	private String ename;
 	/**
 	 * 作者
 	 * eg:刘慈欣
@@ -99,7 +99,7 @@ public class EBook {
 	public void showField(){
 		System.out.println(eid);
 		System.out.println(ISBN);
-		System.out.println(this.name);
+		System.out.println(this.ename);
 		System.out.println(this.author);
 		System.out.println(this.translator);
 		System.out.println(this.category);
@@ -131,11 +131,11 @@ public class EBook {
 	public void setISBN(String iSBN) {
 		ISBN = iSBN;
 	}
-	public String getName() {
-		return name;
+	public String getEname() {
+		return ename;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setEname(String ename) {
+		this.ename = ename;
 	}
 	public String getAuthor() {
 		return author;

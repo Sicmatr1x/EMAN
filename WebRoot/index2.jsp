@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 
@@ -86,21 +87,22 @@
 						<tr>
 							<th>No.</th>
 							<th>Firstname</th>
+							<th>Firstname</th>
+							<th>Firstname</th>
+							<th>Firstname</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>1</td>
-							<td>Anna</td>
-						</tr>
-						<tr>
-							<td>2</td>
-							<td>Debbie</td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td>John</td>
-						</tr>
+						<c:forEach items="${list}" var="ebook">
+							<tr>
+								<td><img src="${ebook.imgAddress}" alt="${ebook.imgAddress}"></img></td>
+								<td>${ebook.eid}</td>
+								<td>${ebook.ISBN}</td>
+								<td>${ebook.name}</td>
+								<td>${ebook.author}</td>
+							</tr>
+						</c:forEach>
+						
 					</tbody>
 				</table>
 			</div>
@@ -109,20 +111,5 @@
 
 	</div>
 
-	<script>
-		$(function() {
-			$('#bt-navbar-form-search').click(
-					function() {
-						if ($('#question').val() == ''
-								|| $('#question').val() == null) {
-							alert("illegal argument");
-							return;
-						}
-						// location.href = 'https://stackoverflow.com/search?q=' + $('#question').val(); // 不知道为什么不行
-						window.open('https://stackoverflow.com/search?q='
-								+ $('#question').val());
-					});
-
-		});
-	</script>
+	
 </body>

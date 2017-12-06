@@ -25,7 +25,18 @@ public class EBookServiceImpl implements EBookService {
 
 	@Override
 	public EBook queryEBookByEid(int eid) {
-		return this.eBookDao.queryEBookByEid(eid);
+		EBook book = this.eBookDao.queryEBookByEid(eid);
+		if(book.getImgAddress()!=null){
+			int beg = book.getImgAddress().indexOf("public/");
+			int end = book.getImgAddress().indexOf("?v=");
+			if(end==-1){
+				
+			}else{
+				String tString = book.getImgAddress().substring(beg + "public/".length(), end);
+				book.setImgAddress(tString);
+			}
+		}
+		return book;
 	}
 
 	@Override
@@ -38,10 +49,11 @@ public class EBookServiceImpl implements EBookService {
 		List<EBook> list = this.eBookDao.queryAllEBookLimit(start);
 		for(EBook book : list){
 			if(book.getImgAddress()!=null){
+				int beg = book.getImgAddress().indexOf("public/");
 				int end = book.getImgAddress().indexOf("?v=");
 				if(end==-1)
 					continue;
-				String tString = book.getImgAddress().substring(0, end);
+				String tString = book.getImgAddress().substring(beg + "public/".length(), end);
 				book.setImgAddress(tString);
 			}
 			

@@ -149,9 +149,9 @@ public class BookInfoSpider implements Runnable{
 				
 				// 查询是否已经存在
 				Statement statemenet = conn.createStatement();
-				ResultSet rs = statemenet.executeQuery("select eid,name from ebook where eid='" + book.getEid() + "';");
+				ResultSet rs = statemenet.executeQuery("select eid,ename from ebook where eid='" + book.getEid() + "';");
 				if(rs.next()){ // 若存在则不爬取
-					System.out.print("[" + rs.getString("eid")+ rs.getString("name") + "]已经存在:");
+					System.out.print("[" + rs.getString("eid")+ rs.getString("ename") + "]已经存在:");
 					
 					// 更新评分与评分人数功能
 					String updateRatInfoString = "update ebook set " + 
@@ -214,9 +214,9 @@ public class BookInfoSpider implements Runnable{
 				String imgAddress = head.select("img").attr("src");
 				book.setImgAddress(imgAddress);
 
-				String name = head.select("h1").text();
-				book.setName(name);
-				System.out.println("爬取[" + name + "]" + this.webAddress);
+				String ename = head.select("h1").text();
+				book.setEname(ename);
+				System.out.println("爬取[" + ename + "]" + this.webAddress);
 				
 //				System.out.println(head.select(".article-meta"));
 				Element article_meta = head.select(".article-meta").get(0);
@@ -331,7 +331,7 @@ public class BookInfoSpider implements Runnable{
 			} catch (org.apache.ibatis.exceptions.PersistenceException e){
 				e.printStackTrace();
 				// 写入数据库
-				System.out.println("尝试去掉description再次插入数据库" + book.getName());
+				System.out.println("尝试去掉description再次插入数据库" + book.getEname());
 				book.setDescription(null);
 				this.sqlSession.insert("insertEBook", book);
 				this.sqlSession.commit();

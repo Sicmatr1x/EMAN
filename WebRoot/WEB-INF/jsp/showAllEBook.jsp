@@ -47,7 +47,7 @@
 				<td>eid</td>
 				<td>eid</td>
 				<td>ISBN</td>
-				<td>name</td>
+				<td>ename</td>
 				<td>author</td>
 			</tr>
 		</thead>
@@ -57,7 +57,7 @@
 					<td><img src="${ebook.imgAddress}" alt="${ebook.imgAddress}"></img></td>
 					<td>${ebook.eid}</td>
 					<td>${ebook.ISBN}</td>
-					<td>${ebook.name}</td>
+					<td>${ebook.ename}</td>
 					<td>${ebook.author}</td>
 				</tr>
 			</c:forEach>

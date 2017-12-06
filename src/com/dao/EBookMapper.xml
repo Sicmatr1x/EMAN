@@ -6,10 +6,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!-- 爬虫使用 -->
 	<insert id="insertEBook" parameterType="com.entity.EBook">
-			insert into ebook (eid,ISBN,name,author,translator,category,
+			insert into ebook (eid,ISBN,ename,author,translator,category,
 			publishingHouse,provider,words,imgAddress,infoAddress,scoreAddress,
 			description,ratingValue,classifyMain,bestRating,worstRating,reviewCount)
-			values(#{eid},#{ISBN},#{name},#{author},#{translator},#{category},
+			values(#{eid},#{ISBN},#{ename},#{author},#{translator},#{category},
 			#{publishingHouse},#{provider},#{words},#{imgAddress},#{infoAddress},#{scoreAddress},
 			#{description},#{ratingValue},#{classifyMain},#{bestRating},#{worstRating},#{reviewCount})
 	</insert>
@@ -24,12 +24,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			limit #{start,jdbcType=INTEGER},#{size,jdbcType=INTEGER}
 	</select>
 	<select id="selectEBookSimpleInfo" resultType="com.entity.EBook">
-			select eid,name,author,publishingHouse,provider,words,imgAddress,score,classifyMain
+			select eid,ename,author,publishingHouse,provider,words,imgAddress,score,classifyMain
 			from ebook
 			where eid = #{eid}
 	</select>
 	<select id="selectEBookByEid" resultType="com.entity.EBook">
-			select eid,ISBN,name,author,translator,category,publishingHouse,provider,words,imgAddress,infoAddress,scoreAddress,description,score,classifyMain
+			select *
 			from ebook
 			where eid = #{eid}
 	</select>
