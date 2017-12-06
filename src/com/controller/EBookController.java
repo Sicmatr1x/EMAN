@@ -62,6 +62,12 @@ public class EBookController {
 		return "showAllEBook";
 	}
 	
+	/**
+	 * http://localhost:8080/EMAN/ebook/topList.htm?start=0
+	 * @param start
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping("/topList.htm")
 	public String queryAllEBookLimit(@RequestParam(value="start")int start, HttpServletRequest request){
 		List<EBook> list = eBookService.queryAllEBookLimit(start);
@@ -99,11 +105,11 @@ public class EBookController {
 	 * @param request
 	 * @return
 	 */
-	@RequestMapping("/ebookinfo.htm")
+	@RequestMapping("/testeebookinfo.htm")
 	public String testebookinfo(HttpServletRequest request){
 		return "testebookinfo";
 	}
-	//------------------------------------------------------------------------------
+	
 	/**
 	 * http://localhost:8080/EMAN/ebook/query.htm?eid=958945
 	 * @param eid
@@ -118,6 +124,19 @@ public class EBookController {
 		json = JSONConverter.convertToJSONString(eBook);
 		out.print(json);
 		out.flush();
+	}
+	//------------------------------------------------------------------------------
+	/**
+	 * http://localhost:8080/EMAN/ebook/info.htm?eid=958945
+	 * @param eid
+	 * @param out
+	 * @param request
+	 */
+	@RequestMapping("/info.htm")
+	public String info(@RequestParam(value="eid")int eid, HttpServletRequest request){
+		EBook ebook = eBookService.queryEBookByEid(eid);
+		request.setAttribute("ebook", ebook);
+		return "info";
 	}
 	
 	
