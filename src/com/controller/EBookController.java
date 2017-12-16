@@ -127,6 +127,7 @@ public class EBookController {
 	}
 	//------------------------------------------------------------------------------
 	/**
+	 * 图书详情页
 	 * http://localhost:8080/EMAN/ebook/info.htm?eid=958945
 	 * @param eid
 	 * @param out
@@ -139,5 +140,35 @@ public class EBookController {
 		return "info";
 	}
 	
+	/**
+	 * 各种图书的列表
+	 * http://localhost:8080/EMAN/ebook/list.htm?start=0&classifyMain=小说
+	 * @param start
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping("/list.htm")
+	public String queryEBookLimitByClassifyMain(@RequestParam(value="start")int start, @RequestParam(value="classifyMain")String classifyMain, HttpServletRequest request){
+		List<EBook> list = eBookService.queryEBookLimitByClassifyMain(classifyMain, start);
+		request.setAttribute("list", list);
+		request.setAttribute("classifyMain", classifyMain);
+		request.setAttribute("start", start+20);
+		return "list";
+	}
 	
+	/**
+	 * http://localhost:8080/EMAN/ebook/recommendHomePage.htm?eid=958945
+	 * @param eid
+	 * @param out
+	 * @param request
+	 */
+	@RequestMapping("/recommendHomePage.htm")
+	@ResponseBody
+	public void recommendHomePage(@RequestParam(value="eid")int eid, PrintWriter out, HttpServletRequest request){
+		EBook eBook = eBookService.queryEBookByEid(eid);
+		String json;
+		json = JSONConverter.convertToJSONString(eBook);
+		out.print(json);
+		out.flush();
+	}
 }

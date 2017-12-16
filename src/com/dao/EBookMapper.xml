@@ -23,15 +23,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			from ebook
 			limit #{start,jdbcType=INTEGER},#{size,jdbcType=INTEGER}
 	</select>
-	<select id="selectEBookSimpleInfo" resultType="com.entity.EBook">
-			select eid,ename,author,publishingHouse,provider,words,imgAddress,score,classifyMain
-			from ebook
-			where eid = #{eid}
-	</select>
 	<select id="selectEBookByEid" resultType="com.entity.EBook">
 			select *
 			from ebook
 			where eid = #{eid}
+	</select>
+	<select id="selectEBookLimitByClassifyMain" parameterType="java.util.Map" resultType="com.entity.EBook">
+			select *
+			from ebook
+			where classifyMain=#{classifyMain}
+			limit #{start},#{size}
 	</select>
 	
 	<!-- 电子书高级查询 -->

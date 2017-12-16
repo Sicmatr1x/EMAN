@@ -11,4 +11,6 @@ public interface EBookService {
 	public List<EBook> quertyAllEBook();
 	
 	public List<EBook> queryAllEBookLimit(int start);
+	
+	public List<EBook> queryEBookLimitByClassifyMain(String classifyMain, Integer start);
 }

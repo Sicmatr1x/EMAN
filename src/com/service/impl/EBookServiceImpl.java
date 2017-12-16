@@ -61,4 +61,22 @@ public class EBookServiceImpl implements EBookService {
 		return list;
 	}
 
+	@Override
+	public List<EBook> queryEBookLimitByClassifyMain(String classifyMain,
+			Integer start) {
+		List<EBook> list = this.eBookDao.queryEBookLimitByClassifyMain(classifyMain, start);
+		for(EBook book : list){
+			if(book.getImgAddress()!=null){
+				int beg = book.getImgAddress().indexOf("public/");
+				int end = book.getImgAddress().indexOf("?v=");
+				if(end==-1)
+					continue;
+				String tString = book.getImgAddress().substring(beg + "public/".length(), end);
+				book.setImgAddress(tString);
+			}
+			
+		}
+		return list;
+	}
+
 }

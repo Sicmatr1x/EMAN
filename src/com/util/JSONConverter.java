@@ -6,8 +6,6 @@ import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
-import com.entity.Dept;
-
 
 
 public class JSONConverter {
@@ -31,12 +29,12 @@ public class JSONConverter {
 	}
 	
 	public static void main(String[] args){
-		Dept dept = new Dept();
-		dept.setDeptno(0);
-		dept.setDname("Neo");
-		dept.setLoc("深圳");
-		dept.setSalary(25000);
-		String json = JSONConverter.convertToJSONString(dept);
-		System.out.println(json);
+//		Dept dept = new Dept();
+//		dept.setDeptno(0);
+//		dept.setDname("Neo");
+//		dept.setLoc("深圳");
+//		dept.setSalary(25000);
+//		String json = JSONConverter.convertToJSONString(dept);
+//		System.out.println(json);
 	}
 }

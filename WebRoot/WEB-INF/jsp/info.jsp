@@ -26,6 +26,12 @@
 </head>
 
 <body>
+	<!-- 面包屑导航栏 TODO: -->
+	<ol class="breadcrumb">
+		<li><a href="<c:url value='/'/>">主页</a></li>
+		<li><a href="list.htm?classifyMain=${ebook.classifyMain}&start=0">${ebook.classifyMain}</a></li>
+	</ol>
+
 	<div class="container">
 		<!-- 图书信息面板 -->
 		<div class="panel panel-default"><!-- 带标题的面板 -->
@@ -95,7 +101,7 @@
 					</div>
 					
 					<div class="col-md-4">
-						<input id="input-ratingValue" type="number" class="rating" value="<%
+						<input id="input-ratingValue" type="number" value="<%
 							/*将0~10之间的评分化为0~5之间的评分*/
 							EBook ebook = (EBook)request.getAttribute("ebook");
 							double t = (ebook.getRatingValue()/2);
@@ -109,25 +115,28 @@
 								f=0.5;
 							double rating=i + f;
 							out.print(rating);
-						%>" min=0 max=5 step=0.5 data-size="xs" />
+						%>"  />
+						
 						<p>
-							评分:
+							综合评分:
 							<c:if test="${ebook.ratingValue != null}">
 								<c:out value="${ebook.ratingValue}" />
 							</c:if>
 							<c:if test="${ebook.ratingValue == null}">		
 												暂无信息
 							</c:if>
-						</p>
-						<p>
-							评分人数:
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
 							<c:if test="${ebook.reviewCount != null}">
 								<c:out value="${ebook.reviewCount}" />
+								人评价
 							</c:if>
 							<c:if test="${ebook.reviewCount == null}">		
 												评分人数不足
 							</c:if>
 						</p>
+						
+						<input id="rating-input" type="number" />
+						
 					</div>
 				</div>
 			</div>
@@ -171,6 +180,12 @@
 						<button id="gotianmao-btn" class="btn btn-primary" type="button">前往天猫</button>
 					</div>
 				</div>
+				
+				<div class="col-md-1">
+					<div class="panel-body">
+						<button id="gozhangyue-btn" class="btn btn-primary" type="button">前往掌阅书库</button>
+					</div>
+				</div>
 			</div>
 		</div>
 		
@@ -203,18 +218,34 @@
 <script>
 	$(document).on('ready', function () {
 		/* 图书评分星星插件 */
-    	//$("#input-ratingValue").rating();
+		/*显示综合评分*/
     	$("#input-ratingValue").rating({
-    		readonly:'true'
+    		min: 0,
+    		max:5,
+    		step: 0.5,
+    		size: 'xs',
+    		readonly: true,
+    		showClear: false
     	});
-    	$('#input-ratingValue').on('rating.change', function(event, value, caption) {
+    	/*登录用户评分*/
+    	$('#rating-input').rating({
+            min: 0,
+            max: 5,
+            step: 0.5,
+            size: 'xs',
+            showClear: false
+        });
+    	/*评分修改触发函数*/
+    	$('#rating-input').on('rating.change', function(event, value, caption) {
+    		//检查用户是否登录,若登录且未评分则可以发送评分请求,否则弹出相应提示
     	    console.log(value);
     	    console.log(caption);
     	});
+    	
+    	
 	});
 	
     $(function() {
-    	
     	
     	/* 搜索图书面板按钮动作 */
         $("#gojd-btn").click(function(){
@@ -227,6 +258,10 @@
         
         $("#gotianmao-btn").click(function(){
         	window.location.href = "https://list.tmall.com/search_product.htm?q=" + "${ebook.ename}";
+        });
+        
+        $("#gozhangyue-btn").click(function(){
+        	window.location.href = "http://www.ireader.com/index.php?ca=search.index&pca=bookdetail.index&keyword=" + "${ebook.ename}";
         });
         
     });  

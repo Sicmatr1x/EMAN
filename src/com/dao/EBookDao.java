@@ -10,7 +10,7 @@ public interface EBookDao {
 	
 	public List<EBook> queryAllEBookLimit(Integer start);
 	
-	public List<EBook> queryEBookSimpleInfo();
-	
 	public List<EBook> quertyAllEBook();
+	
+	public List<EBook> queryEBookLimitByClassifyMain(String classifyMain, Integer start);
 }
