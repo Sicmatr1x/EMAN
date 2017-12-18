@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.RatingList">
+
+	<!-- 爬虫使用 -->
+	<insert id="insertRatingList" parameterType="com.entity.RatingList">
+			insert into ratinglist (eid,uid,ratingValue,rdescribe)
+			values(#{eid},#{uid},#{ratingValue},#{rdescribe})
+	</insert>
+
+	<!-- 基本信息查询 -->
+	<select id="selectAllRatingList" resultType="com.entity.RatingList">
+			select * from ratinglist
+	</select>
+	
+	<select id="selectRatingListByEidAndUid" resultType="com.entity.RatingList">
+			select *
+			from ratinglist
+			where eid = #{eid} and uid = #{uid}
+	</select>
+	
+</mapper>

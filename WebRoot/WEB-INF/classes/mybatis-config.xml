@@ -25,6 +25,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	</environments>
 	
 	<mappers>
+		<mapper resource="com/dao/UserMapper.xml" />
+		<mapper resource="com/dao/RatingListMapper.xml" />
 		<mapper resource="com/dao/EBookMapper.xml" />
 		<mapper class="com.entity.EBook" />
 		

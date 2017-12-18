@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -142,6 +143,7 @@ public class EBookController {
 	
 	/**
 	 * 各种图书的列表
+	 * 评分降序
 	 * http://localhost:8080/EMAN/ebook/list.htm?start=0&classifyMain=小说
 	 * @param start
 	 * @param request
@@ -157,6 +159,7 @@ public class EBookController {
 	}
 	
 	/**
+	 * 首页轮播推荐书籍接口
 	 * http://localhost:8080/EMAN/ebook/recommendHomePage.htm?eid=958945
 	 * @param eid
 	 * @param out

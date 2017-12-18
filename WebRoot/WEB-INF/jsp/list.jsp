@@ -34,7 +34,7 @@
 						<div class="panel panel-default">
 							<!-- 面板头 -->
 							<div class="panel-heading">
-								<h2 class="panel-title">${ebook.ename}</h2>
+								<a class="panel-title" href="<c:url value='/ebook'/>/info.htm?eid=${ebook.eid}">${ebook.ename}</a>
 							</div>
 							<!-- 面板体 -->
 							<div class="panel-body">
@@ -42,7 +42,7 @@
 								<div style="float: left;">
 									<img width="110px" height="164px"
 										src="http://localhost:8080/EMANImgs/${ebook.imgAddress}"
-										alt="10000464.jpg">
+										onerror="javascript:this.src='http://localhost:8080/EMANImgs/error.jpg'">
 								</div>
 								<div class="row">
 									
@@ -61,13 +61,13 @@
 										</p>
 
 									</div>
-									<div class="progress" style="width: 30%;">
+									<!-- <div class="progress" style="width: 30%;">
 										<div class="progress-bar progress-bar-success"
 											role="progressbar" aria-valuenow="30" aria-valuemin="0"
-											aria-valuemax="50" style="width: 50%;">
+											aria-valuemax="50" style="width: 10%;">
 											<span class="sr-only">90% 完成（成功）</span>
 										</div>
-									</div>
+									</div>  -->
 									
 									<div class="col-md-1">
 										<h1>${ebook.ratingValue}</h1>

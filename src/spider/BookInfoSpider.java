@@ -36,7 +36,7 @@ public class BookInfoSpider implements Runnable{
 	 */
 	public static int _retryHtmlTimes = 3;
 	/**
-	 * 若获取页面超时则重复获取几次
+	 * 若获取页面超时则重复获取几次(当前值)
 	 */
 	private int curRetryTimes = 1;
 	/**

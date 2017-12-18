@@ -32,6 +32,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			select *
 			from ebook
 			where classifyMain=#{classifyMain}
+			order by ratingValue desc
 			limit #{start},#{size}
 	</select>
 	

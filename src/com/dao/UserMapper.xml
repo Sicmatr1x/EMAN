@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.UserMapper">
+
+	<!-- 爬虫使用 -->
+	<insert id="insertUser" parameterType="com.entity.User">
+			insert into user (uid,uname,email,password,sex,age)
+			values(#{uid},#{uname},#{email},#{password},#{sex},#{age})
+	</insert>
+
+	<!-- 基本信息查询 -->
+	<select id="selectAllUser" resultType="com.entity.User">
+			select * from user
+	</select>
+	
+	<select id="selectUserByUid" resultType="com.entity.User">
+			select *
+			from user
+			where uid = #{uid}
+	</select>
+	
+</mapper>

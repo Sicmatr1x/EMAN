@@ -42,39 +42,49 @@
 								<a href="2">Link</a>
 							</li> -->
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown" data-toggle="tooltip" title="常用文章">Quick
-									Visit<strong class="caret"></strong>
+								data-toggle="dropdown" data-toggle="tooltip" title="类型"> 类型<strong class="caret"></strong>
 							</a>
 								<ul class="dropdown-menu">
 									<li><a
-										href="https://github.com/Sicmatr1x/Sicmatr1x.github.io/blob/master/coding/Hadoop/Hadoop.md">Hadoop
-											技术栈</a></li>
+										href="<c:url value='ebook/list.htm?classifyMain=小说&start=0'/>">小说</a></li>
 									<li><a
-										href="https://github.com/Sicmatr1x/Sicmatr1x.github.io/blob/master/coding/Oracle_PL_SQL/Oracle_PL.md">Oracle
-											PL</a></li>
+										href="<c:url value='ebook/list.htm?classifyMain=文学&start=0'/>">文学</a></li>
 									<li><a
-										href="https://github.com/Sicmatr1x/Sicmatr1x.github.io/blob/master/coding/Oracle_PL_SQL/Oracle_SQL.md">Oracle
-											SQL</a></li>
+										href="<c:url value='ebook/list.htm?classifyMain=人文社科&start=0'/>">人文社科</a></li>
 									<li class="divider">
 										<!-- 分割线 -->
 									</li>
 									<li><a
-										href="https://github.com/Sicmatr1x/Sicmatr1x.github.io/blob/master/coding/Bootstrap/Bootstrap.md">Bootstrap</a>
+										href="<c:url value='ebook/list.htm?classifyMain=经济管理&start=0'/>">经济管理</a>
 									</li>
 									<li><a
-										href="https://github.com/Sicmatr1x/Sicmatr1x.github.io/blob/master/coding/jQuery/jQuery.md">jQuery</a>
+										href="<c:url value='ebook/list.htm?classifyMain=科技科普&start=0'/>">科技科普</a>
 									</li>
 									<li><a
-										href="https://github.com/Sicmatr1x/Sicmatr1x.github.io/blob/master/coding/jQuery%20UI/jQuery%20UI.md">jQuery
-											UI</a></li>
+										href="<c:url value='ebook/list.htm?classifyMain=计算机与互联网&start=0'/>">计算机与互联网</a></li>
 									<li class="divider">
 										<!-- 分割线 -->
 									</li>
 									<li><a
-										href="https://github.com/Sicmatr1x/Sicmatr1x.github.io/blob/master/coding/Java/Java%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0.md">Java
-											复习笔记</a></li>
+										href="<c:url value='ebook/list.htm?classifyMain=成功励志&start=0'/>">成功励志</a></li>
+									<li><a
+										href="<c:url value='ebook/list.htm?classifyMain=生活&start=0'/>">生活</a></li>
+									<li><a
+										href="<c:url value='ebook/list.htm?classifyMain=少儿&start=0'/>">少儿</a></li>
+									<li><a
+										href="<c:url value='ebook/list.htm?classifyMain=艺术设计&start=0'/>">艺术设计</a></li>
+									<li><a
+										href="<c:url value='ebook/list.htm?classifyMain=漫画绘本&start=0'/>">漫画绘本</a></li>
+									<li><a
+										href="<c:url value='ebook/list.htm?classifyMain=教育考试&start=0'/>">教育考试</a></li>
+									<li class="divider">
+										<!-- 分割线 -->
+									</li>
+									<li><a
+										href="<c:url value='ebook/list.htm?classifyMain=杂志&start=0'/>">杂志</a></li>
 
-								</ul></li>
+								</ul>
+							</li>
 						</ul>
 						<form class="navbar-form navbar-left" role="search">
 							<div class="form-group">
