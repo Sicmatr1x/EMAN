@@ -21,4 +21,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			where uid = #{uid}
 	</select>
 	
+	<select id="selectUserByUname" resultType="com.entity.User">
+			select *
+			from user
+			where uname = #{uname}
+	</select>
+	
 </mapper>

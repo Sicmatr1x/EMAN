@@ -9,30 +9,34 @@ public class RatingList {
 	private String uid;
 	private Double ratingValue;
 	private String rdescribe;
+	private User user;
 	
 	public RatingList() {
 
 	}
-	public RatingList(Integer rid, String eid, String uid, Double ratingValue,
-			String rdescribe) {
-		super();
-		this.rid = rid;
-		this.eid = eid;
-		this.uid = uid;
-		this.ratingValue = ratingValue;
-		this.rdescribe = rdescribe;
-	}
+	
 	
 	public void showField(){
 		System.out.println("-----" + this.toString() + "-----");
 		System.out.println("rid=" + this.rid);
 		System.out.println("eid=" + this.eid);
 		System.out.println("uid=" + this.uid);
+		user.showField();
 		System.out.println("ratingValue=" + this.ratingValue);
 		System.out.println("rdescribe=" + this.rdescribe);
 		System.out.println("----------");
 	}
 	
+	public User getUser() {
+		return user;
+	}
+
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+
 	public Integer getRid() {
 		return rid;
 	}

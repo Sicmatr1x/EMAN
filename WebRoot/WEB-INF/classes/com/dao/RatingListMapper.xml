@@ -21,4 +21,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			where eid = #{eid} and uid = #{uid}
 	</select>
 	
+	<!-- 返回评论列表 -->
+	<resultMap type="com.entity.RatingList" id="ratingListResultMap">
+	<id column="rid" property="rid"/>
+	<result column="eid" property="eid"/>
+	<result column="uid" property="uid"/>
+	<result column="ratingValue" property="ratingValue"/>
+	<result column="rdescribe" property="rdescribe"/>
+	<!-- 表示进行关联查询单条记录 -->
+	<association property="user" javaType="com.entity.User">
+		<id column="uid" property="uid"/>
+		<result column="uname" property="uname"/>
+	</association>
+	</resultMap>
+	
+	<select id="selectRatingListByEid" resultMap="ratingListResultMap">
+			select *
+			from ratinglist natural join user
+			where eid = #{eid}
+	</select>
+	
 </mapper>

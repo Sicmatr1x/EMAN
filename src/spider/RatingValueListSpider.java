@@ -47,7 +47,7 @@ public class RatingValueListSpider implements Runnable{
 	/**
 	 * 获取下一个页面间隔时间
 	 */
-	public static int _getNextPageWaitTime = 5 * 1000;
+	public static int _getNextPageWaitTime = 3 * 1000;
 	/**
 	 * 设置文件
 	 */
@@ -109,6 +109,49 @@ public class RatingValueListSpider implements Runnable{
 			
 		}else{ // 若已存在评分记录
 			System.out.println("评分记录已存在" + rList.getEid() + "," + rList.getUid());
+		}
+	}
+	
+	/**
+	 * 遍历本页评分列表
+	 */
+	private void initDataFromDocument(String eid, Elements ratingCommentsList){
+		// 遍历本页评分列表
+		for(int j = 0; j < ratingCommentsList.size(); j++){
+			User user = new User();
+			RatingList rList = new RatingList();
+			rList.setEid(eid);
+			
+//			System.out.println(ratingCommentsList.get(j));
+//			System.out.println("-----------");
+			// 用户名
+			user.setUname(ratingCommentsList.get(j).select(".user").select("a").text());
+			// 用户id
+			String userHomePage = ratingCommentsList.get(j).select(".user").select("a").attr("href");
+			String[] work = userHomePage.split("[/]");
+			if(work[2].matches("\\d+")){ // 若用户id为数字
+				user.setUid(work[2]);
+				rList.setUid(work[2]);
+			}else{ // 若用户id为非数字
+				continue;
+			}
+			// 评分
+			rList.setRatingValue(Double.valueOf(ratingCommentsList.get(j).select(".impression").select(".rating-stars").attr("title")));
+			// 评论
+			rList.setRdescribe(ratingCommentsList.get(j).select(".desc").text());
+			
+//			System.out.println("评论=" + ratingCommentsList.get(j).select(".desc").text());				
+//			System.out.println("user=" + ratingCommentsList.get(j).select(".user").select("a").text());
+//			System.out.println("评分=" + ratingCommentsList.get(j).select(".impression").select(".rating-stars").attr("title"));
+			System.out.println("-----------");
+			
+			// 写入数据库
+			user.setPassword("123456");
+			user.showField();
+			rList.showField();
+			this.writeUserDate(user);
+			this.writeRatingListDate(rList);
+			
 		}
 	}
 
@@ -203,57 +246,44 @@ public class RatingValueListSpider implements Runnable{
 					// 解析用户评分与评论rating-comments-list
 					Elements ratingCommentsList = this.Doc.select(".rating-comments-list").select("li");
 					if(ratingCommentsList.isEmpty()){ // 若评分数为0
+						// 尝试去另一个网址获取
+						// TODO:因为另一个网址例如https://book.douban.com/subject/10535671/collections网页格式与之前的不同所以暂时不获取
+//						String otherWebAddress = "https://book.douban.com/subject/" + eid + "/collections";
+//						this.Doc = this.getHtmlDoc(otherWebAddress);
+//						
+//						if(ratingCommentsList.isEmpty()){ // 若评分数为0
+//							break;
+//						}else{
+//							// 遍历本页评分列表
+//							this.initDataFromDocument(eid, ratingCommentsList);
+//						}
+						
+						System.out.println("sleep " + _getNextPageWaitTime / 1000 + "s...");
+						Thread.sleep(_getNextPageWaitTime);
 						break;
 					}else{ // 若评分数大于0
 						// 遍历本页评分列表
-						for(int j = 0; j < ratingCommentsList.size(); j++){
-							User user = new User();
-							RatingList rList = new RatingList();
-							rList.setEid(eid);
-							
-//							System.out.println(ratingCommentsList.get(j));
-//							System.out.println("-----------");
-							// 用户名
-							user.setUname(ratingCommentsList.get(j).select(".user").select("a").text());
-							// 用户id
-							String userHomePage = ratingCommentsList.get(j).select(".user").select("a").attr("href");
-							String[] work = userHomePage.split("[/]");
-							if(work[2].matches("\\d+")){ // 若用户id为数字
-								user.setUid(work[2]);
-								rList.setUid(work[2]);
-							}else{ // 若用户id为非数字
-								continue;
-							}
-							// 评分
-							rList.setRatingValue(Double.valueOf(ratingCommentsList.get(j).select(".impression").select(".rating-stars").attr("title")));
-							// 评论
-							rList.setRdescribe(ratingCommentsList.get(j).select(".desc").text());
-							
-//							System.out.println("评论=" + ratingCommentsList.get(j).select(".desc").text());				
-//							System.out.println("user=" + ratingCommentsList.get(j).select(".user").select("a").text());
-//							System.out.println("评分=" + ratingCommentsList.get(j).select(".impression").select(".rating-stars").attr("title"));
-							System.out.println("-----------");
-							
-							// 写入数据库
-							user.setPassword("123456");
-							user.showField();
-							rList.showField();
-							this.writeUserDate(user);
-							this.writeRatingListDate(rList);
-							
+						try{
+							this.initDataFromDocument(eid, ratingCommentsList);
+						} catch(java.lang.ArrayIndexOutOfBoundsException e){
+							e.printStackTrace();
+							break;
 						}
-						
-						
 					}
 					
 					System.out.println("sleep " + _getNextPageWaitTime / 1000 + "s...");
 					Thread.sleep(_getNextPageWaitTime);
 				}
+//				System.out.println("sleep " + _getNextPageWaitTime / 1000 + "s...");
+//				Thread.sleep(_getNextPageWaitTime);
 				
+			} catch (org.jsoup.HttpStatusException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			} catch (IOException | InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			} 
 			
 			// 保存当前遍历图书序号
 			// 写配置文件
@@ -268,7 +298,7 @@ public class RatingValueListSpider implements Runnable{
 				bufferedWriter.write(arg2);
 				bufferedWriter.close();
 
-			} catch (FileNotFoundException e1) {
+			} catch (FileNotFoundException e1 ) {
 				e1.printStackTrace();
 			} catch (UnsupportedEncodingException e) {
 				e.printStackTrace();

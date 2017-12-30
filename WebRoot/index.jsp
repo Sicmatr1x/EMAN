@@ -7,11 +7,9 @@
 <title>E-MAN 电子书推荐社区</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-<script
-	src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="<c:url value='/resources/bootstrap/3.3.7/css/bootstrap.min.css'/>">
+<script src="<c:url value='/resources/jquery/2.1.1/jquery.min.js'/>"></script>
+<script src="<c:url value='/resources/bootstrap/3.3.7/js/bootstrap.min.js'/>"></script>
 <script>
 	$(document).ready(function() {
 		// 开始写 jQuery 代码...
@@ -27,20 +25,15 @@
 			<div class="col-md-12 column">
 				<nav class="navbar navbar-default" role="navigation">
 					<div class="navbar-header">
-						<a class="navbar-brand" href="https://github.com/Sicmatr1x"><span
-							class="glyphicon glyphicon-home"></span> Home</a>
+						<a class="navbar-brand" href="#"><span
+							class="glyphicon glyphicon-home"></span> EMAN</a>
 					</div>
 
 					<div class="collapse navbar-collapse"
 						id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
-							<li>
-								<!-- class="active" --> <a href="articleList.html">Article
-									Type</a>
-							</li>
-							<!-- <li>
-								<a href="2">Link</a>
-							</li> -->
+							
+							
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown" data-toggle="tooltip" title="类型"> 类型<strong class="caret"></strong>
 							</a>
@@ -94,43 +87,23 @@
 							<button type="submit" id="bt-navbar-form-search"
 								class="btn btn-default">Search</button>
 						</form>
+						
+						
 						<ul class="nav navbar-nav navbar-right">
-							<!-- <li>
-								<a href="#">HelpLink</a>
-							</li> -->
-							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown">HelpLink<strong class="caret"></strong></a>
-								<ul class="dropdown-menu">
-									<li><a href="http://www.w3school.com.cn/index.html"><span
-											class="glyphicon glyphicon-book"></span> w3school</a></li>
-									<li><a href="http://www.runoob.com/"><span
-											class="glyphicon glyphicon-book"></span> runoob</a></li>
-									<li class="divider"></li>
-									<li><a href="https://github.com/"><span
-											class="glyphicon glyphicon-home"></span> github</a></li>
-									<li><a href="https://stackoverflow.com/"><span
-											class="glyphicon glyphicon-home"></span> stackoverflow</a></li>
-									<li class="divider">
-									<li><a href="https://www.mysql.com/"><span
-											class="glyphicon glyphicon-save"></span> mysql</a></li>
-									<li><a
-										href="http://www.oracle.com/technetwork/java/javase/downloads/index.html"><span
-											class="glyphicon glyphicon-save"></span> JavaSE</a></li>
-									<li><a
-										href="http://www.oracle.com/technetwork/java/javaee/downloads/index.html"><span
-											class="glyphicon glyphicon-save"></span> JavaEE</a></li>
-								</ul></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown">ToolBox<strong class="caret"></strong></a>
-								<ul class="dropdown-menu">
-									<li><a
-										href="https://github.com/Sicmatr1x/Sicmatr1x.github.io/coding/easyUI/jquery-easyui-1.5.3/demo/datagrid/custompager.html">test
-											easyUI demo</a></li>
-									<li><a href="#">Another action</a></li>
-									<li><a href="#">Something else here</a></li>
-									<li class="divider"></li>
-									<li><a href="#">Separated link</a></li>
-								</ul></li>
+							<!-- 用户登录模块 -->
+							<li>
+							<%
+							String uname = (String)session.getAttribute("uname");
+							String state = (String)session.getAttribute("state");
+							if(state != null && state.equals("login")){
+								out.println("<a href=\"user/logout.htm\">" + uname + "注销" + "</a>");
+							}else{
+								out.println("<a href=\"user/login.htm\">" + "登录" + "</a>");
+							}
+							%>
+							</li>
+						
+							
 						</ul>
 					</div>
 
