@@ -128,6 +128,64 @@ public class EBookController {
 	}
 	//------------------------------------------------------------------------------
 	/**
+	 * 图书搜索
+	 * http://localhost:8080/EMAN/ebook/searchKeyword.htm?start=0&keyword=小说
+	 * @param eid
+	 * @param out
+	 * @param request
+	 */
+	@RequestMapping("/searchKeyword.htm")
+	public String queryEBookByKeyword(HttpServletRequest request,
+			@RequestParam(value="keyword")String keyword,
+			@RequestParam(value="start")int start,
+			@RequestParam(value="orderCondition", required=false)String orderCondition,
+			@RequestParam(value="order", required=false)String order
+			){
+		
+		List<EBook> result = eBookService.queryEBookByKeyword(keyword, start, orderCondition, order);
+		int count = eBookService.queryEBookByKeywordCount(keyword, orderCondition, order);
+		request.setAttribute("result", result);
+		request.setAttribute("count", count);
+		return "searchResult";
+	}
+	
+	/**
+	 * 图书高级搜索
+	 * http://localhost:8080/EMAN/ebook/search.htm?start=0&classifyMain=小说
+	 * @param eid
+	 * @param out
+	 * @param request
+	 */
+	@RequestMapping("/search.htm")
+	public String queryEBookByCondition(HttpServletRequest request,
+			@RequestParam(value="eid", required=false)String eid,
+			@RequestParam(value="ISBN", required=false)String ISBN,
+			@RequestParam(value="ename", required=false)String ename,
+			@RequestParam(value="author", required=false)String author,
+			@RequestParam(value="translator", required=false)String translator,
+			@RequestParam(value="publishingHouse", required=false)String publishingHouse,
+			@RequestParam(value="provider", required=false)String provider,
+			@RequestParam(value="classifyMain", required=false)String classifyMain,
+			@RequestParam(value="start")int start,
+			@RequestParam(value="orderCondition", required=false)String orderCondition,
+			@RequestParam(value="order", required=false)String order
+			){
+		EBook condition = new EBook();
+		condition.setEid(eid);
+		condition.setISBN(ISBN);
+		condition.setEname(ename);
+		condition.setAuthor(author);
+		condition.setTranslator(translator);
+		condition.setPublishingHouse(publishingHouse);
+		condition.setProvider(provider);
+		condition.setClassifyMain(classifyMain);
+		
+		List<EBook> result = eBookService.queryEBookByCondition(condition, start, orderCondition, order);
+		request.setAttribute("result", result);
+		return "searchResult";
+	}
+	
+	/**
 	 * 图书详情页
 	 * http://localhost:8080/EMAN/ebook/info.htm?eid=958945
 	 * @param eid

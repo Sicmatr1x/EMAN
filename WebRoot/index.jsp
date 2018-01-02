@@ -38,7 +38,7 @@
 								data-toggle="dropdown" data-toggle="tooltip" title="类型"> 类型<strong class="caret"></strong>
 							</a>
 								<ul class="dropdown-menu">
-									<li><a
+									<li><a target="view_window"
 										href="<c:url value='ebook/list.htm?classifyMain=小说&start=0'/>">小说</a></li>
 									<li><a
 										href="<c:url value='ebook/list.htm?classifyMain=文学&start=0'/>">文学</a></li>
@@ -81,11 +81,11 @@
 						</ul>
 						<form class="navbar-form navbar-left" role="search">
 							<div class="form-group">
-								<input type="text" id="question" class="form-control"
-									placeholder="search stackoverflow"></input>
+								<input type="text" id="keyword" class="form-control"
+									placeholder="图书搜索"></input>
 							</div>
-							<button type="submit" id="bt-navbar-form-search"
-								class="btn btn-default">Search</button>
+							<button id="bt-navbar-form-search"
+								class="btn btn-default">搜索</button>
 						</form>
 						
 						
@@ -143,7 +143,12 @@
 	</div>
 	<script>
 		$(document).on('ready', function() {
-
+			$("#bt-navbar-form-search").click(function(){
+				var keyword = $("#keyword").val();
+				console.log("keyword=" + keyword);
+				//alert("<c:url value='/'/>" + "ebook/searchKeyword.htm?start=0&keyword=" + keyword);
+				window.open("<c:url value='ebook/searchKeyword.htm?start=0&keyword='/>" + keyword);
+		    });
 		});
 	</script>
 </body>

@@ -67,6 +67,7 @@ public class UserController {
 	 */
 	@RequestMapping("/logout.htm")
 	public void logout(HttpServletRequest request, HttpServletResponse response, HttpSession session){
+		session.setAttribute("uid", null);
 		session.setAttribute("uname", null);
 		session.setAttribute("password", null);
 		session.setAttribute("state", "logout");
@@ -94,6 +95,7 @@ public class UserController {
 		// 从数据库查询用户并校验密码
 		User user = this.userService.queryUserByUname(uname);
 		if(user.getPassword().equals(password)){ // 密码正确
+			session.setAttribute("uid", user.getUid());
 			session.setAttribute("state", "login");
 			try {
 				response.sendRedirect("http://localhost:8080/EMAN/");
@@ -111,7 +113,7 @@ public class UserController {
 			}
 		}
 
-		System.out.println("用户登录 uname=" + uname + "password=" + password);
+		System.out.println("用户登录uid=" + user.getUid() +  ",uname=" + uname + ",password=" + password);
 		
 	}
 	

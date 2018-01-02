@@ -1,6 +1,6 @@
 package com.entity;
 
-import org.aspectj.weaver.patterns.ThisOrTargetAnnotationPointcut;
+
 
 public class User {
 	private String uid;

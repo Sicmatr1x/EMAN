@@ -32,7 +32,7 @@
 						<div class="panel panel-default">
 							<!-- 面板头 -->
 							<div class="panel-heading">
-								<a class="panel-title" href="<c:url value='/ebook'/>/info.htm?eid=${ebook.eid}">${ebook.ename}</a>
+								<a class="panel-title" target="view_window" href="<c:url value='/ebook'/>/info.htm?eid=${ebook.eid}">${ebook.ename}</a>
 							</div>
 							<!-- 面板体 -->
 							<div class="panel-body">

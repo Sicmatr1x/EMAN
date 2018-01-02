@@ -41,7 +41,7 @@ public class RatingListController {
 	 */
 	@RequestMapping("/list.htm")
 	public void queryRatingListByEid(@RequestParam(value="eid")int eid, PrintWriter out, HttpServletRequest request){
-		List<RatingList> list = ratingListService.selectRatingListByEid(eid);
+		List<RatingList> list = ratingListService.selectRatingListByEid(eid + "");
 		
 		String json;
 		json = JSONConverter.convertToJSONString(list);

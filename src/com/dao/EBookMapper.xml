@@ -36,9 +36,60 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			limit #{start},#{size}
 	</select>
 	
+	<!-- 电子书查询 -->
+	<select id="selectEBookByKeyword" parameterType="java.util.Map" resultType="com.entity.EBook">
+	    select *
+		from ebook
+		where
+		ename like '%${keyword}%'
+		or author like '%${keyword}%'
+		or publishingHouse like '%${keyword}%'
+		or provider like '%${keyword}%'
+		order by ${orderCondition} ${order}
+		limit #{start},#{size}
+	</select>
+	<select id="selectEBookByKeywordCount" parameterType="java.util.Map" resultType="int">
+	    select count(eid)
+		from ebook
+		where ename like '%${keyword}%'
+		or author like '%${keyword}%'
+		or publishingHouse like '%${keyword}%'
+		or provider like '%${keyword}%'
+		order by ${orderCondition} ${order}
+	</select>
+	
 	<!-- 电子书高级查询 -->
-	<select id="getEBookCount" resultType="int">
-	    select count(*) from ebook
+	<select id="selectEBookByCondition" parameterType="java.util.Map" resultType="com.entity.EBook">
+	    select *
+		from ebook
+		<where>
+			<if test="eid != null">
+				and eid = #{eid}
+			</if>
+			<if test="ISBN != null">
+				and ISBN = #{ISBN}
+			</if>
+			<if test="ename != null">
+				and ename like '%${ename}%'
+			</if>
+			<if test="author != null">
+				and author like '%${author}%'
+			</if>
+			<if test="translator != null">
+				and translator like '%${translator}%'
+			</if>
+			<if test="publishingHouse != null">
+				and publishingHouse like '%${publishingHouse}%'
+			</if>
+			<if test="provider != null">
+				and provider like '%${provider}%'
+			</if>
+			<if test="classifyMain != null">
+				and classifyMain like '%${classifyMain}%'
+			</if>
+		</where>
+		order by ${orderCondition} ${order}
+		limit #{start},#{size}
 	</select>
 	
 	<!-- 电子书排行榜制作 -->

@@ -1,5 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%@ page import="com.entity.EBook" %>
+<%@ page import="com.entity.*" %>
+<%@ page import="com.service.*" %>
+<%@ page import="com.service.impl.*" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -104,7 +106,12 @@
 						<input id="input-ratingValue" type="number" value="<%
 							/*将0~10之间的评分化为0~5之间的评分*/
 							EBook ebook = (EBook)request.getAttribute("ebook");
-							double t = (ebook.getRatingValue()/2);
+							double t = 0.0;
+							if(ebook.getRatingValue() == null){
+								
+							}else{
+								t = (ebook.getRatingValue()/2);
+							}
 							int i = (int)t;
 							double f = t - i;
 							if(f >= 0.8)
@@ -183,9 +190,16 @@
 				
 				<div class="col-md-1">
 					<div class="panel-body">
+						<button id="douban-btn" class="btn btn-primary" type="button">前往豆瓣</button>
+					</div>
+				</div>
+				
+				<div class="col-md-1">
+					<div class="panel-body">
 						<button id="gozhangyue-btn" class="btn btn-primary" type="button">前往掌阅书库</button>
 					</div>
 				</div>
+				
 			</div>
 		</div>
 		
@@ -202,16 +216,29 @@
 		</div>
 		
 		<!-- 评论面板 -->
+		<h3>评论区</h3>
+		<hr />
+		<!-- 你的评论 -->
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h3 class="panel-title">
-					评论
+					你的评论
 				</h3>
 			</div>
 			<div class="panel-body">
-				评论预留位
+				推荐预留位
 			</div>
 		</div>
+		<!-- 评论列表 -->
+		<ul class="list-group" id="commentList">
+			<li class="list-group-item" id="comment">
+				<div>
+					<h4>用户名</h4>
+					<input id="rating-lisit-1" type="number" value="5"/>
+					<p class="rdescribe">评论</p>
+				</div>
+			</li>
+		</ul>
 		
 	</div><!-- container -->
 	
@@ -242,6 +269,45 @@
     	    console.log(caption);
     	});
     	
+    	/*评论评分区AJAX数据获取*/
+		$.ajax({
+			url:"/EMAN/ratinglist/list.htm",
+			type:"get",
+			data:"eid=${ebook.eid}",
+			dataType:"json",
+			success:function(data){
+				var commentList = data;
+				var clone = $("#comment").clone();
+				$("#commentList").empty();
+				
+				if(commentList.length < 1){ // 若无数据
+					$("#commentList").append("<p>暂无评论</p>");
+				}
+				
+				for(var i = 0; i < commentList.length; i++){
+					var cloneDiv = clone.clone();
+					cloneDiv.attr("id","comment"+(i+1));
+					cloneDiv.find("h4").text(commentList[i].user.uname);
+					cloneDiv.find("input").attr("id","rating-"+(i+1));
+					cloneDiv.find("input").attr("value",commentList[i].ratingValue);
+					cloneDiv.find("input").rating({
+			            min: 0,
+			            max: 5,
+			            step: 0.5,
+			            size: 's',
+			            readonly: true,
+			            showClear: false
+			        });
+					cloneDiv.find(".rdescribe").text(commentList[i].rdescribe);
+					$("#commentList").append(cloneDiv);
+				}
+			},
+			error:function(){
+				alert("ajax请求失败");
+			}
+		});
+
+    	
     	
 	});
 	
@@ -262,6 +328,10 @@
         
         $("#gozhangyue-btn").click(function(){
         	window.location.href = "http://www.ireader.com/index.php?ca=search.index&pca=bookdetail.index&keyword=" + "${ebook.ename}";
+        });
+        
+        $("#douban-btn").click(function(){
+        	window.location.href = "https://read.douban.com/ebook/" + "${ebook.eid}";
         });
         
     });  

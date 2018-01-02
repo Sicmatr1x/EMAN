@@ -27,13 +27,13 @@ public class RatingListServiceImpl implements RatingListService {
 	}
 
 	@Override
-	public List<RatingList> selectRatingListByEid(int eid) {
+	public List<RatingList> selectRatingListByEid(String eid) {
 		List<RatingList> list = ratingListDao.selectRatingListByEid(eid);
 		return list;
 	}
 
 	@Override
-	public RatingList selectRatingListByEidAndUid(int eid, int uid) {
+	public RatingList selectRatingListByEidAndUid(String eid, String uid) {
 		RatingList rList = ratingListDao.selectRatingListByEidAndUid(eid, uid);
 		return rList;
 	}

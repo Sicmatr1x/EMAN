@@ -6,9 +6,9 @@ import com.entity.RatingList;
 
 public interface RatingListDao {
 	
-	public List<RatingList> selectRatingListByEid(int eid);
+	public List<RatingList> selectRatingListByEid(String eid);
 	
-	public RatingList selectRatingListByEidAndUid(int eid, int uid);
+	public RatingList selectRatingListByEidAndUid(String eid, String uid);
 	
 	public void insertRatingList(RatingList rList);
 }

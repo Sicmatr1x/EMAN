@@ -22,14 +22,14 @@ public class RatingListDaoImpl implements RatingListDao {
 	}
 
 	@Override
-	public List<RatingList> selectRatingListByEid(int eid) {
+	public List<RatingList> selectRatingListByEid(String eid) {
 		List<RatingList> list = sqlSession.selectList("selectRatingListByEid", eid);
 		return list;
 	}
 
 	@Override
-	public RatingList selectRatingListByEidAndUid(int eid, int uid) {
-		Map<String, Integer> args = new HashMap<String, Integer>();
+	public RatingList selectRatingListByEidAndUid(String eid, String uid) {
+		Map<String, String> args = new HashMap<String, String>();
 		args.put("eid", eid);
 		args.put("uid", uid);
 		return sqlSession.selectOne("selectEBookByEid", args);
