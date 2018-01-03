@@ -6,13 +6,11 @@ import com.entity.EBook;
 
 public interface EBookService {
 	
-	public EBook queryEBookByEid(int eid);
+	public EBook queryEBookByEid(String eid);
 	
-	public List<EBook> quertyAllEBook();
+	public List<EBook> queryEBookLimitByClassifyMain(String classifyMain, Integer start, String orderCondition, String order);
 	
-	public List<EBook> queryAllEBookLimit(int start);
-	
-	public List<EBook> queryEBookLimitByClassifyMain(String classifyMain, Integer start);
+	public int queryEBookByClassifyMainCount(String classifyMain, String orderCondition, String order);
 	
 	public List<EBook> queryEBookByCondition(EBook orderCondition, Integer start, String orderConditon, String order);
 	

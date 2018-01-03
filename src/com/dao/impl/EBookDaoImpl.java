@@ -7,6 +7,8 @@ import java.util.Map;
 
 
 
+
+
 //import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
@@ -29,40 +31,44 @@ public class EBookDaoImpl implements EBookDao{
 	}
 
 	@Override
-	public EBook queryEBookByEid(int eid) {
+	public EBook queryEBookByEid(String eid) {
 		return sqlSession.selectOne("selectEBookByEid", eid);
-	}
-
-	@Override
-	public List<EBook> quertyAllEBook() {
-		List<EBook> list = sqlSession.selectList("selectAllEBook");
-		return list;
-	}
-
-	@Override
-	public List<EBook> queryAllEBookLimit(Integer start) {
-		if(start < 0 || start == null)
-			start = 0;
-		Integer size = 20;
-		Map<String, Integer> args = new HashMap<String, Integer>();
-		args.put("start", start);
-		args.put("size", size);
-		List<EBook> list = sqlSession.selectList("selectAllEBookLimit", args);
-		return list;
 	}
 	
 	@Override
-	public List<EBook> queryEBookLimitByClassifyMain(String classifyMain, Integer start) {
+	public List<EBook> queryEBookLimitByClassifyMain(String classifyMain, Integer start, String orderCondition,
+			String order) {
 		if(start < 0 || start == null)
 			start = 0;
-
+		if(orderCondition == null || orderCondition.equals(""))
+			orderCondition = "ename";
+		if(order == null || order.equals(""))
+			order = "asc";
+		
 		Integer size = 20;
 		Map<String, Object> args = new HashMap<String, Object>();
 		args.put("classifyMain", classifyMain);
+		args.put("orderCondition", orderCondition);
+		args.put("order", order);
 		args.put("start", start);
 		args.put("size", size);
 		List<EBook> list = sqlSession.selectList("selectEBookLimitByClassifyMain",args);
 		return list;
+	}
+	
+	@Override
+	public int queryEBookByClassifyMainCount(String classifyMain, String orderCondition, String order){
+		if(orderCondition == null || orderCondition.equals(""))
+			orderCondition = "ename";
+		if(order == null || order.equals(""))
+			order = "asc";
+
+		Map<String, Object> args = new HashMap<String, Object>();
+		args.put("classifyMain", classifyMain);
+		args.put("orderCondition", orderCondition);
+		args.put("order", order);
+		int num = sqlSession.selectOne("selectEBookByClassifyMainCount",args);
+		return num;
 	}
 
 	@Override

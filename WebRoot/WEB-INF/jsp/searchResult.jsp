@@ -274,6 +274,7 @@
 				<div class="row">
 					<button id="backpage-btn" class="btn btn-primary" type="button">上一页</button>
 					<!-- 快速翻页按钮位置 -->
+					<span>&nbsp;&nbsp;</span>
 					<button id="nextpage-btn" class="btn btn-primary" type="button">下一页</button>
 				</div>
 
@@ -340,7 +341,7 @@ $(document).on('ready', function () {
 			$("#backpage-btn").after(clone);
 			$("#backpage-btn").after("<span>&nbsp;&nbsp;</span>");
 		}
-		$("#backpage-btn").after("<span>...</span>");
+		$("#backpage-btn").after("<span>&nbsp;&nbsp;</span><span>...</span>");
 		
 		for(i = 3; i > 0; i--){
 			// TODO

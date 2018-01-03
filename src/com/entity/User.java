@@ -3,11 +3,29 @@ package com.entity;
 
 
 public class User {
+	/**
+	 * 用户主键
+	 */
 	private String uid;
+	/**
+	 * 用户名
+	 */
 	private String uname;
+	/**
+	 * 邮箱
+	 */
 	private String email;
+	/**
+	 * 密码
+	 */
 	private String password;
+	/**
+	 * 性别
+	 */
 	private String sex;
+	/**
+	 * 年龄
+	 */
 	private Integer age;
 	
 	public User() {

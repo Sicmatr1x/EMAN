@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
 
 	
 	@Override
-	public User queryUserByUid(int uid) {
+	public User queryUserByUid(String uid) {
 		User user = this.userDao.queryUserByUid(uid);
 		return user;
 	}

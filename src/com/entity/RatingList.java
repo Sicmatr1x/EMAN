@@ -5,10 +5,25 @@ public class RatingList {
 	 * 数据库自增主键禁止设值
 	 */
 	private Integer rid;
+	/**
+	 * 图书主键
+	 */
 	private String eid;
+	/**
+	 * 用户主键
+	 */
 	private String uid;
+	/**
+	 * 用户评分
+	 */
 	private Double ratingValue;
+	/**
+	 * 用户评价
+	 */
 	private String rdescribe;
+	/**
+	 * 用户对象(联级查询用)
+	 */
 	private User user;
 	
 	public RatingList() {

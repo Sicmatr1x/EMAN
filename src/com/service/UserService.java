@@ -4,7 +4,7 @@ import com.entity.User;
 
 public interface UserService {
 	
-	public User queryUserByUid(int uid);
+	public User queryUserByUid(String uid);
 	
 	public User queryUserByUname(String uname);
 	

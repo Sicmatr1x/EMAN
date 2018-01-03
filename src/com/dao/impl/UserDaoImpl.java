@@ -17,7 +17,7 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public User queryUserByUid(int uid) {
+	public User queryUserByUid(String uid) {
 		return sqlSession.selectOne("selectUserByUid", uid);
 	}
 

@@ -24,7 +24,7 @@ public class EBookServiceImpl implements EBookService {
 	}
 
 	@Override
-	public EBook queryEBookByEid(int eid) {
+	public EBook queryEBookByEid(String eid) {
 		EBook book = this.eBookDao.queryEBookByEid(eid);
 		if(book.getImgAddress()!=null){
 			int beg = book.getImgAddress().indexOf("public/");
@@ -37,70 +37,6 @@ public class EBookServiceImpl implements EBookService {
 			}
 		}
 		return book;
-	}
-
-	@Override
-	public List<EBook> quertyAllEBook() {
-		return this.eBookDao.quertyAllEBook();
-	}
-
-	@Override
-	public List<EBook> queryAllEBookLimit(int start) {
-		List<EBook> list = this.eBookDao.queryAllEBookLimit(start);
-		for(EBook book : list){
-			if(book.getImgAddress()!=null){
-				int beg = book.getImgAddress().indexOf("public/");
-				int end = book.getImgAddress().indexOf("?v=");
-				if(end==-1)
-					continue;
-				String tString = book.getImgAddress().substring(beg + "public/".length(), end);
-				book.setImgAddress(tString);
-			}
-			
-		}
-		return list;
-	}
-
-	@Override
-	public List<EBook> queryEBookLimitByClassifyMain(String classifyMain, Integer start) {
-		List<EBook> list = this.eBookDao.queryEBookLimitByClassifyMain(classifyMain, start);
-		for(EBook book : list){
-			if(book.getImgAddress()!=null){
-				int beg = book.getImgAddress().indexOf("public/");
-				int end = book.getImgAddress().indexOf("?v=");
-				if(end==-1)
-					continue;
-				String tString = book.getImgAddress().substring(beg + "public/".length(), end);
-				book.setImgAddress(tString);
-			}
-			
-		}
-		return list;
-	}
-
-	@Override
-	public List<EBook> queryEBookByCondition(EBook condition, Integer start,
-			String orderCondition, String order) {
-		List<EBook> list = this.eBookDao.queryEBookByCondition(condition, start, orderCondition, order);
-		for(EBook book : list){
-			if(book.getImgAddress()!=null){
-				int beg = book.getImgAddress().indexOf("public/");
-				int end = book.getImgAddress().indexOf("?v=");
-				if(end==-1)
-					continue;
-				String tString = book.getImgAddress().substring(beg + "public/".length(), end);
-				book.setImgAddress(tString);
-			}
-			
-		}
-		return list;
-	}
-
-	@Override
-	public List<EBook> queryEBookByKeyword(String Keyword, Integer start,
-			String orderCondition, String order) {
-		List<EBook> list = this.eBookDao.queryEBookByKeyword(Keyword, start, orderCondition, order);
-		return this.initEBookImgAddress(list);
 	}
 	
 	/**
@@ -121,6 +57,33 @@ public class EBookServiceImpl implements EBookService {
 			
 		}
 		return list;
+	}
+
+	
+	@Override
+	public List<EBook> queryEBookLimitByClassifyMain(String classifyMain, Integer start, String orderCondition, String order) {
+		List<EBook> list = this.eBookDao.queryEBookLimitByClassifyMain(classifyMain, start, orderCondition, order);
+		return this.initEBookImgAddress(list);
+	}
+	
+	@Override
+	public int queryEBookByClassifyMainCount(String classifyMain, String orderCondition, String order){
+		int num = this.eBookDao.queryEBookByClassifyMainCount(classifyMain, orderCondition, order);
+		return num;
+	}
+
+	@Override
+	public List<EBook> queryEBookByCondition(EBook condition, Integer start,
+			String orderCondition, String order) {
+		List<EBook> list = this.eBookDao.queryEBookByCondition(condition, start, orderCondition, order);
+		return this.initEBookImgAddress(list);
+	}
+
+	@Override
+	public List<EBook> queryEBookByKeyword(String Keyword, Integer start,
+			String orderCondition, String order) {
+		List<EBook> list = this.eBookDao.queryEBookByKeyword(Keyword, start, orderCondition, order);
+		return this.initEBookImgAddress(list);
 	}
 
 	@Override

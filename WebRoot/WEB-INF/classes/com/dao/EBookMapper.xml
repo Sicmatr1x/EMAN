@@ -15,14 +15,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 
 	<!-- 电子书基本信息查询 -->
-	<select id="selectAllEBook" resultType="com.entity.EBook">
-			select * from ebook
-	</select>
-	<select id="selectAllEBookLimit" parameterType="Map" resultType="com.entity.EBook">
-			select *
-			from ebook
-			limit #{start,jdbcType=INTEGER},#{size,jdbcType=INTEGER}
-	</select>
 	<select id="selectEBookByEid" resultType="com.entity.EBook">
 			select *
 			from ebook
@@ -32,8 +24,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			select *
 			from ebook
 			where classifyMain=#{classifyMain}
-			order by ratingValue desc
+			order by ${orderCondition} ${order}
 			limit #{start},#{size}
+	</select>
+	<select id="selectEBookByClassifyMainCount" parameterType="java.util.Map" resultType="int">
+	    	select count(eid)
+			from ebook
+			where classifyMain=#{classifyMain}
+			order by ${orderCondition} ${order}
 	</select>
 	
 	<!-- 电子书查询 -->

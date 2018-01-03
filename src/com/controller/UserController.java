@@ -3,29 +3,13 @@ package com.controller;
 import java.io.IOException;
 import java.util.Random;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
-
-
-
-
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-
-
-
-
-
-
-
 
 import com.entity.User;
 import com.service.UserService;
@@ -37,8 +21,6 @@ public class UserController {
 
 	@Autowired
 	private UserService userService = null;
-
-	
 	
 	public UserService getUserService() {
 		return userService;
@@ -146,13 +128,12 @@ public class UserController {
 		String sex = (String)request.getAttribute("sex");
 		Integer age = Integer.valueOf((String)request.getAttribute("age"));
 		// 生成随机UID
-		//TODO
 		int uid;
 		User t = null;
 		do{
 			uid = this.getRandomUid();
 			t = null;
-			t = this.userService.queryUserByUid(uid);
+			t = this.userService.queryUserByUid(uid + "");
 		}while(t != null);
         
 		
@@ -175,7 +156,7 @@ public class UserController {
 	}
 	
 	/**
-	 * 
+	 * 生成随机UID[1000001,9999998]
 	 * @return
 	 */
 	private int getRandomUid(){
