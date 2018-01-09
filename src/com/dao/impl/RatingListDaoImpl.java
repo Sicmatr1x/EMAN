@@ -32,7 +32,7 @@ public class RatingListDaoImpl implements RatingListDao {
 		Map<String, String> args = new HashMap<String, String>();
 		args.put("eid", eid);
 		args.put("uid", uid);
-		return sqlSession.selectOne("selectEBookByEid", args);
+		return sqlSession.selectOne("selectRatingListByEidAndUid", args);
 	}
 
 	@Override

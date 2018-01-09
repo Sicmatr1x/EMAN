@@ -28,13 +28,16 @@
 </head>
 
 <body>
+
+	<div class="container">
+	<!-- 导航栏 -->
+	<jsp:include page="head.jsp"/>
 	<!-- 面包屑导航栏 TODO: -->
 	<ol class="breadcrumb">
 		<li><a href="<c:url value='/'/>">主页</a></li>
 		<li><a href="list.htm?classifyMain=${ebook.classifyMain}&start=0">${ebook.classifyMain}</a></li>
 	</ol>
-
-	<div class="container">
+	
 		<!-- 图书信息面板 -->
 		<div class="panel panel-default"><!-- 带标题的面板 -->
 			<div class="panel-heading">
@@ -142,7 +145,7 @@
 							</c:if>
 						</p>
 						
-						<input id="rating-input" type="number" />
+						
 						
 					</div>
 				</div>
@@ -219,16 +222,17 @@
 		<h3>评论区</h3>
 		<hr />
 		<!-- 你的评论 -->
-		<div class="panel panel-default">
+		<div class="panel panel-default" id="myDescribe-panel">
 			<div class="panel-heading">
 				<h3 class="panel-title">
 					你的评论
 				</h3>
 			</div>
-			<div class="panel-body">
-				推荐预留位
+			<div class="panel-body" id="myDescribe-div">
+				登录后才可评论
 			</div>
 		</div>
+		
 		<!-- 评论列表 -->
 		<ul class="list-group" id="commentList">
 			<li class="list-group-item" id="comment">
@@ -243,7 +247,92 @@
 	</div><!-- container -->
 	
 <script>
+var uid = '<%= session.getAttribute("uid") %>';
+var state = '<%= session.getAttribute("state") %>';
+
+function queryOneDescribe(){
+	$.ajax({
+		url:"/EMAN/ratinglist/queryOne.htm",
+		type:"get",
+		data:"eid=${ebook.eid}&uid=<%= session.getAttribute("uid") %>",
+		dataType:"json",
+		success:function(data){
+			var ratingListObject = data;
+
+			$("#myDescribe-div").empty();
+			
+			if(ratingListObject == null || ratingListObject.rdescribe == null){ // 若没有评论 <input id="rating-input" type="number" />
+				$("#myDescribe-div").append("<div class=\"col-md-7\"><textarea class=\"form-control\" rows=\"5\" id=\"myDescribe-textarea\" /></div><div class=\"col-md-4\"><input id=\"rating-input\" type=\"number\" /></div><button id=\"submitMyDescribe-btn\" class=\"btn btn-primary\" type=\"button\">提交</button>");
+				//$("#myDescribe-div").append("<textarea class="form-control" rows="5" id="myDescribe-textarea">");
+				//TODO
+				/*登录用户评分*/
+		    	$('#rating-input').rating({
+		            min: 0,
+		            max: 5,
+		            step: 0.5,
+		            size: 'xs',
+		            showClear: false
+		        });
+		    	$("#submitMyDescribe-btn").click(function(){
+		        	var rdescribe = $("#myDescribe-textarea").val();
+		        	var ratingValue = $("#rating-input").val();
+		        	console.log("rdescribe=" + rdescribe);
+		    	    console.log("ratingValue=" + ratingValue);
+		    	    
+		    	    // 发送用户评分与评论
+		    	    $.ajax({
+		    			url:"/EMAN/ratinglist/insert.htm",
+		    			type:"post",
+		    			data:{
+		    				eid:"${ebook.eid}",
+		    				uid:"<%= session.getAttribute("uid") %>",
+		    				rdescribe:rdescribe,
+		    				ratingValue:ratingValue
+		    				},
+		    			dataType:"json",
+		    			success:function(data){
+		    				var ratingListObject = data;
+		    				window.location.href = window.location.href;
+		    			},
+		    			error:function(){
+		    				alert("ajax请求失败");
+		    			}
+		    		});
+		        });
+		    	/*评分修改触发函数*/
+		    	/*$('#rating-input').on('rating.change', function(event, value, caption) {
+		    		//检查用户是否登录,若登录且未评分则可以发送评分请求,否则弹出相应提示
+		    		if(state == "login"){ // 若用户已登录
+						// 发送修改评分请求
+		        	}
+		    	    console.log(value);
+		    	    console.log(caption);
+		    	});*/
+				
+			}else{
+				$("#myDescribe-div").append("<p>" + ratingListObject.rdescribe + "</p>");
+				$("#myDescribe-div").append("<input id=\"rating-input\" type=\"number\" value=\"\"/>");
+				$("#rating-input").attr("value", ratingListObject.ratingValue);
+				$("#rating-input").rating({
+		    		min: 0,
+		    		max:5,
+		    		step: 0.5,
+		    		size: 's',
+		    		readonly: true,
+		    		showClear: false
+		    	});
+				
+			}
+			
+		},
+		error:function(){
+			alert("ajax请求失败");
+		}
+	});
+}
+
 	$(document).on('ready', function () {
+		
 		/* 图书评分星星插件 */
 		/*显示综合评分*/
     	$("#input-ratingValue").rating({
@@ -254,20 +343,13 @@
     		readonly: true,
     		showClear: false
     	});
-    	/*登录用户评分*/
-    	$('#rating-input').rating({
-            min: 0,
-            max: 5,
-            step: 0.5,
-            size: 'xs',
-            showClear: false
-        });
-    	/*评分修改触发函数*/
-    	$('#rating-input').on('rating.change', function(event, value, caption) {
-    		//检查用户是否登录,若登录且未评分则可以发送评分请求,否则弹出相应提示
-    	    console.log(value);
-    	    console.log(caption);
-    	});
+    	
+    	/*判断用户登录则可评论*/
+    	if(state == "login"){ // 若用户已登录
+    		// 向服务器请求评论
+    		queryOneDescribe();
+    	}
+    	
     	
     	/*评论评分区AJAX数据获取*/
 		$.ajax({
@@ -288,6 +370,7 @@
 					var cloneDiv = clone.clone();
 					cloneDiv.attr("id","comment"+(i+1));
 					cloneDiv.find("h4").text(commentList[i].user.uname);
+					cloneDiv.find("h4").attr("id",commentList[i].user.uid);
 					cloneDiv.find("input").attr("id","rating-"+(i+1));
 					cloneDiv.find("input").attr("value",commentList[i].ratingValue);
 					cloneDiv.find("input").rating({

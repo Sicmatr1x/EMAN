@@ -38,6 +38,11 @@ public class RatingListServiceImpl implements RatingListService {
 		return rList;
 	}
 
+	@Override
+	public void insertRatingList(RatingList rList) {
+		ratingListDao.insertRatingList(rList);
+	}
+
 	
 
 	
