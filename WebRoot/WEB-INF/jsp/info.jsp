@@ -244,6 +244,17 @@
 			</li>
 		</ul>
 		
+		<!-- 翻页按钮 -->
+		<div class="row">
+			<button id="backpage-btn" class="btn btn-primary" type="button">上一页</button>
+			<!-- 快速翻页按钮位置 -->
+			<span>&nbsp;&nbsp;</span>
+			<button id="nextpage-btn" class="btn btn-primary" type="button">下一页</button>
+			<span>&nbsp;&nbsp;</span>
+			<!-- 当前显示评论条数与总条数 -->
+			<span id="curNum-p"></span><span>/</span><span id="totalNum-p"></span><span>条</span>
+		</div>
+		
 	</div><!-- container -->
 	
 <script>
@@ -329,6 +340,8 @@ function queryOneDescribe(){
 			alert("ajax请求失败");
 		}
 	});
+	
+	
 }
 
 	$(document).on('ready', function () {
@@ -353,9 +366,9 @@ function queryOneDescribe(){
     	
     	/*评论评分区AJAX数据获取*/
 		$.ajax({
-			url:"/EMAN/ratinglist/list.htm",
+			url:"/EMAN/ratinglist/listLimit.htm",
 			type:"get",
-			data:"eid=${ebook.eid}",
+			data:"eid=${ebook.eid}&start=0",
 			dataType:"json",
 			success:function(data){
 				var commentList = data;
@@ -389,7 +402,129 @@ function queryOneDescribe(){
 				alert("ajax请求失败");
 			}
 		});
-
+    	
+		/*评论评分区AJAX数据条数获取*/
+	    $.ajax({
+	    	url:"/EMAN/ratinglist/listLimitCount.htm",
+			type:"get",
+			data:"eid=${ebook.eid}",
+			dataType:"json",
+			success:function(data){
+				$("#curNum-p").text(0);
+				$("#totalNum-p").text(data);
+			},
+			error:function(){
+				alert("ajax请求失败");
+			}
+		});
+		
+		/* 翻页按钮动作 */
+		$("#backpage-btn").click(function(){
+			var curNum = parseInt($("#curNum-p").text());
+			var totalNum = parseInt($("#totalNum-p").text());
+			if(curNum < 20){
+				alert("已是第一页");
+			}else{
+				curNum -= 20;
+				$("#curNum-p").text(curNum);
+			}
+			
+			$.ajax({
+				url:"/EMAN/ratinglist/listLimit.htm",
+				type:"post",
+				data:{
+					eid:"${ebook.eid}",
+					start:curNum},
+				dataType:"json",
+				success:function(data){
+					var commentList = data;
+					var clone = $("#comment1").clone();
+					clone.find(".rating-container").remove();
+					clone.find("h4").after("<input id=\"rating-lisit-1\" type=\"number\" value=\"5\"/>");
+					$("#commentList").empty();
+					
+					if(commentList.length < 1){ // 若无数据
+						$("#commentList").append("<p>暂无评论</p>");
+					}
+					
+					for(var i = 0; i < commentList.length; i++){
+						var cloneDiv = clone.clone();
+						cloneDiv.attr("id","comment"+(i+1));
+						cloneDiv.find("h4").text(commentList[i].user.uname);
+						cloneDiv.find("h4").attr("id",commentList[i].user.uid);
+						cloneDiv.find("input").attr("id","rating-"+(i+1));
+						cloneDiv.find("input").attr("value",commentList[i].ratingValue);
+						cloneDiv.find("input").rating({
+				            min: 0,
+				            max: 5,
+				            step: 0.5,
+				            size: 's',
+				            readonly: true,
+				            showClear: false
+				        });
+						cloneDiv.find(".rdescribe").text(commentList[i].rdescribe);
+						$("#commentList").append(cloneDiv);
+					}
+				},
+				error:function(){
+					alert("ajax请求失败");
+				}
+			});
+			
+	    });
+	    $("#nextpage-btn").click(function(){
+	    	var curNum = parseInt($("#curNum-p").text());
+			var totalNum = parseInt($("#totalNum-p").text());
+			if(curNum <= totalNum - 20){
+				curNum += 20;
+				$("#curNum-p").text(curNum);
+			}else{
+				alert("已是尾页");
+			}
+			
+			$.ajax({
+				url:"/EMAN/ratinglist/listLimit.htm",
+				type:"post",
+				data:{
+					eid:"${ebook.eid}",
+					start:curNum},
+				dataType:"json",
+				success:function(data){
+					var commentList = data;
+					var clone = $("#comment1").clone();
+					clone.find(".rating-container").remove();
+					clone.find("h4").after("<input id=\"rating-lisit-1\" type=\"number\" value=\"5\"/>");
+					$("#commentList").empty();
+					
+					if(commentList.length < 1){ // 若无数据
+						$("#commentList").append("<p>暂无评论</p>");
+					}
+					
+					for(var i = 0; i < commentList.length; i++){
+						var cloneDiv = clone.clone();
+						cloneDiv.attr("id","comment"+(i+1));
+						cloneDiv.find("h4").text(commentList[i].user.uname);
+						cloneDiv.find("h4").attr("id",commentList[i].user.uid);
+						cloneDiv.find("input").attr("id","rating-"+(i+1));
+						cloneDiv.find("input").attr("value",commentList[i].ratingValue);
+						cloneDiv.find("input").rating({
+				            min: 0,
+				            max: 5,
+				            step: 0.5,
+				            size: 's',
+				            readonly: true,
+				            showClear: false
+				        });
+						cloneDiv.find(".rdescribe").text(commentList[i].rdescribe);
+						$("#commentList").append(cloneDiv);
+					}
+				},
+				error:function(){
+					alert("ajax请求失败");
+				}
+			});
+	    	
+	    });
     	
     	
 	});

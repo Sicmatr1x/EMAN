@@ -51,3 +51,21 @@ RatingValueListSpider从数据库读取图书信息并爬取图书的评分列�
 ```
 
 <a href="http://hoohtml.com/jQuery/Layout-Interface/2015112221.html">星星组件</a>
+
+---
+
+电子书推荐的策略：
+
+针对不同用户群体的推荐方法选择：
+
+1.新用户策略，年龄、性别基础上推荐相关的畅销书籍。
+2.老用户策略，用户点评所占权重50%
+3.复杂的，和你类似人也看了……(依据)推荐的依据：下载量等数据的来源
+
+http://book.163.com/17/0104/23/C9VMAIAP00923P3U.html  2016年度数字阅读报告
+
+版权问题
+
+# BUG
+
+1. window.location.href = "https://search.jd.com/Search?keyword=" + "${ebook.ename}" + "&enc=utf-8";若图书名中出现"则会导致注入

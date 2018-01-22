@@ -41,6 +41,41 @@ public class RatingListDaoImpl implements RatingListDao {
 		this.sqlSession.commit();
 	}
 
+	@Override
+	public List<RatingList> selectRatingListLimitByEid(String eid, Integer start, String orderCondition, String order) {
+		if(start < 0 || start == null)
+			start = 0;
+		if(orderCondition == null || orderCondition.equals(""))
+			orderCondition = "rid";
+		if(order == null || order.equals(""))
+			order = "asc";
+		
+		Integer size = 20;
+		Map<String, Object> args = new HashMap<String, Object>();
+		args.put("eid", eid);
+		args.put("orderCondition", orderCondition);
+		args.put("order", order);
+		args.put("start", start);
+		args.put("size", size);
+		List<RatingList> list = sqlSession.selectList("selectRatingListLimitByEid",args);
+		return list;
+	}
+
+	@Override
+	public int selectRatingListLimitByEidCount(String eid, String orderCondition, String order) {
+		if(orderCondition == null || orderCondition.equals(""))
+			orderCondition = "rid";
+		if(order == null || order.equals(""))
+			order = "asc";
+
+		Map<String, Object> args = new HashMap<String, Object>();
+		args.put("eid", eid);
+		args.put("orderCondition", orderCondition);
+		args.put("order", order);
+		int num = sqlSession.selectOne("selectRatingListLimitByEidCount",args);
+		return num;
+	}
+
 	
 
 }

@@ -13,6 +13,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			#{publishingHouse},#{provider},#{words},#{imgAddress},#{infoAddress},#{scoreAddress},
 			#{description},#{ratingValue},#{classifyMain},#{bestRating},#{worstRating},#{reviewCount})
 	</insert>
+	<select id="selectAllEBook" resultType="com.entity.EBook">
+			select *
+			from ebook
+	</select>
 
 	<!-- 电子书基本信息查询 -->
 	<select id="selectEBookByEid" resultType="com.entity.EBook">

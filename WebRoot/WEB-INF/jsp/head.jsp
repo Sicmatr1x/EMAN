@@ -20,42 +20,42 @@
 							</a>
 								<ul class="dropdown-menu">
 									<li><a target="view_window"
-										href="<c:url value='ebook/list.htm?classifyMain=小说&start=0'/>">小说</a></li>
+										href="<c:url value='http://localhost:8080/EMAN/ebook/list.htm?classifyMain=小说&start=0'/>">小说</a></li>
 									<li><a
-										href="<c:url value='ebook/list.htm?classifyMain=文学&start=0'/>">文学</a></li>
+										href="<c:url value='http://localhost:8080/EMAN/ebook/list.htm?classifyMain=文学&start=0'/>">文学</a></li>
 									<li><a
-										href="<c:url value='ebook/list.htm?classifyMain=人文社科&start=0'/>">人文社科</a></li>
+										href="<c:url value='http://localhost:8080/EMAN/ebook/list.htm?classifyMain=人文社科&start=0'/>">人文社科</a></li>
 									<li class="divider">
 										<!-- 分割线 -->
 									</li>
 									<li><a
-										href="<c:url value='ebook/list.htm?classifyMain=经济管理&start=0'/>">经济管理</a>
+										href="<c:url value='http://localhost:8080/EMAN/ebook/list.htm?classifyMain=经济管理&start=0'/>">经济管理</a>
 									</li>
 									<li><a
-										href="<c:url value='ebook/list.htm?classifyMain=科技科普&start=0'/>">科技科普</a>
+										href="<c:url value='http://localhost:8080/EMAN/ebook/list.htm?classifyMain=科技科普&start=0'/>">科技科普</a>
 									</li>
 									<li><a
-										href="<c:url value='ebook/list.htm?classifyMain=计算机与互联网&start=0'/>">计算机与互联网</a></li>
+										href="<c:url value='http://localhost:8080/EMAN/ebook/list.htm?classifyMain=计算机与互联网&start=0'/>">计算机与互联网</a></li>
 									<li class="divider">
 										<!-- 分割线 -->
 									</li>
 									<li><a
-										href="<c:url value='ebook/list.htm?classifyMain=成功励志&start=0'/>">成功励志</a></li>
+										href="<c:url value='http://localhost:8080/EMAN/ebook/list.htm?classifyMain=成功励志&start=0'/>">成功励志</a></li>
 									<li><a
-										href="<c:url value='ebook/list.htm?classifyMain=生活&start=0'/>">生活</a></li>
+										href="<c:url value='http://localhost:8080/EMAN/ebook/list.htm?classifyMain=生活&start=0'/>">生活</a></li>
 									<li><a
-										href="<c:url value='ebook/list.htm?classifyMain=少儿&start=0'/>">少儿</a></li>
+										href="<c:url value='http://localhost:8080/EMAN/ebook/list.htm?classifyMain=少儿&start=0'/>">少儿</a></li>
 									<li><a
-										href="<c:url value='ebook/list.htm?classifyMain=艺术设计&start=0'/>">艺术设计</a></li>
+										href="<c:url value='http://localhost:8080/EMAN/ebook/list.htm?classifyMain=艺术设计&start=0'/>">艺术设计</a></li>
 									<li><a
-										href="<c:url value='ebook/list.htm?classifyMain=漫画绘本&start=0'/>">漫画绘本</a></li>
+										href="<c:url value='http://localhost:8080/EMAN/ebook/list.htm?classifyMain=漫画绘本&start=0'/>">漫画绘本</a></li>
 									<li><a
-										href="<c:url value='ebook/list.htm?classifyMain=教育考试&start=0'/>">教育考试</a></li>
+										href="<c:url value='http://localhost:8080/EMAN/ebook/list.htm?classifyMain=教育考试&start=0'/>">教育考试</a></li>
 									<li class="divider">
 										<!-- 分割线 -->
 									</li>
 									<li><a
-										href="<c:url value='ebook/list.htm?classifyMain=杂志&start=0'/>">杂志</a></li>
+										href="<c:url value='http://localhost:8080/EMAN/ebook/list.htm?classifyMain=杂志&start=0'/>">杂志</a></li>
 
 								</ul>
 							</li>

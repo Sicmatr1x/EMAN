@@ -43,6 +43,18 @@ public class RatingListServiceImpl implements RatingListService {
 		ratingListDao.insertRatingList(rList);
 	}
 
+	@Override
+	public List<RatingList> selectRatingListLimitByEid(String eid, Integer start, String orderCondition, String order) {
+		List<RatingList> list = ratingListDao.selectRatingListLimitByEid(eid, start, orderCondition, order);
+		return list;
+	}
+
+	@Override
+	public int selectRatingListLimitByEidCount(String eid, String orderCondition, String order) {
+		int num = ratingListDao.selectRatingListLimitByEidCount(eid, orderCondition, order);
+		return num;
+	}
+
 	
 
 	

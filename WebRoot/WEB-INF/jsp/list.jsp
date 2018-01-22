@@ -192,7 +192,8 @@
 <body>
 	<div class="container">
 		
-		
+		<!-- 导航栏 -->
+		<jsp:include page="head.jsp"/>
 		
 		<div class="row clearfix">
 			<div class="container">

@@ -6,10 +6,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.nio.ByteBuffer;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -52,7 +55,10 @@ public class RatingValueListSpider implements Runnable{
 	 * 设置文件
 	 */
 	private static File settingFile = new File("user_spider_setting.properties");
-	
+	/**
+	 * 获取失败日志
+	 */
+	private static File logFile = new File("user_spider_exception.log");
 	private List<EBook> eBookList = null;
 	
 	/**
@@ -114,8 +120,9 @@ public class RatingValueListSpider implements Runnable{
 	
 	/**
 	 * 遍历本页评分列表
+	 * @throws UnsupportedEncodingException 用户名编码错误
 	 */
-	private void initDataFromDocument(String eid, Elements ratingCommentsList){
+	private void initDataFromDocument(String eid, Elements ratingCommentsList) throws UnsupportedEncodingException{
 		// 遍历本页评分列表
 		for(int j = 0; j < ratingCommentsList.size(); j++){
 			User user = new User();
@@ -125,20 +132,36 @@ public class RatingValueListSpider implements Runnable{
 //			System.out.println(ratingCommentsList.get(j));
 //			System.out.println("-----------");
 			// 用户名
-			user.setUname(ratingCommentsList.get(j).select(".user").select("a").text());
+			String unameString = ratingCommentsList.get(j).select(".user").select("a").text();
+			unameString = RatingValueListSpider.filterOffUtf8Mb4(unameString);
+			if(unameString.length() > 32){
+				unameString = unameString.substring(0, 32);
+			}
+			user.setUname(unameString);
 			// 用户id
 			String userHomePage = ratingCommentsList.get(j).select(".user").select("a").attr("href");
 			String[] work = userHomePage.split("[/]");
-			if(work[2].matches("\\d+")){ // 若用户id为数字
-				user.setUid(work[2]);
-				rList.setUid(work[2]);
-			}else{ // 若用户id为非数字
-				continue;
-			}
+			String uidString = work[work.length - 1];
+			user.setUid(uidString);
+			rList.setUid(uidString);
+			
+//			if(work[2].matches("\\d+")){ // 若用户id为数字
+//				user.setUid(work[2]);
+//				rList.setUid(work[2]);
+//			}else{ // 若用户id为非数字
+//				continue;
+//			}
 			// 评分
-			rList.setRatingValue(Double.valueOf(ratingCommentsList.get(j).select(".impression").select(".rating-stars").attr("title")));
+			String ratingValueString = ratingCommentsList.get(j).select(".impression").select(".rating-stars").attr("title");
+			if(ratingValueString != null && ratingValueString.length() > 0){
+				rList.setRatingValue(Double.valueOf(ratingValueString));
+			}else{
+				rList.setRatingValue(0.0);
+			}
+			
 			// 评论
-			rList.setRdescribe(ratingCommentsList.get(j).select(".desc").text());
+			String rdescribeString = ratingCommentsList.get(j).select(".desc").text();
+			rList.setRdescribe(RatingValueListSpider.filterOffUtf8Mb4(rdescribeString));
 			
 //			System.out.println("评论=" + ratingCommentsList.get(j).select(".desc").text());				
 //			System.out.println("user=" + ratingCommentsList.get(j).select(".user").select("a").text());
@@ -208,6 +231,7 @@ public class RatingValueListSpider implements Runnable{
 		// 开始爬取
 		for(; i < this.eBookList.size(); i++){
 			String eid = this.eBookList.get(i).getEid();
+			
 			// 根据eid生成图书评分列表页地址
 			String webAddress = "https://read.douban.com/ebook/" + eid + "/ratings";
 			System.out.println("开始爬取" + webAddress);
@@ -277,11 +301,26 @@ public class RatingValueListSpider implements Runnable{
 //				System.out.println("sleep " + _getNextPageWaitTime / 1000 + "s...");
 //				Thread.sleep(_getNextPageWaitTime);
 				
-			} catch (org.jsoup.HttpStatusException e) {
-				// TODO Auto-generated catch block
+			} catch (java.net.UnknownHostException e){ // 若无法获取网页
+				// TODO:
 				e.printStackTrace();
+				System.out.println("java.net.UnknownHostException sleep " + _getNextPageWaitTime / 1000 + "s...");
+				try {
+					Thread.sleep(_getHtmlOverTime);
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				// 将异常信息写入日志
+				this.writeExceptionLog(i, e);
+				return;
+				
+			} catch (org.jsoup.HttpStatusException e) {
+				e.printStackTrace();
+				// 将异常信息写入日志
+				this.writeExceptionLog(i, e);
+				
 			} catch (IOException | InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} 
 			
@@ -307,8 +346,30 @@ public class RatingValueListSpider implements Runnable{
 			}
 		}
 		
-		// TODO Auto-generated method stub
 		
+	}
+	
+	/**
+	 * 将异常信息写入日志
+	 * @param i
+	 * @param ex
+	 */
+	private void writeExceptionLog(int i, Exception ex){
+		FileWriter fw = null;
+		try {
+			fw = new FileWriter(logFile, true);
+			PrintWriter pw = new PrintWriter(fw);
+			pw.println(i + " " + ex.getMessage());
+			fw.flush();
+			fw.close();
+			pw.close();
+		} catch (FileNotFoundException e1 ) {
+			e1.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public static void main(String[] args){
@@ -318,4 +379,44 @@ public class RatingValueListSpider implements Runnable{
 		us.run();
 		
 	}
+	
+	static public String filterOffUtf8Mb4(String text) throws UnsupportedEncodingException {
+		if(text == null){
+			return null;
+		}else if(text.equals("")){
+			return "";
+		}
+		System.out.print("filterOffUtf8Mb4(" + text + ")");
+		 byte[] bytes = text.getBytes("utf-8");
+	        ByteBuffer buffer = ByteBuffer.allocate(bytes.length);
+	        int i = 0;
+	        while (i < bytes.length) {
+	            short b = bytes[i];
+	            if (b > 0) {
+	                buffer.put(bytes[i++]);
+	                continue;
+	            }
+
+	            b += 256; // 去掉符号位
+
+	            if (((b >> 5) ^ 0x6) == 0) {
+	                buffer.put(bytes, i, 2);
+	                i += 2;
+	            } else if (((b >> 4) ^ 0xE) == 0) {
+	                buffer.put(bytes, i, 3);
+	                i += 3;
+	            } else if (((b >> 3) ^ 0x1E) == 0) {
+	                i += 4;
+	            } else if (((b >> 2) ^ 0x3E) == 0) {
+	                i += 5;
+	            } else if (((b >> 1) ^ 0x7E) == 0) {
+	                i += 6;
+	            } else {
+	                buffer.put(bytes[i++]);
+	            }
+	        }
+	        buffer.flip();
+	        System.out.print("=>(" + new String(buffer.array(), "utf-8") + ")");
+	        return new String(buffer.array(), "utf-8");
+    }  
 }

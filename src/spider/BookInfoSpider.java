@@ -150,7 +150,7 @@ public class BookInfoSpider implements Runnable{
 				// 查询是否已经存在
 				Statement statemenet = conn.createStatement();
 				ResultSet rs = statemenet.executeQuery("select eid,ename from ebook where eid='" + book.getEid() + "';");
-				if(rs.next()){ // 若存在则不爬取
+				if(rs.next()){ // 若存在则不爬取 TODO:需要强制全部重新获取书籍详情
 					System.out.print("[" + rs.getString("eid")+ rs.getString("ename") + "]已经存在:");
 					
 					// 更新评分与评分人数功能
@@ -282,6 +282,9 @@ public class BookInfoSpider implements Runnable{
 					book.setScoreAddress(scoreAddress);
 				}
 				
+				// 爬取图书标签
+				// TODO:
+				String tagsString = this.Doc.select(".bd").select("meta").attr("content");
 				
 //				System.out.println(head.select(".amount").get(0).select("a").attr("href"));
 				// 写入数据库

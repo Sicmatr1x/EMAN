@@ -36,7 +36,8 @@ public class RatingList {
 		System.out.println("rid=" + this.rid);
 		System.out.println("eid=" + this.eid);
 		System.out.println("uid=" + this.uid);
-		user.showField();
+		if(user != null)
+			user.showField();
 		System.out.println("ratingValue=" + this.ratingValue);
 		System.out.println("rdescribe=" + this.rdescribe);
 		System.out.println("----------");

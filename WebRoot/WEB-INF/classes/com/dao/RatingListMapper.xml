@@ -41,4 +41,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			where eid = #{eid}
 	</select>
 	
+	<select id="selectRatingListLimitByEid" parameterType="java.util.Map" resultMap="ratingListResultMap">
+			select *
+			from ratinglist natural join user
+			where eid = #{eid}
+			order by ${orderCondition} ${order}
+			limit #{start},#{size}
+	</select>
+	<select id="selectRatingListLimitByEidCount" parameterType="java.util.Map" resultType="int">
+	    	select count(rid)
+			from ratinglist
+			where eid = #{eid}
+			order by ${orderCondition} ${order}
+	</select>
+	
 </mapper>
