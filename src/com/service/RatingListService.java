@@ -14,5 +14,5 @@ public interface RatingListService {
 	
 	public List<RatingList> selectRatingListLimitByEid(String eid, Integer start, String orderCondition, String order);
 	
-	public int selectRatingListLimitByEidCount(String eid, String orderCondition, String order);
+	public int selectRatingListLimitByEidCount(String eid);
 }

@@ -29,9 +29,6 @@ public class RatingListController {
 		return ratingListService;
 	}
 
-	public void setRatingListService(RatingListService ratingListService) {
-		this.ratingListService = ratingListService;
-	}
 
 	/**
 	 * 获取评论接口
@@ -86,12 +83,10 @@ public class RatingListController {
 	@RequestMapping("/listLimitCount.htm")
 	public void queryRatingListLimitByEidCount(
 			@RequestParam(value="eid")String eid,
-			@RequestParam(value="orderCondition", required=false)String orderCondition,
-			@RequestParam(value="order", required=false)String order,
 			PrintWriter out,
 			HttpServletRequest request){
 		
-		int num = ratingListService.selectRatingListLimitByEidCount(eid, orderCondition, order);
+		int num = ratingListService.selectRatingListLimitByEidCount(eid);
 		
 		String json;
 		json = JSONConverter.convertToJSONString(num);

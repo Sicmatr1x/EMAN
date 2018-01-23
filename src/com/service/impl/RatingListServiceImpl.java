@@ -50,8 +50,8 @@ public class RatingListServiceImpl implements RatingListService {
 	}
 
 	@Override
-	public int selectRatingListLimitByEidCount(String eid, String orderCondition, String order) {
-		int num = ratingListDao.selectRatingListLimitByEidCount(eid, orderCondition, order);
+	public int selectRatingListLimitByEidCount(String eid) {
+		int num = ratingListDao.selectRatingListLimitByEidCount(eid);
 		return num;
 	}
 

@@ -27,7 +27,7 @@ public interface RatingListDao {
 	 * @param order
 	 * @return
 	 */
-	public int selectRatingListLimitByEidCount(String eid, String orderCondition, String order);
+	public int selectRatingListLimitByEidCount(String eid);
 	
 	/**
 	 * 根据图书eid与用户uid唯一查询图书单条评分

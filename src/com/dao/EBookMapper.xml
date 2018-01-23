@@ -13,6 +13,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			#{publishingHouse},#{provider},#{words},#{imgAddress},#{infoAddress},#{scoreAddress},
 			#{description},#{ratingValue},#{classifyMain},#{bestRating},#{worstRating},#{reviewCount})
 	</insert>
+	<update id="updateEBookRatingValue" parameterType="java.util.Map">  
+        UPDATE ebook  
+            SET ratingValue = #{ratingValue}
+         WHERE eid = #{eid};     
+	</update>  
 	<select id="selectAllEBook" resultType="com.entity.EBook">
 			select *
 			from ebook

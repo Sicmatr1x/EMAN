@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.dao.StatisticsRatingValue;
 import com.entity.EBook;
 import com.service.EBookService;
+import com.service.RatingListService;
 import com.util.JSONConverter;
 
 @Controller
@@ -30,6 +32,20 @@ public class EBookController {
 		this.eBookService = eBookService;
 	}
 	
+	@Autowired
+	private RatingListService ratingListService = null;
+
+	public RatingListService getRatingListService() {
+		return ratingListService;
+	}
+	
+	@Autowired
+	private StatisticsRatingValue statisticsRatingValue = null;
+	
+	public StatisticsRatingValue getStatisticsRatingValue() {
+		return statisticsRatingValue;
+	}
+
 	/**
 	 * 根据图书eid查询图书(测试用)
 	 * http://localhost:8080/EMAN/ebook/query.htm?eid=958945

@@ -48,11 +48,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			order by ${orderCondition} ${order}
 			limit #{start},#{size}
 	</select>
-	<select id="selectRatingListLimitByEidCount" parameterType="java.util.Map" resultType="int">
+	<select id="selectRatingListLimitByEidCount" resultType="int">
 	    	select count(rid)
 			from ratinglist
 			where eid = #{eid}
-			order by ${orderCondition} ${order}
 	</select>
 	
 </mapper>

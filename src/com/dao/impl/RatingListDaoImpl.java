@@ -62,17 +62,8 @@ public class RatingListDaoImpl implements RatingListDao {
 	}
 
 	@Override
-	public int selectRatingListLimitByEidCount(String eid, String orderCondition, String order) {
-		if(orderCondition == null || orderCondition.equals(""))
-			orderCondition = "rid";
-		if(order == null || order.equals(""))
-			order = "asc";
-
-		Map<String, Object> args = new HashMap<String, Object>();
-		args.put("eid", eid);
-		args.put("orderCondition", orderCondition);
-		args.put("order", order);
-		int num = sqlSession.selectOne("selectRatingListLimitByEidCount",args);
+	public int selectRatingListLimitByEidCount(String eid) {
+		int num = sqlSession.selectOne("selectRatingListLimitByEidCount", eid);
 		return num;
 	}
 
