@@ -3,6 +3,7 @@ package com.dao;
 import java.util.List;
 
 import com.entity.EBook;
+import com.entity.RatingList;
 
 public interface EBookDao {
 	
@@ -60,4 +61,10 @@ public interface EBookDao {
 	 * @return
 	 */
 	public int queryEBookByKeywordCount(String keyword,  String orderCondition, String order);
+	/**
+	 * 修改图书评分与评分人数
+	 * @param ratingValue
+	 * @param reviewCount
+	 */
+	public int updateRatingValueAndReviewCount(String eid, double ratingValue, int reviewCount);
 }

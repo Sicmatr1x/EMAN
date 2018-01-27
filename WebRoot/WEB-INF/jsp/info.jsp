@@ -18,6 +18,8 @@
 
 <link href="<c:url value='/resources/star-rating/css/star-rating.min.css'/>" media="all" rel="stylesheet" type="text/css" />
 <script src="<c:url value='/resources/star-rating/js/star-rating.min.js'/>" type="text/javascript"></script>
+<script src="<c:url value='/resources/chart/Chart.js'/>" type="text/javascript"></script>
+<script src="<c:url value='/resources/chart/Chart.bundle.min.js'/>" type="text/javascript"></script>
 
 <script>
 	$(document).ready(function() {
@@ -146,9 +148,24 @@
 						</p>
 						
 						
-						
 					</div>
 				</div>
+			</div>
+		</div>
+		
+		<!-- 数据面板 -->
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					评分数据图表
+				</h3>
+			</div>
+			<div class="panel-body">
+				<!--  -->
+				<div id="canvas-holder" style="width:40%">
+        			<canvas id="reviewCount-Chart"></canvas>
+    			</div>
+				
 			</div>
 		</div>
 		
@@ -356,6 +373,28 @@ function queryOneDescribe(){
     		readonly: true,
     		showClear: false
     	});
+		
+		
+		
+		/*饼图插件*/
+		var ctx = $("#reviewCount-Chart").get(0).getContext("2d");
+		// 获取数据
+		$.ajax({
+	    	url:"/EMAN/ratinglist/getEBookReviewCountPieChartData.htm",
+			type:"get",
+			data:"eid=${ebook.eid}",
+			dataType:"json",
+			success:function(data){
+				window.myPie = new Chart(ctx, data);
+				//window.myPie = Chart.PolarArea(ctx, data);
+				window.myPie.update();
+			},
+			error:function(){
+				alert("ajax请求失败");
+			}
+		});
+		
+		
     	
     	/*判断用户登录则可评论*/
     	if(state == "login"){ // 若用户已登录

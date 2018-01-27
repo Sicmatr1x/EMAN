@@ -9,6 +9,7 @@ import java.util.Map;
 
 
 
+
 //import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
@@ -133,6 +134,23 @@ public class EBookDaoImpl implements EBookDao{
 		args.put("order", order);
 		int num = sqlSession.selectOne("selectEBookByKeywordCount",args);
 		return num;
+	}
+
+	@Override
+	public int updateRatingValueAndReviewCount(String eid, double ratingValue,
+			int reviewCount) {
+//		System.out.println(eid + "," + ratingValue + "," + reviewCount);
+		Map<String, Object> args = new HashMap<String, Object>();
+		args.put("eid", eid);
+		if(reviewCount <= 0){
+			args.put("ratingValue", null);
+		}else{
+			args.put("ratingValue", ratingValue);
+		}
+		args.put("reviewCount", reviewCount);
+		int result = sqlSession.update("updateEBookRatingValue", args);
+		this.sqlSession.commit();
+		return result;
 	}
 
 }

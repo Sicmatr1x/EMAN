@@ -1,10 +1,13 @@
 package com.controller;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.JsonMappingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.entity.RatingList;
 import com.service.RatingListService;
+import com.util.ChartDataJsonCreater;
 import com.util.JSONConverter;
 
 
@@ -147,4 +151,69 @@ public class RatingListController {
 		out.print(json);
 		out.flush();
 	}
+	
+	//--------------------------------------------------------------------------------------
+	/**
+	 * http://localhost:8080/EMAN/ratinglist/getEBookReviewCountPieChartData.htm?eid=930946
+	 * @param eid
+	 * @param out
+	 * @param request
+	 */
+	@RequestMapping("/getEBookReviewCountPieChartData.htm")
+	public void getEBookReviewCountPieChartData(
+			@RequestParam(value="eid")String eid,
+			PrintWriter out,
+			HttpServletRequest request){
+		List<RatingList> list = ratingListService.selectRatingListByEid(eid);
+		
+		double[] data = {0,0,0,0,0};
+		for(RatingList r : list){
+			double value = r.getRatingValue();
+			if(value > 4.0){
+				data[4]++;
+			}else if(value > 3.0){
+				data[3]++;
+			}else if(value > 2.0){
+				data[2]++;
+			}else if(value > 1.0){
+				data[1]++;
+			}else{
+				data[0]++;
+			}
+		}
+		String[] backgroundColor = {
+				"rgb(255, 99, 132)",
+				"rgb(255, 159, 64)",
+				"rgb(255, 205, 86)",
+				"rgb(75, 192, 192)",
+				"rgb(54, 162, 235)"};
+		String[] labels = {
+				"很差",
+                "较差",
+                "还行",
+                "推荐",
+                "力荐"
+		};
+		
+		String json;
+		try {
+			json = ChartDataJsonCreater.getPieJson(data, backgroundColor, labels);
+//			json = ChartDataJsonCreater.getPolarAreaJson(data, backgroundColor, labels, "评分人数", "left");
+			System.out.println(json);
+			out.print(json);
+			out.flush();
+		} catch (JsonGenerationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
 }

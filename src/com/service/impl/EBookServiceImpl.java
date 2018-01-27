@@ -21,6 +21,10 @@ public class EBookServiceImpl implements EBookService {
 		return eBookDao;
 	}
 
+	public void seteBookDao(EBookDao eBookDao) {
+		this.eBookDao = eBookDao;
+	}
+
 	@Autowired
 	private RatingListService ratingListService = null;
 
@@ -28,6 +32,10 @@ public class EBookServiceImpl implements EBookService {
 		return ratingListService;
 	}
 	
+	public void setRatingListService(RatingListService ratingListService) {
+		this.ratingListService = ratingListService;
+	}
+
 	@Autowired
 	private StatisticsRatingValue statisticsRatingValue = null;
 	
@@ -35,6 +43,10 @@ public class EBookServiceImpl implements EBookService {
 		return statisticsRatingValue;
 	}
 	
+	public void setStatisticsRatingValue(StatisticsRatingValue statisticsRatingValue) {
+		this.statisticsRatingValue = statisticsRatingValue;
+	}
+
 	/**
 	 * 处理图书的图片地址为可用
 	 * @param list
@@ -115,7 +127,7 @@ public class EBookServiceImpl implements EBookService {
 	@Override
 	public List<EBook> queryEBookLimitByClassifyMain(String classifyMain, Integer start, String orderCondition, String order) {
 		List<EBook> list = this.eBookDao.queryEBookLimitByClassifyMain(classifyMain, start, orderCondition, order);
-		list = statisticsRating(list);
+//		list = statisticsRating(list);
 		return this.initEBookImgAddress(list);
 	}
 	
@@ -129,7 +141,7 @@ public class EBookServiceImpl implements EBookService {
 	public List<EBook> queryEBookByCondition(EBook condition, Integer start,
 			String orderCondition, String order) {
 		List<EBook> list = this.eBookDao.queryEBookByCondition(condition, start, orderCondition, order);
-		list = statisticsRating(list);
+//		list = statisticsRating(list);
 		return this.initEBookImgAddress(list);
 	}
 
@@ -137,7 +149,7 @@ public class EBookServiceImpl implements EBookService {
 	public List<EBook> queryEBookByKeyword(String Keyword, Integer start,
 			String orderCondition, String order) {
 		List<EBook> list = this.eBookDao.queryEBookByKeyword(Keyword, start, orderCondition, order);
-		list = statisticsRating(list);
+//		list = statisticsRating(list);
 		return this.initEBookImgAddress(list);
 	}
 

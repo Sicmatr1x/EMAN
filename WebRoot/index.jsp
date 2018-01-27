@@ -57,12 +57,7 @@
 	</div>
 	<script>
 		$(document).on('ready', function() {
-			$("#bt-navbar-form-search").click(function(){
-				var keyword = $("#keyword").val();
-				console.log("keyword=" + keyword);
-				//alert("<c:url value='/'/>" + "ebook/searchKeyword.htm?start=0&keyword=" + keyword);
-				window.open("<c:url value='ebook/searchKeyword.htm?start=0&keyword='/>" + keyword);
-		    });
+			
 		});
 	</script>
 </body>
