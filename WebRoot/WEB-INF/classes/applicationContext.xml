@@ -32,5 +32,18 @@
 
 	<mvc:resources location="/resources/" mapping="/resources/**" />
 
+
+	<!-- 获取会话工厂，并注入Mybatis，和dateSource数据库链接 -->  
+    <!-- <beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">  
+        <beans:property name="dataSource" ref="dataSource"/>
+        <beans:property name="configLocation" value="mybatis-config.xml"/>
+    </beans:bean>  -->  
+      
+        <!-- 在会话工厂中取出SqlSessionTemplate这个对象 -->  
+    <!--  <beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">  
+        <constructor-arg index="0" ref="sqlSessionFactory" />  
+    </beans:bean>  -->  
+          
+        
 	
 </beans:beans>

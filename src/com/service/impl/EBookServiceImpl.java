@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dao.EBookDao;
-import com.dao.StatisticsRatingValue;
 import com.entity.EBook;
 import com.service.EBookService;
 import com.service.RatingListService;
+import com.statistics.StatisticsRatingValue;
 
 @Service("eBookService")
 public class EBookServiceImpl implements EBookService {
@@ -132,8 +132,8 @@ public class EBookServiceImpl implements EBookService {
 	}
 	
 	@Override
-	public int queryEBookByClassifyMainCount(String classifyMain, String orderCondition, String order){
-		int num = this.eBookDao.queryEBookByClassifyMainCount(classifyMain, orderCondition, order);
+	public int queryEBookByClassifyMainCount(String classifyMain){
+		int num = this.eBookDao.queryEBookByClassifyMainCount(classifyMain);
 		return num;
 	}
 
@@ -157,6 +157,12 @@ public class EBookServiceImpl implements EBookService {
 	public int queryEBookByKeywordCount(String Keyword, String orderCondition,
 			String order) {
 		int num = this.eBookDao.queryEBookByKeywordCount(Keyword, orderCondition, order);
+		return num;
+	}
+
+	@Override
+	public int queryEBookByClassifyMainCountHasRatingValue(String classifyMain) {
+		int num = this.eBookDao.queryEBookByClassifyMainCountHasRatingValue(classifyMain);
 		return num;
 	}
 

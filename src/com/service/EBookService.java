@@ -10,7 +10,9 @@ public interface EBookService {
 	
 	public List<EBook> queryEBookLimitByClassifyMain(String classifyMain, Integer start, String orderCondition, String order);
 	
-	public int queryEBookByClassifyMainCount(String classifyMain, String orderCondition, String order);
+	public int queryEBookByClassifyMainCount(String classifyMain);
+	
+	public int queryEBookByClassifyMainCountHasRatingValue(String classifyMain);
 	
 	public List<EBook> queryEBookByCondition(EBook orderCondition, Integer start, String orderConditon, String order);
 	

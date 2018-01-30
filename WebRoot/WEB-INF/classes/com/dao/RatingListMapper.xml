@@ -54,4 +54,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			where eid = #{eid}
 	</select>
 	
+	<select id="selectRatingListByClassifyMain" resultMap="ratingListResultMap">
+			select *
+			from ratinglist rl, ebook eb
+			where rl.eid=eb.eid and classifyMain = #{classifyMain}
+	</select>
+	
 </mapper>

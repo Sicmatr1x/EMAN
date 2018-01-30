@@ -75,7 +75,7 @@ public class EBookListSpider implements Runnable {
 			{ "233", "教材教辅" }, { "234", "国外教材" }, { "235", "其他" } };
 	static final String[][] zazhi = { { "18", "小说视界" }, { "19", "新闻人物" },
 			{ "20", "文艺小赏" }, { "21", "生活休闲" }, { "22", "百科万象" } };
-	static final String[] areaNameList = { "小说", "文学", "人文社科", "经济管理", "科技科普",
+	public static final String[] areaNameList = { "小说", "文学", "人文社科", "经济管理", "科技科普",
 			"计算机与互联网", "成功励志", "生活", "少儿", "艺术设计", "漫画绘本", "教育考试", "杂志" };
 
 	/**

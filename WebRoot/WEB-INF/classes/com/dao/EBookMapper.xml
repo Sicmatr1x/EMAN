@@ -11,7 +11,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			description,ratingValue,classifyMain,bestRating,worstRating,reviewCount)
 			values(#{eid},#{ISBN},#{ename},#{author},#{translator},#{category},
 			#{publishingHouse},#{provider},#{words},#{imgAddress},#{infoAddress},#{scoreAddress},
-			#{description},#{ratingValue},#{classifyMain},#{bestRating},#{worstRating},#{reviewCount})
+			#{description},#{ratingValue},#{classifyMain},#{reviewCount})
 	</insert>
 	<update id="updateEBookRatingValue" parameterType="java.util.Map">  
         UPDATE ebook  
@@ -37,11 +37,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			order by ${orderCondition} ${order}
 			limit #{start},#{size}
 	</select>
-	<select id="selectEBookByClassifyMainCount" parameterType="java.util.Map" resultType="int">
+	<select id="selectEBookByClassifyMainCount" resultType="int">
 	    	select count(eid)
 			from ebook
 			where classifyMain=#{classifyMain}
-			order by ${orderCondition} ${order}
+	</select>
+	
+	<select id="selectEBookByClassifyMainCountHasRatingValue" resultType="int">
+	    	select count(eid)
+			from ebook
+			where classifyMain=#{classifyMain} and reviewCount > 50
 	</select>
 	
 	<!-- 电子书查询 -->

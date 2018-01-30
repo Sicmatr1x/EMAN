@@ -31,7 +31,16 @@ public interface EBookDao {
 	 * @param order 排序顺序
 	 * @return
 	 */
-	public int queryEBookByClassifyMainCount(String classifyMain, String orderCondition, String order);
+	public int queryEBookByClassifyMainCount(String classifyMain);
+	
+	/**
+	 * 显示根据图书分类查询图书的结果条数(图书有评分ratingValue)
+	 * @param classifyMain 图书分类
+	 * @param orderCondition 用于排序属性
+	 * @param order 排序顺序
+	 * @return
+	 */
+	public int queryEBookByClassifyMainCountHasRatingValue(String classifyMain);
 	
 	/**
 	 * 高级查询(且条件)

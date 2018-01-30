@@ -10,6 +10,7 @@ import java.util.Map;
 
 
 
+
 //import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
@@ -58,17 +59,8 @@ public class EBookDaoImpl implements EBookDao{
 	}
 	
 	@Override
-	public int queryEBookByClassifyMainCount(String classifyMain, String orderCondition, String order){
-		if(orderCondition == null || orderCondition.equals(""))
-			orderCondition = "ename";
-		if(order == null || order.equals(""))
-			order = "asc";
-
-		Map<String, Object> args = new HashMap<String, Object>();
-		args.put("classifyMain", classifyMain);
-		args.put("orderCondition", orderCondition);
-		args.put("order", order);
-		int num = sqlSession.selectOne("selectEBookByClassifyMainCount",args);
+	public int queryEBookByClassifyMainCount(String classifyMain){
+		int num = sqlSession.selectOne("selectEBookByClassifyMainCount",classifyMain);
 		return num;
 	}
 
@@ -151,6 +143,12 @@ public class EBookDaoImpl implements EBookDao{
 		int result = sqlSession.update("updateEBookRatingValue", args);
 		this.sqlSession.commit();
 		return result;
+	}
+
+	@Override
+	public int queryEBookByClassifyMainCountHasRatingValue(String classifyMain) {
+		int num = sqlSession.selectOne("selectEBookByClassifyMainCountHasRatingValue",classifyMain);
+		return num;
 	}
 
 }

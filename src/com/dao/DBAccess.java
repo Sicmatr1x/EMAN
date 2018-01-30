@@ -10,15 +10,19 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class DBAccess {
 	
+	private static SqlSession sqlSession = null;
+	
 	public static SqlSession getSqlSession() {
-		// ͨ�������ļ���ȡ��ݿ�������Ϣ
+		
 		Reader reader;
-		SqlSession sqlSession = null;
+		if(sqlSession != null){
+			return sqlSession;
+		}
 		try {
 			reader = Resources.getResourceAsReader("mybatis-config.xml");
-			// ͨ��������Ϣ����һ��SqlSessionFactory
+			
 			SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
-			// ͨ��SqlSessionFactory��һ����ݿ�Ự
+			
 			sqlSession = sqlSessionFactory.openSession();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

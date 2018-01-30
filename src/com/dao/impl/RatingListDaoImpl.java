@@ -21,6 +21,10 @@ public class RatingListDaoImpl implements RatingListDao {
 		return sqlSession;
 	}
 
+	public void setSqlSession(SqlSession sqlSession) {
+		this.sqlSession = sqlSession;
+	}
+
 	@Override
 	public List<RatingList> selectRatingListByEid(String eid) {
 		List<RatingList> list = sqlSession.selectList("selectRatingListByEid", eid);

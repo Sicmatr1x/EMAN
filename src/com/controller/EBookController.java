@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.dao.StatisticsRatingValue;
 import com.entity.EBook;
 import com.service.EBookService;
 import com.service.RatingListService;
+import com.statistics.StatisticsRatingValue;
 import com.util.JSONConverter;
 
 @Controller
@@ -98,7 +98,7 @@ public class EBookController {
 			HttpServletRequest request){
 		List<EBook> list = eBookService.queryEBookLimitByClassifyMain(classifyMain, start, orderCondition, order);
 		// 查询结果条数
-		int count = eBookService.queryEBookByClassifyMainCount(classifyMain, orderCondition, order);
+		int count = eBookService.queryEBookByClassifyMainCount(classifyMain);
 		request.setAttribute("list", list);
 		request.setAttribute("classifyMain", classifyMain);
 		request.setAttribute("start", start+20);

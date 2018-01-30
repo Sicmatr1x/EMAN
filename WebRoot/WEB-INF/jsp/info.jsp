@@ -161,13 +161,22 @@
 				</h3>
 			</div>
 			<div class="panel-body">
-				<!--  -->
-				<div id="canvas-holder" style="width:40%">
-        			<canvas id="reviewCount-Chart"></canvas>
+				<div class="col-xs-6">
+					<!-- 饼图 -->
+					<div id="canvas-holder" style="width:30% height:0px">
+        				<canvas id="reviewCount-Chart"></canvas>
+    				</div>
     			</div>
-				
+    			<div class="col-xs-6">
+					<!-- 雷达图 -->
+					<div id="canvas-holder" style="width:30% height:0px">
+        				<canvas id="reviewCountAdvance-Chart"></canvas>
+    				</div>
+    			</div>
 			</div>
 		</div>
+		
+		
 		
 		<!-- 图书简介面板 -->
 		<div class="panel panel-default">
@@ -386,14 +395,30 @@ function queryOneDescribe(){
 			dataType:"json",
 			success:function(data){
 				window.myPie = new Chart(ctx, data);
-				//window.myPie = Chart.PolarArea(ctx, data);
-				window.myPie.update();
 			},
 			error:function(){
 				alert("ajax请求失败");
 			}
 		});
 		
+		/*雷达图插件*/
+		var ctx1 = $("#reviewCountAdvance-Chart").get(0).getContext("2d");
+		// 获取数据
+		$.ajax({
+	    	url:"/EMAN/ratinglist/getEBookReviewCountRadarChartData.htm",
+			type:"get",
+			data:"eid=${ebook.eid}",
+			dataType:"json",
+			success:function(data){
+				//data.datasets[0].backgroundColor="rgb(255, 99, 132).alpha(0.2).rgbString()";
+				//data.datasets[0].borderColor=window.chartColors.red;
+				//data.datasets[0].pointBackgroundColor=window.chartColors.red;
+				window.myRadar = new Chart(ctx1, data);
+			},
+			error:function(){
+				alert("ajax请求失败");
+			}
+		});
 		
     	
     	/*判断用户登录则可评论*/
