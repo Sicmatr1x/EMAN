@@ -107,6 +107,37 @@ public class EBookController {
 	}
 	
 	/**
+	 * 各种图书的列表
+	 * http://localhost:8080/EMAN/ebook/getList.htm?start=0&classifyMain=小说
+	 * @param start 显示结果下标
+	 * @param classifyMain 图书分类
+	 * @param orderCondition 用于排序属性
+	 * @param order 排序顺序
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping("/getList.htm")
+	public void getEBookLimitByClassifyMain(
+			@RequestParam(value="start")int start,
+			@RequestParam(value="classifyMain")String classifyMain,
+			@RequestParam(value="orderCondition", required=false)String orderCondition,
+			@RequestParam(value="order", required=false)String order,
+			HttpServletRequest request,
+			PrintWriter out){
+		List<EBook> list = eBookService.queryEBookLimitByClassifyMain(classifyMain, start, orderCondition, order);
+		// 查询结果条数
+		int count = eBookService.queryEBookByClassifyMainCount(classifyMain);
+		request.setAttribute("list", list);
+		request.setAttribute("classifyMain", classifyMain);
+		request.setAttribute("start", start+20);
+		request.setAttribute("count", count);
+		String json;
+		json = JSONConverter.convertToJSONString(list);
+		out.print(json);
+		out.flush();
+	}
+	
+	/**
 	 * 图书搜索,关键词查询(或条件)
 	 * http://localhost:8080/EMAN/ebook/searchKeyword.htm?start=0&keyword=小说
 	 * @param request
