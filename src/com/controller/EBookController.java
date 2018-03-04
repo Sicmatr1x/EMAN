@@ -12,11 +12,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.entity.EBook;
+import com.entity.EBookTuple;
 import com.service.EBookService;
 import com.service.RatingListService;
 import com.statistics.StatisticsRatingValue;
 import com.util.JSONConverter;
 
+/*
+ * 与图书相关的接口
+ */
 @Controller
 @RequestMapping("/ebook")
 public class EBookController {
@@ -107,7 +111,7 @@ public class EBookController {
 	}
 	
 	/**
-	 * 各种图书的列表
+	 * 各种图书的列表(返回json)
 	 * http://localhost:8080/EMAN/ebook/getList.htm?start=0&classifyMain=小说
 	 * @param start 显示结果下标
 	 * @param classifyMain 图书分类
@@ -222,6 +226,30 @@ public class EBookController {
 		EBook eBook = eBookService.queryEBookByEid(eid);
 		String json;
 		json = JSONConverter.convertToJSONString(eBook);
+		out.print(json);
+		out.flush();
+	}
+	
+	/**
+	 * 喜欢这本书的用户还喜欢接口
+	 * http://localhost:8080/EMAN/ebook/likeThisBooksUserAlsoLike.htm?eid=958945
+	 * @param eid
+	 * @param out
+	 * @param request
+	 */
+	@RequestMapping("/likeThisBooksUserAlsoLike.htm")
+	@ResponseBody
+	public void likeThisBooksUserAlsoLike(@RequestParam(value="eid")String eid, PrintWriter out, HttpServletRequest request){
+		List<EBookTuple> resultList = eBookService.likeThisBooksUserAlsoLike(eid);
+		if(resultList != null){
+			// 查询列表中所有图书的详细信息
+			for(EBookTuple et : resultList){
+				et.setEbook(eBookService.queryEBookByEid(et.getEid()));
+			}
+		}
+		
+		String json;
+		json = JSONConverter.convertToJSONString(resultList);
 		out.print(json);
 		out.flush();
 	}

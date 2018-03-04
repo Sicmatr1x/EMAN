@@ -30,6 +30,24 @@ public class RatingListDaoImpl implements RatingListDao {
 		List<RatingList> list = sqlSession.selectList("selectRatingListByEid", eid);
 		return list;
 	}
+	
+	@Override
+	public List<RatingList> selectRatingListByEidAndRatingValue(String eid, int ratingValue) {
+		Map<String, Object> args = new HashMap<String, Object>();
+		args.put("eid", eid);
+		args.put("ratingValue", ratingValue);
+		List<RatingList> list = sqlSession.selectList("selectRatingListByEidAndRatingValue", args);
+		return list;
+	}
+	
+	@Override
+	public List<RatingList> selectRatingListByUidAndRatingValue(String uid, int ratingValue){
+		Map<String, Object> args = new HashMap<String, Object>();
+		args.put("uid", uid);
+		args.put("ratingValued", ratingValue);
+		List<RatingList> list = sqlSession.selectList("selectRatingListByUidAndRatingValue", args);
+		return list;
+	}
 
 	@Override
 	public RatingList selectRatingListByEidAndUid(String eid, String uid) {

@@ -8,6 +8,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+/*
+ * 用于获取SqlSession数据库连接
+ */
 public class DBAccess {
 	
 	private static SqlSession sqlSession = null;

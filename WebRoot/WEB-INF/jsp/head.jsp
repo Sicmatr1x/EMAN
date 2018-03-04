@@ -96,8 +96,8 @@
 			$("#bt-navbar-form-search").click(function(){
 				var keyword = $("#keyword").val();
 				console.log("keyword=" + keyword);
-				//alert("<c:url value='/'/>" + "ebook/searchKeyword.htm?start=0&keyword=" + keyword);
-				window.location.href="http://localhost:8080/EMAN/ebook/searchKeyword.htm?start=0&keyword=" + keyword;
+				//window.location.href="http://www.baidu.com";
+				window.open('http://localhost:8080/EMAN/ebook/searchKeyword.htm?start=0&keyword=' + keyword);
 		    });
 		});
 </script>

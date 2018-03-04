@@ -16,6 +16,9 @@ import com.entity.RatingList;
 import com.service.EBookService;
 import com.service.RatingListService;
 
+/*
+ * 图书评分信息统计：统计RatingValue表的数据并将统计结果写入到EBook表对应到图书上
+ */
 @Repository("statisticsRatingValue")
 public class StatisticsRatingValue {
 	

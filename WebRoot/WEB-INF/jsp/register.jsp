@@ -19,15 +19,6 @@
 </head>
 
 <body>
-
-	<form method="post" action="registByUname.htm">
-		用户名：<input type="text" name="uname" /><br />
-		邮箱：<input type="text" name="email" /><br />
-		密码：<input type="text" name="password" /><br />
-		性别：<input type="text" name="sex" /><br />
-		年龄：<input type="text" name="age" /><br />
-		<input type="submit" value="注册"/><br />
-	</form>
 	
 	<div class="container">
 		<table class="table table-bordered">
@@ -35,7 +26,7 @@
 			<div class="panel panel-default">
 				<!-- 面板头 -->
 				<div class="panel-heading">
-					<h1>EMAN</h1>
+					<a href="http://localhost:8080/EMAN"><h1>EMAN</h1></a>
 				</div>
 				<!-- 面板体 -->
 				<div class="panel-body">

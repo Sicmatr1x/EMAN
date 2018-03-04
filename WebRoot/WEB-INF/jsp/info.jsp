@@ -1,7 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%@ page import="com.entity.*" %>
-<%@ page import="com.service.*" %>
-<%@ page import="com.service.impl.*" %>
+<%@ page import="com.entity.*"%>
+<%@ page import="com.service.*"%>
+<%@ page import="com.service.impl.*"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -10,16 +10,24 @@
 <title>E-MAN 电子书推荐社区</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="<c:url value='/resources/bootstrap/3.3.7/css/bootstrap.min.css'/>">
+<link rel="stylesheet"
+	href="<c:url value='/resources/bootstrap/3.3.7/css/bootstrap.min.css'/>">
 <!-- <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
 <script src="<c:url value='/resources/jquery/2.1.1/jquery.min.js'/>"></script>
-<script src="<c:url value='/resources/bootstrap/3.3.7/js/bootstrap.min.js'/>"></script>
+<script
+	src="<c:url value='/resources/bootstrap/3.3.7/js/bootstrap.min.js'/>"></script>
 
 
-<link href="<c:url value='/resources/star-rating/css/star-rating.min.css'/>" media="all" rel="stylesheet" type="text/css" />
-<script src="<c:url value='/resources/star-rating/js/star-rating.min.js'/>" type="text/javascript"></script>
-<script src="<c:url value='/resources/chart/Chart.js'/>" type="text/javascript"></script>
-<script src="<c:url value='/resources/chart/Chart.bundle.min.js'/>" type="text/javascript"></script>
+<link
+	href="<c:url value='/resources/star-rating/css/star-rating.min.css'/>"
+	media="all" rel="stylesheet" type="text/css" />
+<script
+	src="<c:url value='/resources/star-rating/js/star-rating.min.js'/>"
+	type="text/javascript"></script>
+<script src="<c:url value='/resources/chart/Chart.js'/>"
+	type="text/javascript"></script>
+<script src="<c:url value='/resources/chart/Chart.bundle.min.js'/>"
+	type="text/javascript"></script>
 
 <script>
 	$(document).ready(function() {
@@ -32,20 +40,22 @@
 <body>
 
 	<div class="container">
-	<!-- 导航栏 -->
-	<jsp:include page="head.jsp"/>
-	<!-- 面包屑导航栏 TODO: -->
-	<ol class="breadcrumb">
-		<li><a href="<c:url value='/'/>">主页</a></li>
-		<li><a href="list.htm?classifyMain=${ebook.classifyMain}&start=0">${ebook.classifyMain}</a></li>
-	</ol>
-	
+		<!-- 导航栏 -->
+		<jsp:include page="head.jsp" />
+		<!-- 面包屑导航栏 TODO: -->
+		<ol class="breadcrumb">
+			<li><a href="<c:url value='/'/>">主页</a></li>
+			<li><a
+				href="list.htm?classifyMain=${ebook.classifyMain}&start=0">${ebook.classifyMain}</a></li>
+		</ol>
+
 		<!-- 图书信息面板 -->
-		<div class="panel panel-default"><!-- 带标题的面板 -->
+		<div class="panel panel-default">
+			<!-- 带标题的面板 -->
 			<div class="panel-heading">
 				<h3 class="panel-title">${ebook.ename}</h3>
 			</div>
-			
+
 			<div class="panel-body">
 				<div style="float: left;">
 					<img src="http://localhost:8080/EMANImgs/${ebook.imgAddress}"
@@ -93,7 +103,7 @@
 							</c:if>
 							字
 						</p>
-						
+
 						<p>
 							ISBN:
 							<c:if test="${ebook.ISBN != 'null'}">
@@ -106,29 +116,28 @@
 						<p>分类：${ebook.classifyMain}</p>
 
 					</div>
-					
+
 					<div class="col-md-4">
-						<input id="input-ratingValue" type="number" value="<%
-							/*将0~10之间的评分化为0~5之间的评分*/
-							EBook ebook = (EBook)request.getAttribute("ebook");
-							double t = 0.0;
-							if(ebook.getRatingValue() == null){
-								
-							}else{
-								t = (ebook.getRatingValue()/2);
-							}
-							int i = (int)t;
-							double f = t - i;
-							if(f >= 0.8)
-								f=1;
-							else if(f < 0.3)
-								f=0;
-							else
-								f=0.5;
-							double rating=i + f;
-							out.print(rating);
-						%>"  />
-						
+						<input id="input-ratingValue" type="number"
+							value="<%/*将0~10之间的评分化为0~5之间的评分*/
+			EBook ebook = (EBook) request.getAttribute("ebook");
+			double t = 0.0;
+			if (ebook.getRatingValue() == null) {
+
+			} else {
+				t = (ebook.getRatingValue() / 2);
+			}
+			int i = (int) t;
+			double f = t - i;
+			if (f >= 0.8)
+				f = 1;
+			else if (f < 0.3)
+				f = 0;
+			else
+				f = 0.5;
+			double rating = i + f;
+			out.print(rating);%>" />
+
 						<p>
 							综合评分:
 							<c:if test="${ebook.ratingValue != null}">
@@ -146,130 +155,128 @@
 												评分人数不足
 							</c:if>
 						</p>
-						
-						
+
+
 					</div>
 				</div>
 			</div>
 		</div>
-		
+
 		<!-- 数据面板 -->
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h3 class="panel-title">
-					评分数据图表
-				</h3>
+				<h3 class="panel-title">评分数据图表</h3>
 			</div>
 			<div class="panel-body">
 				<div class="col-xs-6">
 					<!-- 饼图 -->
 					<div id="canvas-holder" style="width:30% height:0px">
-        				<canvas id="reviewCount-Chart"></canvas>
-    				</div>
-    			</div>
-    			<div class="col-xs-6">
+						<canvas id="reviewCount-Chart"></canvas>
+					</div>
+				</div>
+				<div class="col-xs-6">
 					<!-- 雷达图 -->
 					<div id="canvas-holder" style="width:30% height:0px">
-        				<canvas id="reviewCountAdvance-Chart"></canvas>
-    				</div>
-    			</div>
+						<canvas id="reviewCountAdvance-Chart"></canvas>
+					</div>
+				</div>
 			</div>
 		</div>
-		
-		
-		
+
+
+
 		<!-- 图书简介面板 -->
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h3 class="panel-title">
-					作品信息
-				</h3>
+				<h3 class="panel-title">作品信息</h3>
 			</div>
-			<div class="panel-body">
-				${ebook.description}
-			</div>
+			<div class="panel-body">${ebook.description}</div>
 		</div>
-		
+
 		<!-- 搜索图书面板 -->
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h3 class="panel-title">
-					搜索图书
-				</h3>
+				<h3 class="panel-title">搜索图书</h3>
 			</div>
-			
+
 			<div class="row">
 				<div class="col-md-1">
 					<div class="panel-body">
 						<button id="gojd-btn" class="btn btn-primary" type="button">前往京东</button>
 					</div>
 				</div>
-				
+
 				<div class="col-md-1">
 					<div class="panel-body">
 						<button id="gotaobao-btn" class="btn btn-primary" type="button">前往淘宝</button>
 					</div>
 				</div>
-				
+
 				<div class="col-md-1">
 					<div class="panel-body">
 						<button id="gotianmao-btn" class="btn btn-primary" type="button">前往天猫</button>
 					</div>
 				</div>
-				
+
 				<div class="col-md-1">
 					<div class="panel-body">
 						<button id="douban-btn" class="btn btn-primary" type="button">前往豆瓣</button>
 					</div>
 				</div>
-				
+
 				<div class="col-md-1">
 					<div class="panel-body">
 						<button id="gozhangyue-btn" class="btn btn-primary" type="button">前往掌阅书库</button>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
-		
+
 		<!-- 推荐面板 -->
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h3 class="panel-title">
-					猜你喜欢...
-				</h3>
+				<h3 class="panel-title">喜欢这边书的人也喜欢...</h3>
 			</div>
 			<div class="panel-body">
-				推荐预留位
+				<div class="row" id="xiaoshou-panel">
+					<div class="col-md-3" id="book-example-div">
+						<div class="panel panel-default">
+							<div style="margin:0px auto">
+								<img width="100%"
+									attr="http://localhost:8080/EMANImgs/958945.jpg"
+									onerror="javascript:this.src='http://localhost:8080/EMANImgs/error.jpg'">
+								<a href="#" id="ename"></a>
+								<p id="author"></p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		
+
 		<!-- 评论面板 -->
 		<h3>评论区</h3>
 		<hr />
 		<!-- 你的评论 -->
 		<div class="panel panel-default" id="myDescribe-panel">
 			<div class="panel-heading">
-				<h3 class="panel-title">
-					你的评论
-				</h3>
+				<h3 class="panel-title">你的评论</h3>
 			</div>
-			<div class="panel-body" id="myDescribe-div">
-				登录后才可评论
-			</div>
+			<div class="panel-body" id="myDescribe-div">登录后才可评论</div>
 		</div>
-		
+
 		<!-- 评论列表 -->
 		<ul class="list-group" id="commentList">
 			<li class="list-group-item" id="comment">
 				<div>
 					<h4>用户名</h4>
-					<input id="rating-lisit-1" type="number" value="5"/>
+					<input id="rating-lisit-1" type="number" value="5" />
 					<p class="rdescribe">评论</p>
 				</div>
 			</li>
 		</ul>
-		
+
 		<!-- 翻页按钮 -->
 		<div class="row">
 			<button id="backpage-btn" class="btn btn-primary" type="button">上一页</button>
@@ -280,18 +287,19 @@
 			<!-- 当前显示评论条数与总条数 -->
 			<span id="curNum-p"></span><span>/</span><span id="totalNum-p"></span><span>条</span>
 		</div>
-		
-	</div><!-- container -->
-	
-<script>
-var uid = '<%= session.getAttribute("uid") %>';
-var state = '<%= session.getAttribute("state") %>';
+
+	</div>
+	<!-- container -->
+
+	<script>
+var uid = '<%=session.getAttribute("uid")%>';
+var state = '<%=session.getAttribute("state")%>';
 
 function queryOneDescribe(){
 	$.ajax({
 		url:"/EMAN/ratinglist/queryOne.htm",
 		type:"get",
-		data:"eid=${ebook.eid}&uid=<%= session.getAttribute("uid") %>",
+		data:"eid=${ebook.eid}&uid=<%=session.getAttribute("uid")%>",
 		dataType:"json",
 		success:function(data){
 			var ratingListObject = data;
@@ -322,7 +330,7 @@ function queryOneDescribe(){
 		    			type:"post",
 		    			data:{
 		    				eid:"${ebook.eid}",
-		    				uid:"<%= session.getAttribute("uid") %>",
+		    				uid:"<%=session.getAttribute("uid")%>",
 		    				rdescribe:rdescribe,
 		    				ratingValue:ratingValue
 		    				},
@@ -593,6 +601,40 @@ function queryOneDescribe(){
     	
 	});
 	
+	function getlist() {
+			$.ajax({
+				url : "/EMAN/ebook/likeThisBooksUserAlsoLike.htm",
+				type : "get",
+				data : {eid:"${ebook.eid}"},
+				dataType : "json",
+				success : function(data) {
+					var listObject = data;
+					var clone = $("#book-example-div").clone();
+					$("#" + panelId).empty();
+	
+					if (listObject.length < 1) { // 若无数据
+						$("#" + panelId).append("<p>暂无推荐</p>");
+					}
+	
+					for (var i = 0; i < listObject.length && i < 4; i++) {
+						var cloneDiv = clone.clone();
+						cloneDiv.attr("id", "book" + (i + 1));
+						cloneDiv.find("img").attr("src", "http://localhost:8080/EMANImgs/" + listObject[i].imgAddress);
+						cloneDiv.find("#ename").attr("href", "http://localhost:8080/EMAN/ebook/info.htm?eid=" + listObject[i].eid);
+						cloneDiv.find("#ename").text(listObject[i].ename);
+	
+						cloneDiv.find("#author").text(listObject[i].author);
+	
+						$("#" + panelId).append(cloneDiv);
+					}
+	
+				},
+				error : function() {
+					alert("ajax请求失败");
+				}
+			});
+		}
+	
     $(function() {
     	
     	/* 搜索图书面板按钮动作 */
@@ -616,6 +658,8 @@ function queryOneDescribe(){
         	window.location.href = "https://read.douban.com/ebook/" + "${ebook.eid}";
         });
         
+        /* 喜欢这本书的人也喜欢*/
+        getlist();
     });  
 </script>
 </body>

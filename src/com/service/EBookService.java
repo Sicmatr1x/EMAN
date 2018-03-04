@@ -3,6 +3,7 @@ package com.service;
 import java.util.List;
 
 import com.entity.EBook;
+import com.entity.EBookTuple;
 
 public interface EBookService {
 	
@@ -19,4 +20,11 @@ public interface EBookService {
 	public List<EBook> queryEBookByKeyword(String Keyword, Integer start, String orderCondition, String order);
 	
 	public int queryEBookByKeywordCount(String Keyword,  String orderCondition, String order);
+	
+	/**
+	 * 喜欢这本书的用户还喜欢
+	 * @param eid 图书主键
+	 * @return
+	 */
+	public List<EBookTuple> likeThisBooksUserAlsoLike(String eid);
 }

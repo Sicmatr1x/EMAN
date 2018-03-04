@@ -16,7 +16,9 @@ import com.dao.RatingListDao;
 import com.dao.impl.RatingListDaoImpl;
 import com.entity.RatingList;
 
-
+/*
+ * 统计主分类的各个分数的评分人数、平均评分、评分的方差
+ */
 public class StatisticsClassifyMain {
 	
 	private static SqlSession sqlSession = DBAccess.getSqlSession();

@@ -25,7 +25,9 @@ import com.util.ChartDataJsonCreater;
 import com.util.JSONConverter;
 
 
-
+/*
+ * 与用户评论、评分相关的接口
+ */
 @Controller
 @RequestMapping("/ratinglist")
 public class RatingListController {
@@ -181,6 +183,7 @@ public class RatingListController {
 	
 	//--------------------------------------------------------------------------------------
 	/**
+	 * 各个评分分别有多少人的饼图json数据接口
 	 * http://localhost:8080/EMAN/ratinglist/getEBookReviewCountPieChartData.htm?eid=930946
 	 * @param eid
 	 * @param out
@@ -243,6 +246,7 @@ public class RatingListController {
 	}
 	
 	/**
+	 * 各个评分分别有多少人的雷达图json数据接口
 	 * http://localhost:8080/EMAN/ratinglist/getEBookReviewCountRadarChartData.htm?eid=930946
 	 * @param eid
 	 * @param out

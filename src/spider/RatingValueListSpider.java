@@ -35,7 +35,7 @@ import com.dao.DBAccess;
 import com.entity.*;
 
 /**
- * 爬取豆瓣图书评分列表与用户
+ * 爬取豆瓣图书评分列表与用户评论
  * @author Sicmatr1x
  *
  */

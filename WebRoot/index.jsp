@@ -89,22 +89,18 @@
 								<!-- 轮播（Carousel）项目 -->
 								<div class="carousel-inner">
 									<div class="item active">
-										<img
-											src="https://img3.doubanio.com/view/ark_campaign_pic/large/public/5392.jpg"
-											alt="First slide" />
-										<div class="carousel-caption">标题 1</div>
-									</div>
+										<a href="http://localhost:8080/EMAN/ebook/info.htm?eid=31844036">
+										<img src="http://localhost:8080/EMANImgs/lb-5559.jpg" alt="First slide" /></a>
+										</div>
 									<div class="item">
 										<img
-											src="https://img3.doubanio.com/view/ark_campaign_pic/large/public/5401.jpg"
+											src="http://localhost:8080/EMANImgs/lb-5556.jpg"
 											alt="Second slide" />
-										<div class="carousel-caption">标题 2</div>
 									</div>
 									<div class="item">
 										<img
-											src="https://img3.doubanio.com/view/ark_campaign_pic/large/public/5406.jpg"
+											src="http://localhost:8080/EMANImgs/lb-5558.jpg"
 											alt="Third slide" />
-										<div class="carousel-caption">标题 3</div>
 									</div>
 								</div>
 								<!-- 轮播（Carousel）导航 -->
@@ -118,54 +114,112 @@
 
 					<h3>热门推荐</h3>
 					<hr />
-					<!-- 你的评论 -->
-					<div class="panel panel-default" id="myDescribe-panel">
+					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h3 class="panel-title">小说</h3>
 						</div>
-						<div class="panel-body" id="myDescribe-div">
-							<div class="row">
-								<div class="col-md-3">
-									<div class="panel panel-default" id="myDescribe-panel">
+						<div class="panel-body">
+							<div class="row" id="xiaoshou-panel">
+								<div class="col-md-3" id="book-example-div">
+									<div class="panel panel-default">
 										<div style="margin:0px auto">
-											<img width="110px" height="164px"
-												src="http://localhost:8080/EMANImgs/958945.jpg"
+											<img width="100%"
+												attr="http://localhost:8080/EMANImgs/958945.jpg"
 												onerror="javascript:this.src='http://localhost:8080/EMANImgs/error.jpg'">
-											<p>三体</p>
-											<p>刘慈欣</p>
+											<a href="#" id="ename"></a>
+											<p id="author"></p>
 										</div>
-									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="panel panel-default" id="myDescribe-panel">
-										<img width="110px" height="164px"
-											src="http://localhost:8080/EMANImgs/958945.jpg"
-											onerror="javascript:this.src='http://localhost:8080/EMANImgs/error.jpg'">
-										<p>三体</p>
-										<p>刘慈欣</p>
-									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="panel panel-default" id="myDescribe-panel">
-										<img width="110px" height="164px"
-											src="http://localhost:8080/EMANImgs/958945.jpg"
-											onerror="javascript:this.src='http://localhost:8080/EMANImgs/error.jpg'">
-										<p>三体</p>
-										<p>刘慈欣</p>
-									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="panel panel-default" id="myDescribe-panel">
-										<img width="110px" height="164px"
-											src="http://localhost:8080/EMANImgs/958945.jpg"
-											onerror="javascript:this.src='http://localhost:8080/EMANImgs/error.jpg'">
-										<p>三体</p>
-										<p>刘慈欣</p>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">文学</h3>
+						</div>
+						<div class="panel-body">
+							<div class="row" id="wenxue-panel">
+								<div class="col-md-3" id="book-example-div">
+									<div class="panel panel-default">
+										<div style="margin:0px auto">
+											<img width="100%"
+												attr="http://localhost:8080/EMANImgs/958945.jpg"
+												onerror="javascript:this.src='http://localhost:8080/EMANImgs/error.jpg'">
+											<a href="#" id="ename"></a>
+											<p id="author"></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">人文社科</h3>
+						</div>
+						<div class="panel-body">
+							<div class="row" id="renwensheke-panel">
+							
+								<div class="col-md-3" id="book-example-div">
+									<div class="panel panel-default">
+										<div style="margin:0px auto">
+											<img width="100%" attr="http://localhost:8080/EMANImgs/958945.jpg"
+												onerror="javascript:this.src='http://localhost:8080/EMANImgs/error.jpg'" />
+											<a href="#" id="ename"></a>
+											<p id="author"></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">经济管理</h3>
+						</div>
+						<div class="panel-body">
+							<div class="row" id="jinjiguanli-panel">
+							
+								<div class="col-md-3" id="book-example-div">
+									<div class="panel panel-default">
+										<div style="margin:0px auto">
+											<img width="100%" attr="http://localhost:8080/EMANImgs/958945.jpg"
+												onerror="javascript:this.src='http://localhost:8080/EMANImgs/error.jpg'" />
+											<a href="#" id="ename"></a>
+											<p id="author"></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">科技科普</h3>
+						</div>
+						<div class="panel-body">
+							<div class="row" id="kejikepu-panel">
+							
+								<div class="col-md-3" id="book-example-div">
+									<div class="panel panel-default">
+										<div style="margin:0px auto">
+											<img width="100%" attr="http://localhost:8080/EMANImgs/958945.jpg"
+												onerror="javascript:this.src='http://localhost:8080/EMANImgs/error.jpg'" />
+											<a href="#" id="ename"></a>
+											<p id="author"></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					
 
 				</div>
 
@@ -183,23 +237,46 @@
 
 	</div>
 	<script>
-		function getlist(classifyMain) {
+		function getlist(args, panelId) {
 			$.ajax({
 				url : "/EMAN/ebook/getList.htm",
 				type : "get",
-				data : "classifyMain=小说",
+				data : args,
 				dataType : "json",
 				success : function(data) {
-
+					var listObject = data;
+					var clone = $("#book-example-div").clone();
+					$("#" + panelId).empty();
+	
+					if (listObject.length < 1) { // 若无数据
+						$("#" + panelId).append("<p>暂无推荐</p>");
+					}
+	
+					for (var i = 0; i < listObject.length && i < 4; i++) {
+						var cloneDiv = clone.clone();
+						cloneDiv.attr("id", "book" + (i + 1));
+						cloneDiv.find("img").attr("src", "http://localhost:8080/EMANImgs/" + listObject[i].imgAddress);
+						cloneDiv.find("#ename").attr("href", "http://localhost:8080/EMAN/ebook/info.htm?eid=" + listObject[i].eid);
+						cloneDiv.find("#ename").text(listObject[i].ename);
+	
+						cloneDiv.find("#author").text(listObject[i].author);
+	
+						$("#" + panelId).append(cloneDiv);
+					}
+	
 				},
 				error : function() {
 					alert("ajax请求失败");
 				}
 			});
 		}
-
+	
 		$(document).on('ready', function() {
-
+			getlist("classifyMain=小说&start=0&orderCondition=ratingValue&order=desc", "xiaoshou-panel");
+			getlist("classifyMain=文学&start=0&orderCondition=ratingValue&order=desc", "wenxue-panel");
+			getlist("classifyMain=人文社科&start=0&orderCondition=ratingValue&order=desc", "renwensheke-panel");
+			getlist("classifyMain=经济管理&start=0&orderCondition=ratingValue&order=desc", "jinjiguanli-panel");
+			getlist("classifyMain=科技科普&start=0&orderCondition=ratingValue&order=desc", "kejikepu-panel");
 		});
 	</script>
 </body>

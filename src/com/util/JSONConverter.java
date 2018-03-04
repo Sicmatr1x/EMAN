@@ -7,7 +7,9 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
 
-
+/*
+ * 提供用于将 JavaBeans 对象直接转化为结构化 Json 数据
+ */
 public class JSONConverter {
 	
 	public static String convertToJSONString(Object o){

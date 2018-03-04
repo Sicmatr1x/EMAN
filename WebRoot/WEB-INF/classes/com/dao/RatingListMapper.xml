@@ -41,6 +41,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			where eid = #{eid}
 	</select>
 	
+	<select id="selectRatingListByEidAndRatingValue" parameterType="java.util.Map" resultMap="ratingListResultMap">
+			select *
+			from ratinglist natural join user
+			where eid = #{eid} and #{ratingValue} >= ratingValue
+	</select>
+	
+	<select id="selectRatingListByUidAndRatingValue" parameterType="java.util.Map" resultMap="ratingListResultMap">
+			select *
+			from ratinglist natural join user
+			where uid = #{uid}  and #{ratingValue} >= ratingValue
+	</select>
+	
 	<select id="selectRatingListLimitByEid" parameterType="java.util.Map" resultMap="ratingListResultMap">
 			select *
 			from ratinglist natural join user

@@ -4,6 +4,9 @@ import java.util.List;
 
 import com.entity.RatingList;
 
+/*
+ * 提供评分评论表的访问
+ */
 public interface RatingListDao {
 	
 	/**
@@ -12,6 +15,20 @@ public interface RatingListDao {
 	 * @return
 	 */
 	public List<RatingList> selectRatingListByEid(String eid);
+	
+	/**
+	 * 根据图书eid查询图书评分列表,并且只选出评分高于ratingValue的结果
+	 * @param eid
+	 * @return
+	 */
+	public List<RatingList> selectRatingListByEidAndRatingValue(String eid, int ratingValue);
+	
+	/**
+	 * 根据图书uid查询图书评分列表,并且只选出评分高于ratingValue的结果
+	 * @param uid
+	 * @return
+	 */
+	public List<RatingList> selectRatingListByUidAndRatingValue(String uid, int ratingValue);
 	
 	/**
 	 * 根据图书eid查询图书评分列表(数据库分页)
@@ -36,6 +53,7 @@ public interface RatingListDao {
 	 * @return
 	 */
 	public RatingList selectRatingListByEidAndUid(String eid, String uid);
+	
 	
 	/**
 	 * 新增评分

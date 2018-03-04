@@ -15,7 +15,9 @@ import com.dao.ClassifyMainStatisticsDao;
 import com.entity.User;
 import com.service.UserService;
 
-
+/*
+ * 统计模块接口(待定)
+ */
 @Controller
 @RequestMapping("/statistics")
 public class StatisticsController {

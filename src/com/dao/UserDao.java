@@ -2,6 +2,9 @@ package com.dao;
 
 import com.entity.User;
 
+/*
+ * 提供用户表的访问
+ */
 public interface UserDao {
 	/**
 	 * 根据用户uid查询用户

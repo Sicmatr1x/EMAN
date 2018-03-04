@@ -31,6 +31,18 @@ public class RatingListServiceImpl implements RatingListService {
 		List<RatingList> list = ratingListDao.selectRatingListByEid(eid);
 		return list;
 	}
+	
+	@Override
+	public List<RatingList> selectRatingListByEidAndRatingValue(String eid, int ratingValue){
+		List<RatingList> rList = ratingListDao.selectRatingListByEidAndRatingValue(eid, ratingValue);
+		return rList;
+	}
+	
+	@Override
+	public List<RatingList> selectRatingListByUidAndRatingValue(String uid, int ratingValue){
+		List<RatingList> rList = ratingListDao.selectRatingListByUidAndRatingValue(uid, ratingValue);
+		return rList;
+	}
 
 	@Override
 	public RatingList selectRatingListByEidAndUid(String eid, String uid) {

@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.entity.User;
 import com.service.UserService;
 
-
+/*
+ * 用户相关接口
+ */
 @Controller
 @RequestMapping("/user")
 public class UserController {
