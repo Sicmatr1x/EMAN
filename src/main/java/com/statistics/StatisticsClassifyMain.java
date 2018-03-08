@@ -7,6 +7,9 @@ import java.sql.Statement;
 import java.text.DecimalFormat;
 import java.util.List;
 
+import com.dao.ClassifyMainStatisticsDao;
+import com.dao.impl.ClassifyMainStatisticsDaoImpl;
+import com.entity.ClassifyMainStatistics;
 import org.apache.ibatis.session.SqlSession;
 
 import spider.EBookListSpider;
@@ -24,7 +27,10 @@ public class StatisticsClassifyMain {
 	private static SqlSession sqlSession = DBAccess.getSqlSession();
 	
 	private static RatingListDao ratingListDao = new RatingListDaoImpl();
-	
+
+	private static ClassifyMainStatisticsDao classifyMainStatisticsDao = new ClassifyMainStatisticsDaoImpl();
+
+
 	/**
 	 * mysql数据库连接
 	 */
@@ -102,23 +108,111 @@ public class StatisticsClassifyMain {
 		
 		
 	}
+
+	/**
+	 * 计算全部分类均值
+	 */
+	public static void totalAvg() throws SQLException {
+		DecimalFormat df = new DecimalFormat();
+		df.setMinimumFractionDigits(5);
+
+		int reviewCount5 = 0;
+		int reviewCount4 = 0;
+		int reviewCount3 = 0;
+		int reviewCount2 = 0;
+		int reviewCount1 = 0;
+		double varianceRatingValue;
+		double avgRatingValue;
+
+		List<ClassifyMainStatistics> list = classifyMainStatisticsDao.queryAllClassifyMainStatistics();
+		for(int i = 0; i < list.size(); i++){
+			if(list.get(i).getClassifyMain().equals("avg"))
+				list.remove(i);
+//			System.out.println(list.get(i).getClassifyMain());
+		}
+
+		int sum = 0;
+		for(int i = 0; i < list.size(); i++){
+			sum += list.get(i).getReviewCount5();
+		}
+		reviewCount5 = (int)(sum*1.0 / list.size());
+		sum = 0;
+		for(int i = 0; i < list.size(); i++){
+			sum += list.get(i).getReviewCount4();
+		}
+		reviewCount4 = (int)(sum*1.0 / list.size());
+		sum = 0;
+		for(int i = 0; i < list.size(); i++){
+			sum += list.get(i).getReviewCount3();
+		}
+		reviewCount3 = (int)(sum*1.0 / list.size());
+		sum = 0;
+		for(int i = 0; i < list.size(); i++){
+			sum += list.get(i).getReviewCount2();
+		}
+		reviewCount2 = (int)(sum*1.0 / list.size());
+		sum = 0;
+		for(int i = 0; i < list.size(); i++){
+			sum += list.get(i).getReviewCount1();
+		}
+		reviewCount1 = (int)(sum*1.0 / list.size());
+
+		double total = 0;
+		for(int i = 0; i < list.size(); i++){
+			total += list.get(i).getVarianceRatingValue();
+		}
+		varianceRatingValue = total*1.0 / list.size();
+
+		total = 0;
+		for(int i = 0; i < list.size(); i++){
+			total += list.get(i).getAvgRatingValue();
+		}
+		avgRatingValue = total*1.0 / list.size();
+
+
+		Statement statemenet = conn.createStatement();
+		String sqlString = "UPDATE classifymainstatistics SET reviewCount5=" + reviewCount5 +
+				",reviewCount4=" + reviewCount4 +
+				",reviewCount3=" + reviewCount3 +
+				",reviewCount2=" + reviewCount2 +
+				",reviewCount1=" + reviewCount1 +
+				",avgRatingValue=" + df.format(avgRatingValue) +
+				",varianceRatingValue=" + df.format(varianceRatingValue) +
+				" where classifyMain='" + "avg" + "';";
+		System.out.println(sqlString);
+		statemenet.execute(sqlString);
+		statemenet.close();
+	}
 	
 	
 	public static void main(String[] args){
+//		try {
+//			StatisticsClassifyMain.initConnection();
+//			StatisticsClassifyMain.statisticsAverage();
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (InstantiationException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IllegalAccessException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (ClassNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+
 		try {
 			StatisticsClassifyMain.initConnection();
-			StatisticsClassifyMain.statisticsAverage();
+			StatisticsClassifyMain.totalAvg();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InstantiationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InstantiationException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

@@ -62,14 +62,24 @@ public class ClassifyMainStatisticsController {
     @ResponseBody
     public void getClassifyMainStatisticLineChartData(@RequestParam(value="classifyMain")String classifyMain, PrintWriter out, HttpServletRequest request){
         ClassifyMainStatistics classifyMainStatistics = classifyMainStatisticsService.queryClassifyMainStatisticsByClassifyMain(classifyMain);
+        ClassifyMainStatistics avgStatistics = classifyMainStatisticsService.queryClassifyMainStatisticsByClassifyMain("avg");
+        System.out.println(classifyMainStatistics.getClassifyMain());
 
-        double[][] data = {
-                {10, 20, 5, 45, 20},
-                {20, 20, 20, 20, 20}
-        };
+        double[][] data = {{0,0,0,0,0},{0,0,0,0,0}};
+        data[0][0] = classifyMainStatistics.getReviewCount5();
+        data[0][1] = classifyMainStatistics.getReviewCount4();
+        data[0][2] = classifyMainStatistics.getReviewCount3();
+        data[0][3] = classifyMainStatistics.getReviewCount2();
+        data[0][4] = classifyMainStatistics.getReviewCount1();
+        data[1][0] = avgStatistics.getReviewCount5();
+        data[1][1] = avgStatistics.getReviewCount4();
+        data[1][2] = avgStatistics.getReviewCount3();
+        data[1][3] = avgStatistics.getReviewCount2();
+        data[1][4] = avgStatistics.getReviewCount1();
+
         String[] dataLabels = {
-                "a",
-                "b"
+                classifyMain,
+                "全区平均"
         };
         String[] backgroundColor = {
                 "rgb(255, 99, 132)",
@@ -84,10 +94,10 @@ public class ClassifyMainStatisticsController {
                 "2",
                 "1"
         };
+        String json;
         try {
-            String json = ChartDataJsonCreater.getLineJson(data, dataLabels, backgroundColor, borderColor, labels, "testLine");
+            json = ChartDataJsonCreater.getLineJson(data, dataLabels, backgroundColor, borderColor, labels, "各个评分的评分人数");
             System.out.println(json);
-            json = JSONConverter.convertToJSONString(json);
             out.print(json);
             out.flush();
         } catch (JsonGenerationException e) {
