@@ -23,7 +23,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			from ClassifyMainStatistics
 			where classifyMain = #{classifyMain}
 	</select>
-	
+
+	<select id="selectAllClassifyMainStatistics" resultType="com.entity.ClassifyMainStatistics">
+		select *
+		from classifymainstatistics
+	</select>
 	
 	
 </mapper>

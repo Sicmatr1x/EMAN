@@ -264,5 +264,13 @@
           </plugin>
 
       </plugins>
+      <resources>
+          <resource>
+              <directory>${basedir}/src/main/java</directory>
+              <includes>
+                  <include>**/*.xml</include>
+              </includes>
+          </resource>
+      </resources>
   </build>
 </project>

@@ -12,6 +12,11 @@
 <script src="<c:url value='/resources/jquery/2.1.1/jquery.min.js'/>"></script>
 <script
 	src="<c:url value='/resources/bootstrap/3.3.7/js/bootstrap.min.js'/>"></script>
+<script src="<c:url value='/resources/chart/Chart.js'/>"
+            type="text/javascript"></script>
+<script src="<c:url value='/resources/chart/Chart.bundle.min.js'/>"
+            type="text/javascript"></script>
+
 <script>
 	$(document).ready(function() {
 		// 开始写 jQuery 代码...
@@ -111,6 +116,7 @@
 							</div>
 						</div>
 					</div>
+
 					
 					<h3>来自你感兴趣的分区...</h3>
 					<hr />
@@ -122,7 +128,7 @@
 										<div style="margin:0px auto">
 											<img width="100%"
 												attr="http://localhost:8080/EMANImgs/958945.jpg"
-												onerror="javascript:this.src='http://localhost:8080/EMANImgs/error.jpg'">
+												alt="error">
 											<a href="#" id="ename"></a>
 											<p id="author">登录后显示</p>
 										</div>
@@ -254,6 +260,8 @@
 			if(uid !== 'null'){ // 若用户未登录
                 getlist("uid="+uid, "favorite-panel");
 			}
+
 		});
+
 	</script>
 </body>

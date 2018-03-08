@@ -170,13 +170,13 @@
 			<div class="panel-body">
 				<div class="col-xs-6">
 					<!-- 饼图 -->
-					<div id="canvas-holder" style="width:30% height:0px">
+					<div id="canvas-holder" style="width:30%; height:0px">
 						<canvas id="reviewCount-Chart"></canvas>
 					</div>
 				</div>
 				<div class="col-xs-6">
 					<!-- 雷达图 -->
-					<div id="canvas-holder" style="width:30% height:0px">
+					<div id="canvas-holder-1" style="width:30%; height:0px">
 						<canvas id="reviewCountAdvance-Chart"></canvas>
 					</div>
 				</div>
@@ -234,7 +234,7 @@
 		</div>
 
 		<!-- 推荐面板 -->
-		<div class="panel panel-default">
+		<!--<div class="panel panel-default">
 			<div class="panel-heading">
 				<h3 class="panel-title">喜欢这边书的人也喜欢...</h3>
 			</div>
@@ -253,7 +253,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>-->
 
 		<!-- 评论面板 -->
 		<h3>评论区</h3>
@@ -421,7 +421,9 @@ function queryOneDescribe(){
 				//data.datasets[0].backgroundColor="rgb(255, 99, 132).alpha(0.2).rgbString()";
 				//data.datasets[0].borderColor=window.chartColors.red;
 				//data.datasets[0].pointBackgroundColor=window.chartColors.red;
+                // console.log(data);
 				window.myRadar = new Chart(ctx1, data);
+                console.log(data);
 			},
 			error:function(){
 				alert("ajax请求失败");
@@ -601,39 +603,39 @@ function queryOneDescribe(){
     	
 	});
 	
-	function getlist() {
-			$.ajax({
-				url : "/EMAN/ebook/likeThisBooksUserAlsoLike.htm",
-				type : "get",
-				data : {eid:"${ebook.eid}"},
-				dataType : "json",
-				success : function(data) {
-					var listObject = data;
-					var clone = $("#book-example-div").clone();
-					$("#" + panelId).empty();
-	
-					if (listObject.length < 1) { // 若无数据
-						$("#" + panelId).append("<p>暂无推荐</p>");
-					}
-	
-					for (var i = 0; i < listObject.length && i < 4; i++) {
-						var cloneDiv = clone.clone();
-						cloneDiv.attr("id", "book" + (i + 1));
-						cloneDiv.find("img").attr("src", "http://localhost:8080/EMANImgs/" + listObject[i].imgAddress);
-						cloneDiv.find("#ename").attr("href", "http://localhost:8080/EMAN/ebook/info.htm?eid=" + listObject[i].eid);
-						cloneDiv.find("#ename").text(listObject[i].ename);
-	
-						cloneDiv.find("#author").text(listObject[i].author);
-	
-						$("#" + panelId).append(cloneDiv);
-					}
-	
-				},
-				error : function() {
-					alert("ajax请求失败");
-				}
-			});
-		}
+    <%--function getlist() {--%>
+			<%--$.ajax({--%>
+				<%--url : "/EMAN/ebook/likeThisBooksUserAlsoLike.htm",--%>
+				<%--type : "get",--%>
+				<%--data : {eid:"${ebook.eid}"},--%>
+				<%--dataType : "json",--%>
+				<%--success : function(data) {--%>
+					<%--var listObject = data;--%>
+					<%--var clone = $("#book-example-div").clone();--%>
+					<%--$("#" + panelId).empty();--%>
+
+					<%--if (listObject.length < 1) { // 若无数据--%>
+						<%--$("#" + panelId).append("<p>暂无推荐</p>");--%>
+					<%--}--%>
+
+					<%--for (var i = 0; i < listObject.length && i < 4; i++) {--%>
+						<%--var cloneDiv = clone.clone();--%>
+						<%--cloneDiv.attr("id", "book" + (i + 1));--%>
+						<%--cloneDiv.find("img").attr("src", "http://localhost:8080/EMANImgs/" + listObject[i].imgAddress);--%>
+						<%--cloneDiv.find("#ename").attr("href", "http://localhost:8080/EMAN/ebook/info.htm?eid=" + listObject[i].eid);--%>
+						<%--cloneDiv.find("#ename").text(listObject[i].ename);--%>
+
+						<%--cloneDiv.find("#author").text(listObject[i].author);--%>
+
+						<%--$("#" + panelId).append(cloneDiv);--%>
+					<%--}--%>
+
+				<%--},--%>
+				<%--error : function() {--%>
+					<%--alert("ajax请求失败");--%>
+				<%--}--%>
+			<%--});--%>
+    <%--}--%>
 	
     $(function() {
     	
@@ -659,7 +661,7 @@ function queryOneDescribe(){
         });
         
         /* 喜欢这本书的人也喜欢*/
-        getlist();
+        //getlist();
     });  
 </script>
 </body>

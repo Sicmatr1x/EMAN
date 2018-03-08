@@ -2,286 +2,38 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="EMAN:war" />
+      <artifact name="EMAN:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7e8de30-f37b-49e5-80f5-46baaacc8bf9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.classpath" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.project" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.settings/.jsdtscope" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.settings/com.genuitec.eclipse.core.prefs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.settings/com.genuitec.runtime.libraries.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.component" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.project.facet.core.prefs.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.project.facet.core.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.container" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.name" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.springBeans" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/META-INF/MANIFEST.MF" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/.gitignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/applicationContext.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/controller/EBookController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/controller/RatingListController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/controller/StatisticsController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/controller/UserController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/dao/ClassifyMainStatisticsDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/dao/ClassifyMainStatisticsMapper.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/dao/DBAccess.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/dao/EBookDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/dao/EBookMapper.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/dao/RatingListDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/dao/RatingListMapper.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/dao/UserDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/dao/UserMapper.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/dao/impl/ClassifyMainStatisticsDaoImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/dao/impl/EBookDaoImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/dao/impl/RatingListDaoImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/dao/impl/UserDaoImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/entity/ClassifyMainStatistics.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/entity/EBook.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/entity/RatingList.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/entity/User.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/service/EBookService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/service/RatingListService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/service/UserService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/service/impl/EBookServiceImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/service/impl/RatingListServiceImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/service/impl/UserServiceImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/statistics/StatisticsClassifyMain.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/statistics/StatisticsRatingValue.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/util/ChartDataJsonCreater.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/util/JSONConverter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/jdbc.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/log4j.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/mybatis-config.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/spider/BookInfoSpider.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/spider/EBookListSpider.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/spider/HttpURLConnectionUtil.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/spider/RatingValueListSpider.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/sql/classifymainstatistics.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/sql/ebook.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/sql/ratinglist.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/sql/recommendhomepage.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/sql/subclassify.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/sql/user.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/error.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/head.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/info.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/list.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/login.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/register.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/jsp/searchResult.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/asm-4.2.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/cglib-3.1.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-logging-1.2.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/ehcache-2.10.1.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/jackson-core-asl-1.9.11.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/jackson-mapper-asl-1.9.11.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/jsoup-1.10.3.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/log4j-1.2.17.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/log4j-api-2.2.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/log4j-core-2.2.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/mybatis-3.3.0.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/mybatis-ehcache-1.0.2.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/mybatis-spring-1.3.0.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/mysql-connector-java-5.1.9.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/slf4j-api-1.7.12.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/slf4j-log4j12-1.7.12.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/spring-form.tld" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/spring.tld" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/web.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/index.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/bootstrap/3.3.7/css/bootstrap-theme.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/bootstrap/3.3.7/css/bootstrap-theme.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/bootstrap/3.3.7/css/bootstrap-theme.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/bootstrap/3.3.7/css/bootstrap-theme.min.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/bootstrap/3.3.7/css/bootstrap.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/bootstrap/3.3.7/css/bootstrap.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/bootstrap/3.3.7/css/bootstrap.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/bootstrap/3.3.7/css/bootstrap.min.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/bootstrap/3.3.7/js/bootstrap.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/bootstrap/3.3.7/js/bootstrap.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/bootstrap/3.3.7/js/npm.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/Chart.bundle.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/Chart.bundle.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/Chart.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/Chart.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/LICENSE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/advanced/data-labelling.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/advanced/progress-bar.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/area/analyser.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/area/line-boundaries.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/area/line-datasets.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/area/line-stacked.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/area/radar.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/bar/horizontal.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/bar/multi-axis.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/bar/stacked-group.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/bar/stacked.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/bar/vertical.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/bubble.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/combo-bar-line.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/doughnut.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/line/basic.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/line/interpolation-modes.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/line/line-styles.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/line/multi-axis.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/line/point-sizes.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/line/point-styles.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/line/skip-points.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/line/stepped.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/pie.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/polar-area.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/radar-skip-points.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/radar.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/scatter/basic.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/charts/scatter/multi-axis.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/favicon.ico" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/legend/point-style.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/legend/positioning.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/logo.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/samples.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/scales/filtering-labels.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/scales/gridlines-display.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/scales/gridlines-style.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/scales/linear/min-max-suggested.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/scales/linear/min-max.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/scales/linear/step-size.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/scales/logarithmic/line.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/scales/logarithmic/scatter.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/scales/multiline-labels.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/scales/non-numeric-y.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/scales/time/combo.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/scales/time/financial.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/scales/time/line-point-data.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/scales/time/line.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/scriptable/bubble.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/style.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/tooltips/border.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/tooltips/callbacks.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/tooltips/custom-line.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/tooltips/custom-pie.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/tooltips/custom-points.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/tooltips/interactions.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/tooltips/positioning.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/chart/samples/utils.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/css/bootstrap.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/css/bootstrap.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/css/details.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/css/mainpageCSS.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/css/registerpageCSS.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/css/searchList.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/css/star-rating.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/img/kindle.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/jquery/2.1.1/jquery.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/js/axios.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/js/bootstrap.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/js/details.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/js/detailsWithoutLogin.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/js/highcharts.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/js/jquery.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/js/js-for-firstpage.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/js/ratePercentageChart.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/js/searchList.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/js/vue-for-detail.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/js/vue-for-firstpage.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/js/vue-for-register.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/CHANGE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/LICENSE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/bower.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/composer.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/css/star-rating.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/css/star-rating.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/examples/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/examples/sample.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/img/loading.gif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/js/locales/LANG.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/js/locales/ar.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/js/locales/de.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/js/locales/es.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/js/locales/fr.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/js/locales/it.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/js/locales/pl.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/js/locales/pt-BR.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/js/locales/ro.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/js/locales/ru.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/js/locales/ua.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/js/locales/zh.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/js/star-rating.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/js/star-rating.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/package.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/themes/krajee-fa/theme.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/themes/krajee-fa/theme.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/themes/krajee-fa/theme.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/themes/krajee-fa/theme.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/themes/krajee-svg/theme.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/themes/krajee-svg/theme.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/themes/krajee-svg/theme.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/themes/krajee-svg/theme.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/themes/krajee-uni/theme.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/themes/krajee-uni/theme.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/themes/krajee-uni/theme.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/resources/star-rating/themes/krajee-uni/theme.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/setting.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/applicationContext.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/controller/EBookController.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/controller/RatingListController.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/controller/StatisticsController.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/controller/UserController.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/dao/ClassifyMainStatisticsDao.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/dao/ClassifyMainStatisticsMapper.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/dao/DBAccess.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/dao/EBookDao.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/dao/EBookMapper.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/dao/RatingListDao.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/dao/RatingListMapper.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/dao/UserDao.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/dao/UserMapper.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/dao/impl/ClassifyMainStatisticsDaoImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/dao/impl/EBookDaoImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/dao/impl/RatingListDaoImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/dao/impl/UserDaoImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/entity/ClassifyMainStatistics.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/entity/EBook.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/entity/EBookTuple.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/entity/RatingList.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/entity/User.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/service/EBookService.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/service/RatingListService.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/service/UserService.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/service/impl/EBookServiceImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/service/impl/RatingListServiceImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/service/impl/UserServiceImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/statistics/StatisticsClassifyMain.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/statistics/StatisticsRatingValue.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/util/ChartDataJsonCreater.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/util/JSONConverter.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/jdbc.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/log4j.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/mybatis-config.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/spider/BookInfoSpider.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/spider/EBookListSpider.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/spider/HttpURLConnectionUtil.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/spider/RatingValueListSpider.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sql/classifymainstatistics.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sql/ebook.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sql/ratinglist.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sql/recommendhomepage.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sql/subclassify.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sql/user.sql" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/user_spider_exception.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/user_spider_setting.properties" afterPath="" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/controller/ClassifyMainStatisticsController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/service/ClassifyMainStatisticsService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/service/impl/ClassifyMainStatisticsServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/RatingListController.java" afterPath="$PROJECT_DIR$/src/main/java/com/controller/RatingListController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dao/ClassifyMainStatisticsDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/dao/ClassifyMainStatisticsDao.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dao/ClassifyMainStatisticsMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/dao/ClassifyMainStatisticsMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dao/impl/ClassifyMainStatisticsDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/dao/impl/ClassifyMainStatisticsDaoImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/util/ChartDataJsonCreater.java" afterPath="$PROJECT_DIR$/src/main/java/com/util/ChartDataJsonCreater.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/info.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/info.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/list.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/chart/samples/scales/multiline-labels.html" afterPath="$PROJECT_DIR$/src/main/webapp/resources/chart/samples/scales/multiline-labels.html" />
+      <change beforePath="$PROJECT_DIR$/target/EMAN.war" afterPath="$PROJECT_DIR$/target/EMAN.war" />
+      <change beforePath="$PROJECT_DIR$/target/EMAN/WEB-INF/classes/com/controller/RatingListController.class" afterPath="$PROJECT_DIR$/target/EMAN/WEB-INF/classes/com/controller/RatingListController.class" />
+      <change beforePath="$PROJECT_DIR$/target/EMAN/WEB-INF/classes/com/dao/ClassifyMainStatisticsDao.class" afterPath="$PROJECT_DIR$/target/EMAN/WEB-INF/classes/com/dao/ClassifyMainStatisticsDao.class" />
+      <change beforePath="$PROJECT_DIR$/target/EMAN/WEB-INF/classes/com/dao/impl/ClassifyMainStatisticsDaoImpl.class" afterPath="$PROJECT_DIR$/target/EMAN/WEB-INF/classes/com/dao/impl/ClassifyMainStatisticsDaoImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/EMAN/WEB-INF/classes/com/util/ChartDataJsonCreater.class" afterPath="$PROJECT_DIR$/target/EMAN/WEB-INF/classes/com/util/ChartDataJsonCreater.class" />
+      <change beforePath="$PROJECT_DIR$/target/EMAN/WEB-INF/jsp/list.jsp" afterPath="$PROJECT_DIR$/target/EMAN/WEB-INF/jsp/list.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/EMAN/index.jsp" afterPath="$PROJECT_DIR$/target/EMAN/index.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/EMAN/resources/chart/samples/scales/multiline-labels.html" afterPath="$PROJECT_DIR$/target/EMAN/resources/chart/samples/scales/multiline-labels.html" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/controller/RatingListController.class" afterPath="$PROJECT_DIR$/target/classes/com/controller/RatingListController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dao/ClassifyMainStatisticsDao.class" afterPath="$PROJECT_DIR$/target/classes/com/dao/ClassifyMainStatisticsDao.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dao/impl/ClassifyMainStatisticsDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/dao/impl/ClassifyMainStatisticsDaoImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/util/ChartDataJsonCreater.class" afterPath="$PROJECT_DIR$/target/classes/com/util/ChartDataJsonCreater.class" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -293,12 +45,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="ClassifyMainStatisticsController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/ClassifyMainStatisticsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="450">
+              <caret line="91" column="24" lean-forward="true" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1000#1001#0" expanded="true" />
+                <element signature="e#1052#1053#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChartDataJsonCreater.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/util/ChartDataJsonCreater.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="155">
+              <caret line="465" column="42" lean-forward="false" selection-start-line="465" selection-start-column="42" selection-end-line="465" selection-end-column="42" />
+              <folding>
+                <element signature="e#16564#16565#0" expanded="true" />
+                <element signature="e#16608#16609#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -306,50 +75,8 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1108">
-              <caret line="129" column="38" lean-forward="true" selection-start-line="119" selection-start-column="32" selection-end-line="129" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="head.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/head.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="82" column="105" lean-forward="false" selection-start-line="82" selection-start-column="105" selection-end-line="82" selection-end-column="105" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EBookMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/EBookMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="32" column="46" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="46" />
-              <folding>
-                <marker date="1517742326576" expanded="true" signature="268:701" ph="insert into ebook... " />
-                <marker date="1517742326576" expanded="true" signature="791:920" ph="UPDATE ebook... " />
-                <marker date="1517742326576" expanded="true" signature="1003:1025" ph="select * fro... ebook" />
-                <marker date="1517742326576" expanded="true" signature="1123:1167" ph="select * fro... ebook" />
-                <marker date="1517742326576" expanded="true" signature="1288:1413" ph="select * fro... ebook" />
-                <marker date="1517742326576" expanded="true" signature="1494:1563" ph="select count... ebook" />
-                <marker date="1517742326576" expanded="true" signature="1660:1750" ph="select count... ebook" />
-                <marker date="1517742326576" expanded="true" signature="1881:2108" ph="select * fro... ebook" />
-                <marker date="1517742326576" expanded="true" signature="2213:2422" ph="select count... ebook" />
-                <marker date="1517742326576" expanded="true" signature="2557:3277" ph="select * fro... ebook" />
-                <marker date="1517742326576" expanded="true" signature="3360:3386" ph="select count... ebook" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EBookDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/impl/EBookDaoImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="61" column="66" lean-forward="false" selection-start-line="61" selection-start-column="66" selection-end-line="61" selection-end-column="66" />
+            <state relative-caret-position="210">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="17" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -358,52 +85,56 @@
       <file leaf-file-name="info.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/info.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1738">
-              <caret line="263" column="40" lean-forward="false" selection-start-line="263" selection-start-column="40" selection-end-line="263" selection-end-column="40" />
-              <folding />
+            <state relative-caret-position="308">
+              <caret line="425" column="34" lean-forward="false" selection-start-line="425" selection-start-column="34" selection-end-line="425" selection-end-column="34" />
+              <folding>
+                <marker date="1520518235172" expanded="false" signature="6322:6337" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EBookController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/EBookController.java">
+      <file leaf-file-name="list.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/list.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="150" column="138" lean-forward="false" selection-start-line="150" selection-start-column="138" selection-end-line="150" selection-end-column="138" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FavoriteController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/FavoriteController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="36" column="47" lean-forward="false" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="47" />
-              <folding />
+            <state relative-caret-position="372">
+              <caret line="325" column="30" lean-forward="false" selection-start-line="325" selection-start-column="30" selection-end-line="325" selection-end-column="30" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1520517749542" expanded="true" signature="11758:11764" ph="&amp;nbsp;" />
+                <marker date="1520517749542" expanded="true" signature="11764:11770" ph="&amp;nbsp;" />
+                <marker date="1520517749542" expanded="true" signature="12462:12468" ph="&amp;nbsp;" />
+                <marker date="1520517749542" expanded="true" signature="12468:12474" ph="&amp;nbsp;" />
+                <marker date="1520517749542" expanded="true" signature="12523:12529" ph="&amp;nbsp;" />
+                <marker date="1520517749542" expanded="true" signature="12529:12535" ph="&amp;nbsp;" />
+                <marker date="1520517749542" expanded="true" signature="13191:13197" ph="&amp;nbsp;" />
+                <marker date="1520517749542" expanded="true" signature="13197:13203" ph="&amp;nbsp;" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>ThisOrTargetAnnotationPointcut</find>
       <find>book-example-div</find>
-      <find>spring</find>
       <find>selectEBookLimitByClassifyMain</find>
+      <find>spring</find>
+      <find>selectAllClassifyMainStatistics</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -416,16 +147,26 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/spider/BookInfoSpider.java" />
         <option value="$PROJECT_DIR$/src/main/java/spider/RatingValueListSpider.java" />
         <option value="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/info.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/controller/EBookController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/head.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dao/ClassifyMainStatisticsDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/service/ClassifyMainStatisticsService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/controller/RatingListController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/service/impl/ClassifyMainStatisticsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dao/ClassifyMainStatisticsMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dao/impl/ClassifyMainStatisticsDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/controller/ClassifyMainStatisticsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/util/ChartDataJsonCreater.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/info.jsp" />
       </list>
     </option>
   </component>
@@ -563,6 +304,44 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EMAN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EMAN" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EMAN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EMAN" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EMAN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EMAN" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EMAN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EMAN" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="statistics" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -605,6 +384,32 @@
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="jsp" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="EMAN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EMAN" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EMAN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EMAN" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EMAN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EMAN" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EMAN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EMAN" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -617,7 +422,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -639,13 +444,32 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Tomcat Server.tomcat 8.0.46">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
+    </configuration>
+    <configuration name="ChartDataJsonCreater" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.util.ChartDataJsonCreater" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="EMAN" />
+      <envs />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -718,11 +542,10 @@
     <configuration name="tomcat 8.0.46" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.46" ALTERNATIVE_JRE_ENABLED="false">
       <option name="START_JAVASCRIPT_DEBUGGER" value="true" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
-      <option name="HOT_SWAP_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
-      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
-        <artifact name="EMAN:war">
+        <artifact name="EMAN:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/EMAN" />
           </settings>
@@ -787,7 +610,7 @@
       </ConfigurationWrapper>
       <method>
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="EMAN:war" />
+          <artifact name="EMAN:war exploded" />
         </option>
       </method>
     </configuration>
@@ -797,6 +620,15 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.tomcat 8.0.46" />
+      <item index="1" class="java.lang.String" itemvalue="Application.ChartDataJsonCreater" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.ChartDataJsonCreater" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -811,46 +643,47 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1520490951792</updated>
-      <workItem from="1520490954213" duration="8824000" />
+      <workItem from="1520490954213" duration="21321000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8824000" />
+    <option name="totallyTimeSpent" value="21321000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23203884" sideWeight="0.096354164" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31578946" sideWeight="0.11128861" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.083333336" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08519702" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39920557" sideWeight="0.75186366" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.4978701" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286991" sideWeight="0.49361023" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23203884" sideWeight="0.9036458" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31578946" sideWeight="0.8887114" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291262" sideWeight="0.49791667" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18229167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286991" sideWeight="0.49574015" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18636848" sideWeight="0.49492016" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18636848" sideWeight="0.5050798" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -865,35 +698,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="232" column="95" lean-forward="false" selection-start-line="232" selection-start-column="95" selection-end-line="232" selection-end-column="95" />
-          <folding>
-            <marker date="1517742326000" expanded="true" signature="10594:10600" ph="&amp;nbsp;" />
-            <marker date="1517742326000" expanded="true" signature="10600:10606" ph="&amp;nbsp;" />
-            <marker date="1517742326000" expanded="true" signature="11298:11304" ph="&amp;nbsp;" />
-            <marker date="1517742326000" expanded="true" signature="11304:11310" ph="&amp;nbsp;" />
-            <marker date="1517742326000" expanded="true" signature="11359:11365" ph="&amp;nbsp;" />
-            <marker date="1517742326000" expanded="true" signature="11365:11371" ph="&amp;nbsp;" />
-            <marker date="1517742326000" expanded="true" signature="12027:12033" ph="&amp;nbsp;" />
-            <marker date="1517742326000" expanded="true" signature="12033:12039" ph="&amp;nbsp;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="21" lean-forward="false" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -923,14 +731,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/DBAccess.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -947,18 +747,100 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/head.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="82" column="105" lean-forward="false" selection-start-line="82" selection-start-column="105" selection-end-line="82" selection-end-column="105" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/EBookService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/ClassifyMainStatisticsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="46" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="36" column="47" lean-forward="false" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="47" />
+        <state relative-caret-position="180">
+          <caret line="24" column="43" lean-forward="true" selection-start-line="23" selection-start-column="4" selection-end-line="24" selection-end-column="43" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/ClassifyMainStatisticsDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="39" lean-forward="false" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/impl/EBookServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/FavoriteMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1520435797575" expanded="true" signature="277:377" ph="insert into favorite... " />
+            <marker date="1520435797575" expanded="true" signature="480:527" ph="select * fro... favorite" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/RatingListMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-614">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1520418652260" expanded="true" signature="277:384" ph="insert into ratinglist... " />
+            <marker date="1520418652260" expanded="true" signature="487:511" ph="select * fro... ratinglist" />
+            <marker date="1520418652260" expanded="true" signature="606:672" ph="select * fro... ratinglist" />
+            <marker date="1520418652260" expanded="true" signature="1254:1321" ph="select * fro... ratinglist" />
+            <marker date="1520418652260" expanded="true" signature="1451:1552" ph="select * fro... ratinglist" />
+            <marker date="1520418652260" expanded="true" signature="1682:1784" ph="select * fro... ratinglist" />
+            <marker date="1520418652260" expanded="true" signature="1905:2037" ph="select * fro... ratinglist" />
+            <marker date="1520418652260" expanded="true" signature="2119:2177" ph="select count... ratinglist" />
+            <marker date="1520418652260" expanded="true" signature="2272:2370" ph="select * fro... ratinglist" />
+            <marker date="1520418652260" expanded="true" signature="2452:2531" ph="select count... ratinglist" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/EBookMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="32" column="46" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="46" />
+        <state relative-caret-position="-511">
+          <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
           <folding>
             <marker date="1517742326576" expanded="true" signature="268:701" ph="insert into ebook... " />
             <marker date="1517742326576" expanded="true" signature="791:920" ph="UPDATE ebook... " />
@@ -975,43 +857,148 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/impl/RatingListDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/impl/ClassifyMainStatisticsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="31" column="79" lean-forward="true" selection-start-line="31" selection-start-column="79" selection-end-line="31" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="39" lean-forward="false" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/impl/EBookDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
+        <state relative-caret-position="186">
           <caret line="61" column="66" lean-forward="false" selection-start-line="61" selection-start-column="66" selection-end-line="61" selection-end-column="66" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1108">
-          <caret line="129" column="38" lean-forward="true" selection-start-line="119" selection-start-column="32" selection-end-line="129" selection-end-column="38" />
+        <state relative-caret-position="557">
+          <caret line="273" column="18" lean-forward="false" selection-start-line="273" selection-start-column="18" selection-end-line="273" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/ClassifyMainStatisticsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="47" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/com/dao/ClassifyMainStatisticsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1520512253375" expanded="true" signature="316:728" ph="UPDATE ClassifyMainStatistics... " />
+            <marker date="1520512253375" expanded="true" signature="866:945" ph="select * fro... ClassifyMainStatistics" />
+            <marker date="1520512253375" expanded="true" signature="1054:1092" ph="select * fro... classifymainstatistics" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/impl/ClassifyMainStatisticsDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="29" column="98" lean-forward="false" selection-start-line="29" selection-start-column="98" selection-end-line="29" selection-end-column="98" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/EBookController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="150" column="138" lean-forward="false" selection-start-line="150" selection-start-column="138" selection-end-line="150" selection-end-column="138" />
+        <state relative-caret-position="431">
+          <caret line="120" column="42" lean-forward="false" selection-start-line="120" selection-start-column="30" selection-end-line="120" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/head.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/RatingListController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="82" column="105" lean-forward="false" selection-start-line="82" selection-start-column="105" selection-end-line="82" selection-end-column="105" />
+        <state relative-caret-position="293">
+          <caret line="247" column="93" lean-forward="true" selection-start-line="247" selection-start-column="7" selection-end-line="247" selection-end-column="93" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="17" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/ClassifyMainStatisticsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="91" column="24" lean-forward="true" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1000#1001#0" expanded="true" />
+            <element signature="e#1052#1053#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/util/ChartDataJsonCreater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="465" column="42" lean-forward="false" selection-start-line="465" selection-start-column="42" selection-end-line="465" selection-end-column="42" />
+          <folding>
+            <element signature="e#16564#16565#0" expanded="true" />
+            <element signature="e#16608#16609#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="325" column="30" lean-forward="false" selection-start-line="325" selection-start-column="30" selection-end-line="325" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1520517749542" expanded="true" signature="11758:11764" ph="&amp;nbsp;" />
+            <marker date="1520517749542" expanded="true" signature="11764:11770" ph="&amp;nbsp;" />
+            <marker date="1520517749542" expanded="true" signature="12462:12468" ph="&amp;nbsp;" />
+            <marker date="1520517749542" expanded="true" signature="12468:12474" ph="&amp;nbsp;" />
+            <marker date="1520517749542" expanded="true" signature="12523:12529" ph="&amp;nbsp;" />
+            <marker date="1520517749542" expanded="true" signature="12529:12535" ph="&amp;nbsp;" />
+            <marker date="1520517749542" expanded="true" signature="13191:13197" ph="&amp;nbsp;" />
+            <marker date="1520517749542" expanded="true" signature="13197:13203" ph="&amp;nbsp;" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/info.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1738">
-          <caret line="263" column="40" lean-forward="false" selection-start-line="263" selection-start-column="40" selection-end-line="263" selection-end-column="40" />
-          <folding />
+        <state relative-caret-position="308">
+          <caret line="425" column="34" lean-forward="false" selection-start-line="425" selection-start-column="34" selection-end-line="425" selection-end-column="34" />
+          <folding>
+            <marker date="1520518235172" expanded="false" signature="6322:6337" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

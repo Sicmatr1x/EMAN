@@ -22,6 +22,7 @@
         var randomScalingFactor = function() {
             return Math.round(Math.random() * 100);
         };
+        var data = {"type":"line","data":{"labels":["5","4","3","2","1"],"datasets":[{"label":"a","fill":false,"backgroundColor":"rgb(255, 99, 132)","borderColor":"rgb(255, 99, 132)","data":[10.0,20.0,5.0,45.0,20.0]},{"label":"b","fill":false,"backgroundColor":"rgb(255, 159, 64)","borderColor":"rgb(255, 159, 64)","data":[20.0,20.0,20.0,20.0,20.0]}]},"options":{"response":true,"title":{"display":true,"text":"testLine"}}}
 
         var config = {
             type: 'line',
@@ -78,7 +79,7 @@
 
         window.onload = function() {
             var ctx = document.getElementById("canvas").getContext("2d");
-            window.myLine = new Chart(ctx, config);
+            window.myLine = new Chart(ctx, data);
         };
     </script>
 </body>

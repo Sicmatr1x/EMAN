@@ -2,6 +2,8 @@ package com.dao;
 
 import com.entity.ClassifyMainStatistics;
 
+import java.util.List;
+
 /*
  * 提供主分区统计表的访问
  */
@@ -12,6 +14,12 @@ public interface ClassifyMainStatisticsDao {
 	 * @return
 	 */
 	public ClassifyMainStatistics queryClassifyMainStatisticsByClassifyMain(String classifyMain);
+
+	/**
+	 * 查询全部统计数据
+	 * @return
+	 */
+	public List<ClassifyMainStatistics> queryAllClassifyMainStatistics();
 	
 	
 	/**

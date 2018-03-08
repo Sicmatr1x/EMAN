@@ -108,8 +108,6 @@ public class RatingListController {
 	 * 获取评论总条数接口
 	 * http://localhost:8080/EMAN/ratinglist/listLimitCount.htm?eid=10245287
 	 * @param eid
-	 * @param orderCondition
-	 * @param order
 	 * @param out
 	 * @param request
 	 */

@@ -10,6 +10,10 @@
 <link rel="stylesheet" href="<c:url value='/resources/bootstrap/3.3.7/css/bootstrap.min.css'/>">
 <script src="<c:url value='/resources/jquery/2.1.1/jquery.min.js'/>"></script>
 <script src="<c:url value='/resources/bootstrap/3.3.7/js/bootstrap.min.js'/>"></script>
+<script src="<c:url value='/resources/chart/Chart.js'/>"
+			type="text/javascript"></script>
+<script src="<c:url value='/resources/chart/Chart.bundle.js'/>"
+			type="text/javascript"></script>
 <script>
 	$(document).ready(function() {
 		
@@ -197,6 +201,23 @@
 		
 		<div class="row clearfix">
 			<div class="container">
+
+				<h3>图书分类统计</h3>
+				<hr />
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="row" id="statistics-panel">
+							<!-- 折线图 -->
+							<!--<div id="canvas-holder" style="width:30%; height:0px">
+								<canvas id="statistics-Chart"></canvas>
+							</div>-->
+							<div style="width:90%;">
+								<canvas id="statistics-Chart"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+
 				<h2>${classifyMain}</h2>
 				<p>共找到 <span id="p-count">${count}</span> 条结果</p>
 				<!-- 排序按钮 -->
@@ -291,6 +312,24 @@ var initBtn = function(i) {
 
 
 $(document).on('ready', function () {
+
+    /*折线图插件*/
+    // var ctx = $("#statistics-Chart").getContext("2d");
+    var ctx = document.getElementById("statistics-Chart").getContext("2d");
+    // 获取数据
+    $.ajax({
+        url:"/EMAN/statistics/getClassifyMainStatisticLineChartData.htm",
+        type:"get",
+        data:"classifyMain=${classifyMain}",
+        dataType:"json",
+        success:function(data){
+            console.log(data);
+            window.myLine = new Chart(ctx, data);
+        },
+        error:function(){
+            alert("ajax请求失败:"+data);
+        }
+    });
 	
 	/*生成快速翻页按钮*/
 	var sum = parseInt($("#p-count").text());

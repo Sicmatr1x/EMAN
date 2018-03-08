@@ -383,38 +383,158 @@ public class ChartDataJsonCreater {
 		return mapper.writeValueAsString(root);
 	}
 
+    /**
+     * 返回折线图json
+     *
+     * {
+     type: 'line',
+     data: {
+     labels: [["June","2015"], "July", "August", "September", "October", "November", "December", ["January","2016"],"February", "March", "April", "May"],
+     datasets: [{
+     label: "My First dataset",
+     fill: false,
+     backgroundColor: window.chartColors.red,
+     borderColor: window.chartColors.red,
+     data: [
+     randomScalingFactor(),
+     randomScalingFactor(),
+     randomScalingFactor(),
+     randomScalingFactor(),
+     randomScalingFactor(),
+     randomScalingFactor(),
+     randomScalingFactor(),
+     randomScalingFactor(),
+     randomScalingFactor(),
+     randomScalingFactor(),
+     randomScalingFactor(),
+     randomScalingFactor()
+     ]
+     }, {
+     label: "My Second dataset",
+     fill: false,
+     backgroundColor: window.chartColors.blue,
+     borderColor: window.chartColors.blue,
+     data: [
+     randomScalingFactor(),
+     randomScalingFactor(),
+     randomScalingFactor(),
+     randomScalingFactor(),
+     randomScalingFactor(),
+     randomScalingFactor(),
+     randomScalingFactor(),
+     randomScalingFactor(),
+     randomScalingFactor(),
+     randomScalingFactor(),
+     randomScalingFactor(),
+     randomScalingFactor()
+     ],
+     }]
+     },
+     options: {
+     responsive: true,
+     title:{
+     display:true,
+     text:'Chart with Multiline Labels'
+     },
+     }
+     };
+     *
+     * @param data
+     * @param dataLabels
+     * @param backgroundColor
+     * @param borderColor
+     * @param labels
+     * @param title
+     * @return
+     * @throws JsonGenerationException
+     * @throws JsonMappingException
+     * @throws IOException
+     */
+    public static String getLineJson(double[][] data, String[] dataLabels, String[] backgroundColor, String[] borderColor, String[] labels, String title) throws JsonGenerationException, JsonMappingException, IOException {
+        ObjectMapper mapper = new ObjectMapper();
+
+        ArrayNode labelsList = mapper.createArrayNode();
+        for(String t : labels){
+            labelsList.add(t);
+        }
+
+        // 添加数据
+        ArrayNode datasetsList = mapper.createArrayNode();
+        for(int i = 0; i < data.length; i++){
+            ObjectNode datasetsNode = mapper.createObjectNode();
+            datasetsNode.put("label", dataLabels[i]);
+            datasetsNode.put("fill", false);
+            datasetsNode.put("backgroundColor", backgroundColor[i]);
+            datasetsNode.put("borderColor", borderColor[i]);
+            ArrayNode dataList = mapper.createArrayNode();
+            for(int j = 0; j < data[i].length; j++){
+                dataList.add(data[i][j]);
+            }
+            datasetsNode.put("data", dataList);
+
+            datasetsList.add(datasetsNode);
+        }
+
+        ObjectNode dataRoot = mapper.createObjectNode();
+        dataRoot.put("labels", labelsList);
+        dataRoot.put("datasets", datasetsList);
+
+        // 添加设置
+        ObjectNode titleNode = mapper.createObjectNode();
+        titleNode.put("display", true);
+        titleNode.put("text", title);
+
+        ObjectNode optionsNode = mapper.createObjectNode();
+        optionsNode.put("response", true);
+        optionsNode.put("title", titleNode);
+
+        // 1级孩子
+        ObjectNode root = mapper.createObjectNode();
+        root.put("type", "line");
+        root.put("data", dataRoot);
+        root.put("options", optionsNode);
+
+        return mapper.writeValueAsString(root);
+    }
+
+    public static void testLine(){
+        double[][] data = {
+                {10, 20, 5, 45, 20},
+                {20, 20, 20, 20, 20}
+        };
+        String[] dataLabels = {
+                "a",
+                "b"
+        };
+        String[] backgroundColor = {
+                "rgb(255, 99, 132)",
+                "rgb(255, 159, 64)"};
+        String[] borderColor = {
+                "rgb(255, 99, 132)",
+                "rgb(255, 159, 64)"};
+        String[] labels = {
+                "5",
+                "4",
+                "3",
+                "2",
+                "1"
+        };
+        try {
+            String json = ChartDataJsonCreater.getLineJson(data, dataLabels, backgroundColor, borderColor, labels, "testLine");
+            System.out.println(json);
+        } catch (JsonGenerationException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (JsonMappingException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
 	public static void main(String[] args) {
-		double[] data = {
-				10,
-	            20,
-	            5,
-	            45,
-	            20};
-		
-		String[] backgroundColor = {
-				"rgb(255, 99, 132)",
-				"rgb(255, 159, 64)",
-				"rgb(255, 205, 86)",
-				"rgb(75, 192, 192)",
-				"rgb(54, 162, 235)"};
-		String[] labels = {
-				"Red",
-                "Orange",
-                "Yellow",
-                "Green",
-                "Blue"
-		};
-		try {
-			ChartDataJsonCreater.getPieJson(data, backgroundColor, labels,"test","left");
-		} catch (JsonGenerationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        ChartDataJsonCreater.testLine();
 	}
 }

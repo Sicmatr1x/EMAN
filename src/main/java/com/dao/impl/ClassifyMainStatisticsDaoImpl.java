@@ -7,6 +7,8 @@ import com.dao.ClassifyMainStatisticsDao;
 import com.dao.DBAccess;
 import com.entity.ClassifyMainStatistics;
 
+import java.util.List;
+
 @Repository("classifyMainStatisticsDao")
 public class ClassifyMainStatisticsDaoImpl implements ClassifyMainStatisticsDao {
 	
@@ -20,6 +22,13 @@ public class ClassifyMainStatisticsDaoImpl implements ClassifyMainStatisticsDao 
 	public ClassifyMainStatistics queryClassifyMainStatisticsByClassifyMain(
 			String classifyMain) {
 		return sqlSession.selectOne("selectClassifyMainStatisticsByClassifyMain", classifyMain);
+	}
+
+	@Override
+	public List<ClassifyMainStatistics> queryAllClassifyMainStatistics() {
+	    // 不知道为什么这个方法老是抛出 java.lang.IllegalArgumentException: Mapped Statements collection does not contain value for
+		List<ClassifyMainStatistics> list = sqlSession.selectList("selectAllClassifyMainStatistics");
+		return list;
 	}
 
 	@Override
