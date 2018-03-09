@@ -4,7 +4,7 @@ public class MatrixC {
 	private Integer cid;
 	private String eida;
 	private String eidb;
-	private Integer count;
+	private Integer counter;
 	private Double cos_similarity;
 	
 	public Integer getCid() {
@@ -25,11 +25,11 @@ public class MatrixC {
 	public void setEidb(String eidb) {
 		this.eidb = eidb;
 	}
-	public Integer getCount() {
-		return count;
+	public Integer getCounter() {
+		return counter;
 	}
-	public void setCount(Integer count) {
-		this.count = count;
+	public void setCounter(Integer counter) {
+		this.counter = counter;
 	}
 	public Double getCos_similarity() {
 		return cos_similarity;

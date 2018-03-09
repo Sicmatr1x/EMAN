@@ -27,14 +27,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			where eida = #{eida} and eidb = #{eidb}
 	</select>
 	
-	<update id="updateMatrixCWithCountByEidAAndEidB" parameterType="java.util.Map">  
+	<update id="updateMatrixCWithCounterByEidAAndEidB" parameterType="java.util.Map">
         UPDATE matrixC  
-            SET count = #{count}
+            SET counter = #{counter}
          WHERE eida = #{eida} and eidb = #{eidb}
 	</update>
 	
 	<insert id="insertMatrixC" parameterType="com.entity.MatrixC">
-			insert into MatrixC (eida,eidb,counter)
+			insert into MatrixC (eida,eidb,counter)<!--count是关键字-->
 			values(#{eida},#{eidb},#{counter})
 	</insert>
 	

@@ -46,12 +46,12 @@ public class MatrixCDaoImpl implements MatrixCDao {
 	}
 
 	@Override
-	public int updateMatrixCWithCountByEidAAndEidB(String eida, String eidb, Integer count) {
+	public int updateMatrixCWithCountByEidAAndEidB(String eida, String eidb, Integer counter) {
 		Map<String, Object> args = new HashMap<String, Object>();
 		args.put("eida", eida);
 		args.put("eidb", eidb);
-		args.put("count", count);
-		int result = sqlSession.update("updateMatrixCWithCountByEidAAndEidB", args);
+		args.put("counter", counter);
+		int result = sqlSession.update("updateMatrixCWithCounterByEidAAndEidB", args);
 		this.sqlSession.commit();
 		return result;
 	}

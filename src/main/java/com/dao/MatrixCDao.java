@@ -25,7 +25,7 @@ public interface MatrixCDao {
 	/**
 	 * 修改count根据eida和eidb
 	 */
-	public int updateMatrixCWithCountByEidAAndEidB(String eida, String eidb, Integer count);
+	public int updateMatrixCWithCountByEidAAndEidB(String eida, String eidb, Integer counter);
 	/**
 	 * 查询eida,eidb记录是否存在
 	 * @return

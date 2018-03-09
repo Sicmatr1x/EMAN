@@ -31,3 +31,379 @@ DEBUG main org.apache.ibatis.transaction.jdbc.JdbcTransaction - Setting autocomm
 DEBUG main com.dao.ClassifyMainStatisticsMapper.selectAllClassifyMainStatistics - ==>  Preparing: select * from classifymainstatistics 
 DEBUG main com.dao.ClassifyMainStatisticsMapper.selectAllClassifyMainStatistics - ==> Parameters: 
 DEBUG main com.dao.ClassifyMainStatisticsMapper.selectAllClassifyMainStatistics - <==      Total: 14
+DEBUG main org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+DEBUG main org.apache.ibatis.transaction.jdbc.JdbcTransaction - Opening JDBC Connection
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - Created connection 1698097425.
+DEBUG main org.apache.ibatis.transaction.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@6536e911]
+DEBUG main com.dao.UserMapper.selectAllUser - ==>  Preparing: select * from user 
+DEBUG main com.dao.UserMapper.selectAllUser - ==> Parameters: 
+DEBUG main com.dao.UserMapper.selectAllUser - <==      Total: 215407
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 000000001(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 233
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100002934(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100002963(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 1000040(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100005142(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100018025(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100019518(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100020175(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 0
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 1000314(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100032229(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100034697(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100038943(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100044122(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100046508(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 4
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100051958(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 0
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100056794(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 3
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100058380(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 0
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100059056(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 2
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100063073(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 2
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 1000686(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100077835(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100081136(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100081408(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 1000821(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 5
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100084574(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100088672(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100095774(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100097795(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 0
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100099232(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 7
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 1001042(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 0
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100112278(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100113706(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100113740(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100114355(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 5
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100116713(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100118949(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100119087(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 0
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100126057(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 3
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 10012630(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100137516(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100138320(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 2
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100138371(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 0
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100141177(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100142723(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 0
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 1001456(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100145822(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 3
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100146623(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 0
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100150208(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100171864(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100171970(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100176352(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100176564(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 2
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100177469(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 10017811(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100179635(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100179816(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 2
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100183476(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 5
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 1001839(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100184498(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 0
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100185120(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 2
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100189204(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 2
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100194876(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 0
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100210723(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 1002188(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 1002192(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 0
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100220181(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100220620(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 0
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100221940(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100224600(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 2
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100226584(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 2
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100230291(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 3
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100233181(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100233625(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100234986(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 2
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100235825(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100243497(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 10025807(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100260002(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 0
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100265378(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100267532(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 2
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100278235(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 5
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 1002833(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 2
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100284227(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100285710(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100285835(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 2
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100287235(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100287905(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100295036(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 0
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100295199(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 0
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100300117(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100305932(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 2
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100308619(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100309538(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100312973(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100313446(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100314397(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 41
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100321743(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100324553(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 10032518(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100325697(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 2
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100336497(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 2
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100337505(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100338933(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 3
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100341693(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 3
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100342129(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 2
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100342369(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 5
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100342523(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 7
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100343126(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100344389(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 10034598(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 2
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100349773(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 3
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100353065(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100363127(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100373560(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100375224(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100378746(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100386071(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 3
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100386421(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 11
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100387846(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 10038789(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 100393397(String), 4(Integer)
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - <==      Total: 1
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==>  Preparing: select * from ratinglist natural join user where uid = ? and ratingValue >= ? 
+DEBUG main com.dao.RatingList.selectRatingListByUidAndRatingValue - ==> Parameters: 1003981(String), 4(Integer)

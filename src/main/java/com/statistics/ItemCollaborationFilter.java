@@ -22,6 +22,9 @@ import com.entity.MatrixC;
 import com.entity.RatingList;
 import com.entity.User;
 
+/**
+ * 用于计算基于物品的协同过滤推荐矩阵
+ */
 public class ItemCollaborationFilter {
 	
 	/**
@@ -132,19 +135,28 @@ public class ItemCollaborationFilter {
 			Integer value = (Integer)entry.getValue();  
 			// System.out.println("key=" + key + " value=" + value);
 			String[] eidList = key.split(",");
+			// 异常数据处理
+			if(eidList[0] == null || eidList[1] == null){
+                continue;
+            }
+            if(value == null){
+                value = 0;
+            }
 			// 查询数据库该数据是否已经存在
 			MatrixC c = this.matrixCDao.selectMatrixCByEidAAndEidB(eidList[0], eidList[1]);
 			if(c != null){ // 若存在则不插入
 				this.matrixCDao.updateMatrixCWithCountByEidAAndEidB(eidList[0], eidList[1], value);
-				System.out.println("update:[" + eidList[0] + ",[" + eidList[1] + "]:count=" + c.getCount() + "->" + value);
-				continue;
-			}
-			// 写入数据库
-			c = new MatrixC();
-			c.setCount(value);
-			this.matrixCDao.insertMatrixC(c);
-			System.out.println("insert:[" + eidList[0] + ",[" + eidList[1] + "]:count=" + c.getCount() + "->" + value);
-			//System.out.println(query); // debug
+				System.out.println("update:[" + eidList[0] + "],[" + eidList[1] + "]:count=" + c.getCounter() + "->" + value);
+//				continue;
+			}else{
+                // 写入数据库
+                c = new MatrixC();
+                c.setCounter(value);
+                this.matrixCDao.insertMatrixC(c);
+                System.out.println("insert:[" + eidList[0] + "],[" + eidList[1] + "]:count=" + c.getCounter() + "->" + value);
+                //System.out.println(query); // debug
+            }
+
 		}
 		
 	}
@@ -179,7 +191,7 @@ public class ItemCollaborationFilter {
 		System.out.println("["+this.df.format(new Date())+"]"+"开始余弦相似度矩阵W的计算,需要计算"+matrixCList.size()+"条");
 		for(int i = 0; i < matrixCList.size(); i++){
 			MatrixC c = matrixCList.get(i);
-			Double cos_similarity = this.computerMatrixW(c.getEida(), c.getEidb(), c.getCount());
+			Double cos_similarity = this.computerMatrixW(c.getEida(), c.getEidb(), c.getCounter());
 			this.matrixCDao.updateMatrixCWithCos_similarity(c.getEida(), c.getEidb(), cos_similarity);
 		}
 		System.out.println("["+this.df.format(new Date())+"]"+"完成余弦相似度矩阵W的计算,共计算"+matrixCList.size()+"条,写入数据库完毕");
@@ -206,24 +218,32 @@ public class ItemCollaborationFilter {
 			// 重定向标准输出到文件方便查看
 			ps = new PrintStream(new FileOutputStream("output-ItemCollaborationFilter"));
 			System.setOut(ps);
-			
+
 			ItemCollaborationFilter icf = new ItemCollaborationFilter();
-			
-			// 计算同现矩阵C
+
+            //计算同现矩阵C
 			try {
 				icf.computerAndWriteMtrixC();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
-			// 计算余弦相似度矩阵W
-//			icf.computerAndWriteMatrixW();
-			
+
+			 //计算余弦相似度矩阵W
+			icf.computerAndWriteMatrixW();
+
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+//        ItemCollaborationFilter icf = new ItemCollaborationFilter();
+//        icf.matrixC.put("15232623,16834057",111);
+//        try {
+//            icf.writeMatrixCToDB();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
 	    
 	}
 	

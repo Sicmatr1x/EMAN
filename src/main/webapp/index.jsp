@@ -19,7 +19,22 @@
 
 <script>
 	$(document).ready(function() {
-		// 开始写 jQuery 代码...
+        /*折线图插件*/
+        // var ctx = $("#statistics-Chart").getContext("2d");
+        var ctx = document.getElementById("statistics-Chart").getContext("2d");
+        // 获取数据
+        $.ajax({
+            url:"/EMAN/statistics/getVarianceRatingValueLineChartData.htm",
+            type:"get",
+            dataType:"json",
+            success:function(data){
+                console.log(data);
+                window.myLine = new Chart(ctx, data);
+            },
+            error:function(){
+                alert("ajax请求失败:"+"/EMAN/statistics/getVarianceRatingValueLineChartData.htm");
+            }
+        });
 
 	});
 </script>
@@ -30,6 +45,22 @@
 
 		<!-- 导航栏 -->
 		<jsp:include page="WEB-INF/jsp/head.jsp" />
+
+        <h3>图书分类统计</h3>
+        <hr />
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row" id="statistics-panel">
+                    <!-- 折线图 -->
+                    <!--<div id="canvas-holder" style="width:30%; height:0px">
+                        <canvas id="statistics-Chart"></canvas>
+                    </div>-->
+                    <div style="width:90%;">
+                        <canvas id="statistics-Chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 		<div class="container">
@@ -123,17 +154,7 @@
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<div class="row" id="favorite-panel">
-								<div class="col-md-3" id="book-example-div">
-									<div class="panel panel-default">
-										<div style="margin:0px auto">
-											<img width="100%"
-												attr="http://localhost:8080/EMANImgs/958945.jpg"
-												alt="error">
-											<a href="#" id="ename"></a>
-											<p id="author">登录后显示</p>
-										</div>
-									</div>
-								</div>
+								<p>登录后显示</p>
 							</div>
 						</div>
 					</div>
@@ -146,7 +167,17 @@
 						</div>
 						<div class="panel-body">
 							<div class="row" id="xiaoshou-panel">
-
+								<div class="col-md-3" id="book-example-div">
+									<div class="panel panel-default">
+										<div style="margin:0px auto">
+											<img width="100%"
+												 attr="#"
+												 onerror="javascript:this.src='http://localhost:8080/EMANImgs/error.jpg'">
+											<a href="#" id="ename"></a>
+											<p id="author"></p>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
