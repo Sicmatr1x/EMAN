@@ -1,5 +1,8 @@
 package com.util;
 
+/**
+ * 随机数生成工具类
+ */
 public class RandomNumFactory {
 	/** 
 	 * 随机指定范围内N个不重复的数 

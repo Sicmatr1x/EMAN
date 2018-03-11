@@ -17,7 +17,7 @@ import com.service.FavoriteService;
 import com.util.JSONConverter;
 
 /*
- * 用户相关接口
+ * 用户喜爱分类接口
  */
 @Controller
 @RequestMapping("/favorite")

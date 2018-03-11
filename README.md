@@ -18,8 +18,10 @@ user_spider_setting.properties:用于控制用户爬虫的行为
     <ol>
         <li>EBookController：与图书相关的接口</li>
         <li>RatingListController：与用户评论、评分相关的接口</li>
-        <li>StatisticsController：统计模块接口(待定)</li>
+        <li>StatisticsController：统计模块接口</li>
         <li>UserController：用户相关接口</li>
+        <li>FavoriteController：用户喜爱分类接口</li>
+        <li>ClassifyMainStatisticsController：分类统计相关接口</li>
     </ol>
 <li>com.dao</li>
     <ol>
@@ -27,11 +29,16 @@ user_spider_setting.properties:用于控制用户爬虫的行为
         <li>EBookDao：提供图书表的访问</li>
         <li>RatingListDao：提供评分评论表的访问</li>
         <li>UserDao：提供用户表的访问</li>
-        <li>ClassifyMainStatisticsDao：提供主分区统计表的访问</li>
+        <li>FavoriteDao：用户喜爱分类表的访问</li>
+        <li>ClassifyMainStatisticsDao：分类统计相关数据表的访问</li>
+        <li>MatrixCDao：提供同现矩阵C与余弦相似度矩阵W的访问</li>
         <li>EBookMapper.xml：提供图书表的访问的sql语句</li>
         <li>RatingListMapper.xml：提供评分评论表的访问的sql语句</li>
         <li>UserMapper.xml：提供用户表的访问的sql语句</li>
         <li>ClassifyMainStatisticsMapper.xml：提供主分区统计表的访问的sql语句</li>
+        <li>FavoriteMapper.xml：用户喜爱分类表的访问的sql语句</li>
+        <li>ClassifyMainStatisticsMapper.xml：分类统计相关数据表的访问的sql语句</li>
+        <li>MatrixCMapper.xml：提供同现矩阵C与余弦相似度矩阵W的访问的sql语句</li>
     </ol>
 <li>com.entity</li>
     <ol>
@@ -39,16 +46,20 @@ user_spider_setting.properties:用于控制用户爬虫的行为
         <li>RatingList：评论评分相 -> ratingList表</li>
         <li>ClassifyMainStatistics：主分区统计模块 -> classifyMainStatistics表</li>
         <li>User：用户 -> user表</li>
-        <li>EBookTuple：用于计算基于用户相似度时使用</li>
+        <li>Favorite：用户喜爱分类实体 -> favorite表</li>
+        <li>MatrixC：同现矩阵C与余弦相似度矩阵W -> matrixC表</li>
     </ol>
 <li>com.service</li>
     <ol>
         <li>EBookService：图书模块</li>
         <li>RatingListService：评论评分模块</li>
         <li>UserService：用户模块</li>
+        <li>FavoriteService：用户喜爱分类模块</li>
+        <li>ClassifyMainStatisticsService：分类统计模块</li>
     </ol>
 <li>com.statistics</li>
     <ol>
+        <li>&#8594; ItemCollaborationFilter：用于计算基于物品的协同过滤推荐矩阵</li>
         <li>&#8594; StatisticsClassifyMain：统计主分类的各个分数的评分人数、平均评分、评分的方差</li>
         <li>&#8594; StatisticsRatingValue：图书评分信息统计：统计RatingValue表的数据并将统计结果写入到EBook表对应到图书上</li>
     </ol>
@@ -56,6 +67,7 @@ user_spider_setting.properties:用于控制用户爬虫的行为
     <ol>
         <li>ChartDataJsonCreater：提供将数据转换为 Chart.js 插件专用的结构化 Json 数据格式</li>
         <li>JSONConverter：提供用于将 JavaBeans 对象直接转化为结构化 Json 数据</li>
+        <li>RandomNumFactory：随机数生成工具类</li>
     </ol>
 <li>spider(爬虫包)</li>
     <ol>
@@ -90,6 +102,7 @@ user_spider_setting.properties:用于控制用户爬虫的行为
 <li>index.jsp：主页</li>
 <li>head.jsp：导航栏</li>
 <li>error.jsp：错误信息页(待实现)</li>
+<li>success.jsp：成功操作信息跳转页</li>
 <li>/ebook(图书相关页面)</li>
     <ol>
         <li>list.jsp：主分类图书列表</li>
@@ -100,6 +113,7 @@ user_spider_setting.properties:用于控制用户爬虫的行为
     <ol>
         <li>login.jsp：用户登录</li>
         <li>register.jsp：用户注册</li>
+        <li>home.jsp：用户喜爱分类选择</li>
     </ol>
 </ol>
 
@@ -108,12 +122,14 @@ user_spider_setting.properties:用于控制用户爬虫的行为
 ## 数据库表
 
 <ol>
-<li>ebook：图书详情</li>
-<li>ratinglist：评分评论列表</li>
-<li>subclassify：图书副分类</li>
-<li>user：用户信息</li>
-<li>classifymainstatistics：主分类统计</li>
-<li>recommendhomepage：主页推荐书籍(待定)</li>
+    <li>ebook：图书详情</li>
+    <li>ratinglist：评分评论列表</li>
+    <li>subclassify：图书副分类</li>
+    <li>user：用户信息</li>
+    <li>classifymainstatistics：主分类统计</li>
+    <li>recommendhomepage：主页推荐书籍(待定)</li>
+    <li>favorite：用户喜爱分类表</li>
+    <li>matrixC：同现矩阵C与余弦相似度矩阵W表</li>
 </ol>
 
 ---

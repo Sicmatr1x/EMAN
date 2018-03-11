@@ -3,7 +3,6 @@ package com.service;
 import java.util.List;
 
 import com.entity.EBook;
-import com.entity.EBookTuple;
 import com.entity.MatrixC;
 
 public interface EBookService {

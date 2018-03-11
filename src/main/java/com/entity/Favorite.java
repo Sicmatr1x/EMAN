@@ -1,5 +1,8 @@
 package com.entity;
 
+/**
+ * 用户喜爱分类实体
+ */
 public class Favorite {
 	
 	private Integer fid;

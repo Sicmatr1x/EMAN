@@ -1,5 +1,8 @@
 package com.entity;
 
+/**
+ * 共现矩阵C与
+ */
 public class MatrixC implements Comparable<MatrixC>{
 	private Integer cid;
 	private String eida;

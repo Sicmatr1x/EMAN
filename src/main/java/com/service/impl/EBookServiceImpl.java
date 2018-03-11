@@ -1,11 +1,7 @@
 package com.service.impl;
 
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 import com.dao.MatrixCDao;
 import com.entity.MatrixC;
@@ -14,8 +10,6 @@ import org.springframework.stereotype.Service;
 
 import com.dao.EBookDao;
 import com.entity.EBook;
-import com.entity.EBookTuple;
-import com.entity.RatingList;
 import com.service.EBookService;
 import com.service.RatingListService;
 import com.statistics.StatisticsRatingValue;
