@@ -1,6 +1,6 @@
 package com.entity;
 
-public class MatrixC {
+public class MatrixC implements Comparable<MatrixC>{
 	private Integer cid;
 	private String eida;
 	private String eidb;
@@ -37,5 +37,10 @@ public class MatrixC {
 	public void setCos_similarity(Double cos_similarity) {
 		this.cos_similarity = cos_similarity;
 	}
-	
+
+
+	@Override
+	public int compareTo(MatrixC c) {
+		return this.counter - c.getCounter();
+	}
 }

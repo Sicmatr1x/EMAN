@@ -31,6 +31,8 @@ public interface MatrixCDao {
 	 * @return
 	 */
 	public MatrixC selectMatrixCByEidAAndEidB(String eida, String eidb);
+
+	public List<MatrixC> selectMatrixCByEidAOrEidB(String eida, String eidb);
 	
-	public void insertMatrixC(MatrixC c);
+	public void insertMatrixC(String eida, String eidb, Integer counter);
 }

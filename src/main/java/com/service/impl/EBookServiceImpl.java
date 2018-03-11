@@ -7,6 +7,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import com.dao.MatrixCDao;
+import com.entity.MatrixC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,6 +43,17 @@ public class EBookServiceImpl implements EBookService {
 	
 	public void setRatingListService(RatingListService ratingListService) {
 		this.ratingListService = ratingListService;
+	}
+
+	@Autowired
+	private MatrixCDao matrixCDao = null;
+
+	public MatrixCDao getMatrixCDao() {
+		return matrixCDao;
+	}
+
+	public void setMatrixCDao(MatrixCDao matrixCDao) {
+		this.matrixCDao = matrixCDao;
 	}
 
 	@Autowired
@@ -109,7 +122,7 @@ public class EBookServiceImpl implements EBookService {
 	
 	/**
 	 * 实时统计图书平均分与总评分人数
-	 * @param book
+	 * @param list
 	 * @return
 	 */
 	private List<EBook> statisticsRating(List<EBook> list){
@@ -174,48 +187,21 @@ public class EBookServiceImpl implements EBookService {
 	}
 
 	/**
-	 * 喜欢这本书的用户还喜欢
+	 * 与这本书相似的图书
 	 */
 	@Override
-	public List<EBookTuple> likeThisBooksUserAlsoLike(String eid) {
-		// 查询该图书的评分列表中评分较高的
-		List<RatingList>  ratingList = this.ratingListService.selectRatingListByEidAndRatingValue(eid, 4);
-		System.out.println("EBookServiceImpl->likeThisBooksUserAlsoLike(" + eid + ")->" + ratingList);
-		if(ratingList.size() < 1){ // 评分人数不足
-			return null;
-		}else{
-			Map<String, Integer> recommandBookMap = new HashMap<>();
-			// 遍历打分高的用户获取这些用户的评分列表
-			for(int i = 0; i < ratingList.size(); i++){
-				List<RatingList>  userRatingList = this.ratingListService.selectRatingListByUidAndRatingValue(ratingList.get(i).getUid(), 4);
-				for(RatingList r : userRatingList){
-					if(recommandBookMap.get(r.getEid()) != null){ // 若已存在推荐图书则增加计数器
-						Integer value = recommandBookMap.get(r.getEid());
-						recommandBookMap.put(r.getEid(), value+1);
-					}else{
-						recommandBookMap.put(r.getEid(), 1);
-					}
-				}
-			}
+	public List<MatrixC> similarityEBooks(String eid) {
+		// 获取与该图书同现的书籍列表
+		List<MatrixC> cList = this.matrixCDao.selectMatrixCByEidAOrEidB(eid, eid);
+		// 根据相似度进行排序
+		Collections.sort(cList);
 			
-			// 遍历统计结果
-			List<EBookTuple> recommandBookList = new ArrayList<>();
-			Iterator it = recommandBookMap.entrySet().iterator();  
-			while (it.hasNext()) {  
-				Map.Entry entry = (Map.Entry) it.next();  
-				String key = (String)entry.getKey();  
-				Integer value = (Integer)entry.getValue();  
-				System.out.println("key=" + key + " value=" + value);
-				recommandBookList.add(new EBookTuple(key, value));
-			}
-			// 进行排序
-			Collections.sort(recommandBookList);
-			// 选出前10的图书
-			List<EBookTuple> resultList = recommandBookList.subList(0, 9);
-			return resultList;
-			
-		}
-		
+
+		// 选出前10的图书
+		List<MatrixC> resultList = cList.subList(0, 9);
+		return resultList;
 	}
+		
+
 
 }

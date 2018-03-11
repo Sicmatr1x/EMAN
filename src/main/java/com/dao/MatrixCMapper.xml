@@ -26,6 +26,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			from matrixC
 			where eida = #{eida} and eidb = #{eidb}
 	</select>
+
+	<select id="selectMatrixCByEidAOrEidB" resultType="com.entity.MatrixC">
+		select *
+		from matrixC
+		where eida = #{eida} or eidb = #{eidb}
+	</select>
 	
 	<update id="updateMatrixCWithCounterByEidAAndEidB" parameterType="java.util.Map">
         UPDATE matrixC  

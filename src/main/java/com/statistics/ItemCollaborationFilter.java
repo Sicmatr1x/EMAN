@@ -152,7 +152,7 @@ public class ItemCollaborationFilter {
                 // 写入数据库
                 c = new MatrixC();
                 c.setCounter(value);
-                this.matrixCDao.insertMatrixC(c);
+                this.matrixCDao.insertMatrixC(eidList[0], eidList[1], value);
                 System.out.println("insert:[" + eidList[0] + "],[" + eidList[1] + "]:count=" + c.getCounter() + "->" + value);
                 //System.out.println(query); // debug
             }
@@ -230,7 +230,7 @@ public class ItemCollaborationFilter {
 			}
 
 			 //计算余弦相似度矩阵W
-			icf.computerAndWriteMatrixW();
+//			icf.computerAndWriteMatrixW();
 
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -238,7 +238,7 @@ public class ItemCollaborationFilter {
 		}
 
 //        ItemCollaborationFilter icf = new ItemCollaborationFilter();
-//        icf.matrixC.put("15232623,16834057",111);
+//        icf.matrixC.put("15232623,16834057",11);
 //        try {
 //            icf.writeMatrixCToDB();
 //        } catch (SQLException e) {

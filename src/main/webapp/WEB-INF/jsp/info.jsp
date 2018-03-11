@@ -176,7 +176,7 @@
             </div>
             <div class="col-xs-6">
                 <!-- 雷达图 -->
-                <div id="canvas-holder" style="width:30% height:0px">
+                <div id="canvas-holder-1" style="width:30% height:0px">
                     <canvas id="reviewCountAdvance-Chart"></canvas>
                 </div>
             </div>
@@ -236,15 +236,15 @@
     <!-- 推荐面板 -->
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">喜欢这边书的人也喜欢...</h3>
+            <h3 class="panel-title">与这本书相似的书...</h3>
         </div>
         <div class="panel-body">
-            <div class="row" id="xiaoshou-panel">
-                <div class="col-md-3" id="book-example-div">
+            <div class="row" id="similarityEBooks-panel">
+                <div class="col-md-3" style="width: 15%;" id="book-example-div">
                     <div class="panel panel-default">
                         <div style="margin:0px auto">
                             <img width="100%"
-                                 attr="http://localhost:8080/EMANImgs/958945.jpg"
+                                 attr="http://localhost:8080/EMANImgs/error.jpg"
                                  onerror="javascript:this.src='http://localhost:8080/EMANImgs/error.jpg'">
                             <a href="#" id="ename"></a>
                             <p id="author"></p>
@@ -602,22 +602,22 @@
 
     });
 
-    function getlist() {
-        $.ajax({
-            url : "/EMAN/ebook/likeThisBooksUserAlsoLike.htm",
+    /* 与这本书相似度高的图书 */
+       $.ajax({
+            url : "/EMAN/ebook/similarityEBooks.htm",
             type : "get",
             data : {eid:"${ebook.eid}"},
             dataType : "json",
             success : function(data) {
                 var listObject = data;
                 var clone = $("#book-example-div").clone();
-                $("#" + panelId).empty();
+                $("#similarityEBooks-panel").empty();
 
                 if (listObject.length < 1) { // 若无数据
-                    $("#" + panelId).append("<p>暂无推荐</p>");
+                    $("#similarityEBooks-panel").append("<p>暂无推荐</p>");
                 }
 
-                for (var i = 0; i < listObject.length && i < 4; i++) {
+                for (var i = 0; i < listObject.length && i < 6; i++) {
                     var cloneDiv = clone.clone();
                     cloneDiv.attr("id", "book" + (i + 1));
                     cloneDiv.find("img").attr("src", "http://localhost:8080/EMANImgs/" + listObject[i].imgAddress);
@@ -626,7 +626,7 @@
 
                     cloneDiv.find("#author").text(listObject[i].author);
 
-                    $("#" + panelId).append(cloneDiv);
+                    $("#similarityEBooks-panel").append(cloneDiv);
                 }
 
             },
@@ -634,7 +634,7 @@
                 alert("ajax请求失败");
             }
         });
-    }
+
 
     $(function() {
 
@@ -659,8 +659,8 @@
             window.location.href = "https://read.douban.com/ebook/" + "${ebook.eid}";
         });
 
-        /* 喜欢这本书的人也喜欢*/
-        getlist();
+
+
     });
 </script>
 </body>

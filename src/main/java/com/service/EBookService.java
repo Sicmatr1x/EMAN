@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.entity.EBook;
 import com.entity.EBookTuple;
+import com.entity.MatrixC;
 
 public interface EBookService {
 	
@@ -26,5 +27,5 @@ public interface EBookService {
 	 * @param eid 图书主键
 	 * @return
 	 */
-	public List<EBookTuple> likeThisBooksUserAlsoLike(String eid);
+	public List<MatrixC> similarityEBooks(String eid);
 }

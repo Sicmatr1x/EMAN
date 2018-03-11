@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.entity.MatrixC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -263,24 +264,31 @@ public class EBookController {
 	
 	/**
 	 * 喜欢这本书的用户还喜欢接口
-	 * http://localhost:8080/EMAN/ebook/likeThisBooksUserAlsoLike.htm?eid=958945
+	 * http://localhost:8080/EMAN/ebook/similarityEBooks.htm?eid=682817
 	 * @param eid
 	 * @param out
 	 * @param request
 	 */
-	@RequestMapping("/likeThisBooksUserAlsoLike.htm")
+	@RequestMapping("/similarityEBooks.htm")
 	@ResponseBody
-	public void likeThisBooksUserAlsoLike(@RequestParam(value="eid")String eid, PrintWriter out, HttpServletRequest request){
-//		List<EBookTuple> resultList = eBookService.likeThisBooksUserAlsoLike(eid);
-//		if(resultList != null){
-//			// 查询列表中所有图书的详细信息
-//			for(EBookTuple et : resultList){
-//				et.setEbook(eBookService.queryEBookByEid(et.getEid()));
-//			}
-//		}
+	public void similarityEBooks(@RequestParam(value="eid")String eid, PrintWriter out, HttpServletRequest request){
+		List<EBook> resultList = new ArrayList<>();
+		List<MatrixC> cList = eBookService.similarityEBooks(eid);
+		if(cList != null){
+			// 查询列表中所有图书的详细信息
+			for(MatrixC c : cList){
+				String sEid = null;
+				if(c.getEida().equals(eid)){
+					sEid = c.getEidb();
+				}else{
+					sEid = c.getEida();
+				}
+				resultList.add(eBookService.queryEBookByEid(sEid));
+			}
+		}
 		
 		String json = "{}";
-//		json = JSONConverter.convertToJSONString(resultList);
+		json = JSONConverter.convertToJSONString(resultList);
 		out.print(json);
 		out.flush();
 	}

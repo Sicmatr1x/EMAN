@@ -66,8 +66,21 @@ public class MatrixCDaoImpl implements MatrixCDao {
 	}
 
 	@Override
-	public void insertMatrixC(MatrixC c) {
-		this.sqlSession.insert("insertMatrixC", c);
+	public List<MatrixC> selectMatrixCByEidAOrEidB(String eida, String eidb) {
+		Map<String, Object> args = new HashMap<String, Object>();
+		args.put("eida", eida);
+		args.put("eidb", eidb);
+
+		return sqlSession.selectList("selectMatrixCByEidAOrEidB", args);
+	}
+
+	@Override
+	public void insertMatrixC(String eida, String eidb, Integer counter) {
+		Map<String, Object> args = new HashMap<>();
+		args.put("eida", eida);
+		args.put("eidb", eidb);
+		args.put("counter", counter);
+		this.sqlSession.insert("insertMatrixC", args);
 		this.sqlSession.commit();
 	}
 
