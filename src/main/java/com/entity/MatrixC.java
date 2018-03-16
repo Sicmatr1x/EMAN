@@ -44,6 +44,11 @@ public class MatrixC implements Comparable<MatrixC>{
 
 	@Override
 	public int compareTo(MatrixC c) {
-		return this.counter - c.getCounter();
+		if(this.getCos_similarity() == null || c.getCos_similarity() == null){
+			return this.counter - c.getCounter();
+		}else{
+			return (int)(this.getCos_similarity() - c.getCos_similarity());
+		}
+
 	}
 }

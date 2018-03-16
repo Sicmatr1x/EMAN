@@ -101,10 +101,11 @@ public class EBookServiceImpl implements EBookService {
 	}
 	
 	/**
-	 * 实时统计图书平均分与总评分人数
+	 * 实时统计图书平均分与总评分人数(已更新ebook表,该方法废弃)
 	 * @param book
 	 * @return
 	 */
+    @Deprecated
 	private EBook statisticsRating(EBook book){
 		double ratingValue = 2.0*statisticsRatingValue.statisticsRatingValue(book.getEid());
 		book.setRatingValue(ratingValue);
@@ -115,10 +116,11 @@ public class EBookServiceImpl implements EBookService {
 	}
 	
 	/**
-	 * 实时统计图书平均分与总评分人数
+	 * 实时统计图书平均分与总评分人数(已更新ebook表,该方法废弃)
 	 * @param list
 	 * @return
 	 */
+    @Deprecated
 	private List<EBook> statisticsRating(List<EBook> list){
 		for(EBook book : list){
 			double ratingValue = 2.0*statisticsRatingValue.statisticsRatingValue(book.getEid());
@@ -134,7 +136,7 @@ public class EBookServiceImpl implements EBookService {
 	public EBook queryEBookByEid(String eid) {
 		EBook book = this.eBookDao.queryEBookByEid(eid);
 		book = initEBookImgAddress(book);
-		book = statisticsRating(book);
+//		book = statisticsRating(book);
 		return book;
 	}
 	
@@ -175,6 +177,12 @@ public class EBookServiceImpl implements EBookService {
 	}
 
 	@Override
+	public List<EBook> queryEBookLimitByClassifyMainReviewCount(String classifyMain, Integer start, String orderCondition, String order) {
+		List<EBook> list = this.eBookDao.queryEBookLimitByClassifyMainReviewCount(classifyMain, start, orderCondition, order);
+		return this.initEBookImgAddress(list);
+	}
+
+	@Override
 	public int queryEBookByClassifyMainCountHasRatingValue(String classifyMain) {
 		int num = this.eBookDao.queryEBookByClassifyMainCountHasRatingValue(classifyMain);
 		return num;
@@ -187,13 +195,17 @@ public class EBookServiceImpl implements EBookService {
 	public List<MatrixC> similarityEBooks(String eid) {
 		// 获取与该图书同现的书籍列表
 		List<MatrixC> cList = this.matrixCDao.selectMatrixCByEidAOrEidB(eid, eid);
-		// 根据相似度进行排序
-		Collections.sort(cList);
-			
+		if(!cList.isEmpty()){
+            // 根据相似度进行排序
+            Collections.sort(cList);
 
-		// 选出前10的图书
-		List<MatrixC> resultList = cList.subList(0, 9);
-		return resultList;
+            // 选出前10的图书
+            List<MatrixC> resultList = cList.subList(0, cList.size()-1);
+            return resultList;
+        }else{
+		    return null;
+        }
+
 	}
 		
 

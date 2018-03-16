@@ -149,7 +149,7 @@ public class EBookController {
 			List<Favorite> favoriteList = this.favoriteService.selectFavoriteByUid(uid);
 			List<EBook> resultList = new ArrayList<>();
 			for(int i = 0; i < favoriteList.size(); i++){
-				List<EBook> list = eBookService.queryEBookLimitByClassifyMain(favoriteList.get(i).getClassifyMain(), 0, "reviewCount", "desc");
+				List<EBook> list = eBookService.queryEBookLimitByClassifyMain(favoriteList.get(i).getClassifyMain(), 0, "ratingValue", "desc");
 				resultList.add(list.get(RandomNumFactory.randomNum(0, list.size())));
 			}
 			String json;
@@ -263,7 +263,7 @@ public class EBookController {
 	}
 	
 	/**
-	 * 喜欢这本书的用户还喜欢接口
+	 * 相似图书推荐接口
 	 * http://localhost:8080/EMAN/ebook/similarityEBooks.htm?eid=682817
 	 * @param eid
 	 * @param out
@@ -288,6 +288,39 @@ public class EBookController {
 		}
 		
 		String json = "{}";
+		json = JSONConverter.convertToJSONString(resultList);
+		out.print(json);
+		out.flush();
+	}
+
+	/**
+	 * 冷门高分图书推荐接口
+	 * http://localhost:8080/EMAN/ebook/coldEBooks.htm?classifyMain=小说
+	 * @param out
+	 * @param request
+	 */
+	@RequestMapping("/coldEBooks.htm")
+	@ResponseBody
+	public void coldEBooks(@RequestParam(value="start", required=false)Integer start,
+						   @RequestParam(value="classifyMain", required=false)String classifyMain,
+						   @RequestParam(value="orderCondition", required=false)String orderCondition,
+						   @RequestParam(value="order", required=false)String order,
+						   PrintWriter out, HttpServletRequest request){
+        String[] areaNameList = { "小说", "文学", "人文社科", "经济管理", "科技科普",
+                "计算机与互联网", "成功励志", "生活", "少儿", "艺术设计", "漫画绘本", "教育考试", "杂志" };
+	    if(classifyMain == null){
+            classifyMain = areaNameList[RandomNumFactory.randomNum(0, areaNameList.length)];
+        }
+		List<EBook> list =  eBookService.queryEBookLimitByClassifyMainReviewCount(classifyMain, start, orderCondition, order);
+		// 获取随机图书
+		int[] randomNum = RandomNumFactory.randomCommon(0, 19, 4);
+		List<EBook> resultList = new ArrayList<>();
+		for(int i = 0; i < randomNum.length; i++){
+			resultList.add(list.get(randomNum[i]));
+		}
+
+
+		String json = null;
 		json = JSONConverter.convertToJSONString(resultList);
 		out.print(json);
 		out.flush();

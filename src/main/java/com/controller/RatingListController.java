@@ -255,12 +255,12 @@ public class RatingListController {
 			@RequestParam(value="eid")String eid,
 			PrintWriter out,
 			HttpServletRequest request){
-		try {
-			Thread.sleep(100);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+//		try {
+//			Thread.sleep(100);
+//		} catch (InterruptedException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		}
 		List<RatingList> list = ratingListService.selectRatingListByEid(eid);
 		// 查询并计算该图书所属主要分类的各个评分的平均数
 		EBook book = eBookService.queryEBookByEid(eid);

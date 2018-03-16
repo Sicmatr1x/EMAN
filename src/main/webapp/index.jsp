@@ -19,20 +19,37 @@
 
 <script>
 	$(document).ready(function() {
-        /*折线图插件*/
-        // var ctx = $("#statistics-Chart").getContext("2d");
-        var ctx = document.getElementById("statistics-Chart").getContext("2d");
-        // 获取数据
+
+	    // 冷门图书推荐
         $.ajax({
-            url:"/EMAN/statistics/getVarianceRatingValueLineChartData.htm",
-            type:"get",
-            dataType:"json",
-            success:function(data){
-                console.log(data);
-                window.myLine = new Chart(ctx, data);
+            url : "/EMAN/ebook/coldEBooks.htm",
+            type : "get",
+            // data : "classifyMain=小说",
+            dataType : "json",
+            success : function(data) {
+                var listObject = data;
+                var clone = example;
+                $("#coldEBook-panel").empty();
+
+                if (listObject.length < 1) { // 若无数据
+                    $("#coldEBook-panel").append("<p>暂无推荐</p>");
+                }
+
+                for (var i = 0; i < listObject.length && i < 4; i++) {
+                    var cloneDiv = clone.clone();
+                    cloneDiv.attr("id", "book" + (i + 1));
+                    cloneDiv.find("img").attr("src", "http://localhost:8080/EMANImgs/" + listObject[i].imgAddress);
+                    cloneDiv.find("#ename").attr("href", "http://localhost:8080/EMAN/ebook/info.htm?eid=" + listObject[i].eid);
+                    cloneDiv.find("#ename").text(listObject[i].ename);
+
+                    cloneDiv.find("#author").text(listObject[i].author);
+
+                    $("#coldEBook-panel").append(cloneDiv);
+                }
+
             },
-            error:function(){
-                alert("ajax请求失败:"+"/EMAN/statistics/getVarianceRatingValueLineChartData.htm");
+            error : function() {
+                alert("冷门图书推荐ajax请求失败");
             }
         });
 
@@ -45,22 +62,6 @@
 
 		<!-- 导航栏 -->
 		<jsp:include page="WEB-INF/jsp/head.jsp" />
-
-        <h3>图书分类统计</h3>
-        <hr />
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="row" id="statistics-panel">
-                    <!-- 折线图 -->
-                    <!--<div id="canvas-holder" style="width:30%; height:0px">
-                        <canvas id="statistics-Chart"></canvas>
-                    </div>-->
-                    <div style="width:90%;">
-                        <canvas id="statistics-Chart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
 		<div class="container">
@@ -148,6 +149,16 @@
 						</div>
 					</div>
 
+					<h3>每日冷门佳作推荐</h3>
+					<hr />
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="row" id="coldEBook-panel">
+								<p>暂无数据</p>
+							</div>
+						</div>
+					</div>
+
 					
 					<h3>来自你感兴趣的分区...</h3>
 					<hr />
@@ -171,7 +182,7 @@
 									<div class="panel panel-default">
 										<div style="margin:0px auto">
 											<img width="100%"
-												 attr="#"
+												 src="#"
 												 onerror="javascript:this.src='http://localhost:8080/EMANImgs/error.jpg'">
 											<a href="#" id="ename"></a>
 											<p id="author"></p>
@@ -288,7 +299,7 @@
 			getlist("classifyMain=人文社科&start=0&orderCondition=ratingValue&order=desc", "renwensheke-panel");
 			getlist("classifyMain=经济管理&start=0&orderCondition=ratingValue&order=desc", "jinjiguanli-panel");
 			getlist("classifyMain=科技科普&start=0&orderCondition=ratingValue&order=desc", "kejikepu-panel");
-			if(uid !== 'null'){ // 若用户未登录
+			if(uid !== 'null'){ // 若用户已登录
                 getlist("uid="+uid, "favorite-panel");
 			}
 

@@ -3,7 +3,7 @@ package com.statistics;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
-import java.sql.SQLException;
+import java.sql.*;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -11,6 +11,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import com.dao.MatrixCDao;
 import com.dao.RatingListDao;
@@ -49,6 +51,25 @@ public class ItemCollaborationFilter {
 	public MatrixCDao getMatrixCDao() {
 		return matrixCDao;
 	}
+
+    /**
+     * mysql数据库连接
+     */
+    public static Connection conn = null;
+    public static void initConnection() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{
+        Class.forName("org.gjt.mm.mysql.Driver").newInstance();
+        String url ="jdbc:mysql://localhost/ebookdb?user=root&password=root&useUnicode=true&characterEncoding=utf-8";
+        //myDB为数据库名
+        conn= DriverManager.getConnection(url);
+        if(conn == null){
+            System.out.println("创建数据库连接失败");
+        }else{
+            System.out.println("创建数据库连接成功" + conn);
+        }
+    }
+    public static void closeConnection() throws SQLException{
+        conn.close();
+    }
 	
 	
 
@@ -166,21 +187,35 @@ public class ItemCollaborationFilter {
 	 * 计算方法：
 	 * 使用矩阵C的每个value作为分子，key中的两个图书的喜欢人数的积开根号作为分母
 	 */
-	private double computerMatrixW(String eida, String eidb, int value){
+	private Double computerMatrixW(String eida, String eidb, int value){
 		DecimalFormat df = new DecimalFormat("#.##");
 		// 查询每个图书有多少人喜欢
-		int likeANum = this.ratingListDao.countRatingListByEidAndUserLike(eida);
-		int likeBNum = this.ratingListDao.countRatingListByEidAndUserLike(eidb);
-		if(likeANum == 0)
-			likeANum = 1;
-		if(likeBNum == 0)
-			likeBNum = 1;
-		// 开始计算
-		Double answer = value*1.0/Math.sqrt(likeANum*likeBNum);
-		// 精确到小数点后两位
-		Double result = Double.parseDouble(df.format(answer));
-		// 返回计算结果
-		return result;
+        try {
+            Statement statemenet = conn.createStatement();
+            ResultSet rs = statemenet.executeQuery("select count(rid) from ratinglist where eid = '"+ eida +"' and ratingValue >= 4;");
+            rs.next();
+            int likeANum = rs.getInt("count(rid)");
+            rs = statemenet.executeQuery("select count(rid) from ratinglist where eid = '"+ eidb +"' and ratingValue >= 4;");
+            rs.next();
+            int likeBNum = rs.getInt("count(rid)");
+//		int likeANum = this.ratingListDao.countRatingListByEidAndUserLike(eida);
+//		int likeBNum = this.ratingListDao.countRatingListByEidAndUserLike(eidb);
+            if(likeANum == 0)
+                likeANum = 1;
+            if(likeBNum == 0)
+                likeBNum = 1;
+            // 开始计算
+            Double answer = value*1.0/Math.sqrt(likeANum*likeBNum);
+            // 精确到小数点后两位
+            Double result = Double.parseDouble(df.format(answer));
+            // 返回计算结果
+            return result;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+		return null;
 	}
 	
 	/**
@@ -191,8 +226,11 @@ public class ItemCollaborationFilter {
 		System.out.println("["+this.df.format(new Date())+"]"+"开始余弦相似度矩阵W的计算,需要计算"+matrixCList.size()+"条");
 		for(int i = 0; i < matrixCList.size(); i++){
 			MatrixC c = matrixCList.get(i);
-			Double cos_similarity = this.computerMatrixW(c.getEida(), c.getEidb(), c.getCounter());
-			this.matrixCDao.updateMatrixCWithCos_similarity(c.getEida(), c.getEidb(), cos_similarity);
+			if(c.getCos_similarity() == null){
+				Double cos_similarity = this.computerMatrixW(c.getEida(), c.getEidb(), c.getCounter());
+				this.matrixCDao.updateMatrixCWithCos_similarity(c.getEida(), c.getEidb(), cos_similarity);
+			}
+
 		}
 		System.out.println("["+this.df.format(new Date())+"]"+"完成余弦相似度矩阵W的计算,共计算"+matrixCList.size()+"条,写入数据库完毕");
 	}
@@ -210,7 +248,7 @@ public class ItemCollaborationFilter {
 		this.writeMatrixCToDB();
 		System.out.println("["+this.df.format(new Date())+"]"+"同现矩阵C写入数据库完毕");
 	}
-	
+
 	
 	public static void main(String[] args){
 		PrintStream ps;
@@ -220,22 +258,31 @@ public class ItemCollaborationFilter {
 			System.setOut(ps);
 
 			ItemCollaborationFilter icf = new ItemCollaborationFilter();
+            ItemCollaborationFilter.initConnection();
 
             //计算同现矩阵C
-			try {
-				icf.computerAndWriteMtrixC();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+//			try {
+//				icf.computerAndWriteMtrixC();
+//			} catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 
 			 //计算余弦相似度矩阵W
-//			icf.computerAndWriteMatrixW();
+			icf.computerAndWriteMatrixW();
 
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		} catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
 //        ItemCollaborationFilter icf = new ItemCollaborationFilter();
 //        icf.matrixC.put("15232623,16834057",11);
@@ -246,8 +293,8 @@ public class ItemCollaborationFilter {
 //        }
 	    
 	}
-	
-	
-	
-	
+
+
+
+
 }

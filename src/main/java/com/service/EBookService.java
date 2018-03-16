@@ -20,9 +20,19 @@ public interface EBookService {
 	public List<EBook> queryEBookByKeyword(String Keyword, Integer start, String orderCondition, String order);
 	
 	public int queryEBookByKeywordCount(String Keyword,  String orderCondition, String order);
+
+	/**
+	 * 根据分类查询冷门高分图书(10 >= reviewCount and ratingValue >= 4)
+	 * @param classifyMain
+	 * @param start
+	 * @param orderCondition
+	 * @param order
+	 * @return
+	 */
+	public List<EBook> queryEBookLimitByClassifyMainReviewCount(String classifyMain, Integer start, String orderCondition, String order);
 	
 	/**
-	 * 喜欢这本书的用户还喜欢
+	 * 相似图书推荐
 	 * @param eid 图书主键
 	 * @return
 	 */

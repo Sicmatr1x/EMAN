@@ -52,11 +52,11 @@ var state = '<%=session.getAttribute("state")%>';
 
 						<div class="col-md-5">
 							<div style="padding: 100px 100px 10px;">
-								<span><h3>选择你感兴趣到分类</h3></span>
+								<span><h3>选择你感兴趣的分类</h3></span>
 								<form class="bs-example bs-example-form" role="form"
 									method="post" action="http://localhost:8080/EMAN/favorite/add.htm">
 
-									<label for="name">图书主分类</label>
+									<label>图书主分类</label>
 									<input type="text" style="display:none" name="uid" value="<%=session.getAttribute("uid")%>"></input>
 									<div class="checkbox">
 										<label><input type="checkbox" name="classifyMain" value="0">小说</label>

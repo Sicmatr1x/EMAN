@@ -40,7 +40,7 @@ public class EBookDaoImpl implements EBookDao{
 	@Override
 	public List<EBook> queryEBookLimitByClassifyMain(String classifyMain, Integer start, String orderCondition,
 			String order) {
-		if(start < 0 || start == null)
+		if(start == null || start < 0)
 			start = 0;
 		if(orderCondition == null || orderCondition.equals(""))
 			orderCondition = "ename";
@@ -66,7 +66,7 @@ public class EBookDaoImpl implements EBookDao{
 
 	@Override
 	public List<EBook> queryEBookByCondition(EBook condition, Integer start, String orderCondition, String order) {
-		if(start < 0 || start == null)
+		if(start == null || start < 0)
 			start = 0;
 		if(orderCondition == null || orderCondition.equals(""))
 			orderCondition = "ratingValue";
@@ -94,7 +94,7 @@ public class EBookDaoImpl implements EBookDao{
 	@Override
 	public List<EBook> queryEBookByKeyword(String keyword, Integer start,
 			String orderCondition, String order) {
-		if(start < 0 || start == null)
+		if(start == null || start < 0)
 			start = 0;
 		if(orderCondition == null || orderCondition.equals(""))
 			orderCondition = "ename";
@@ -143,6 +143,26 @@ public class EBookDaoImpl implements EBookDao{
 		int result = sqlSession.update("updateEBookRatingValue", args);
 		this.sqlSession.commit();
 		return result;
+	}
+
+	@Override
+	public List<EBook> queryEBookLimitByClassifyMainReviewCount(String classifyMain, Integer start, String orderCondition, String order) {
+		if(start == null || start < 0)
+			start = 0;
+		if(orderCondition == null || orderCondition.equals(""))
+			orderCondition = "ratingValue";
+		if(order == null || order.equals(""))
+			order = "desc";
+
+		Integer size = 20;
+		Map<String, Object> args = new HashMap<String, Object>();
+		args.put("classifyMain", classifyMain);
+		args.put("orderCondition", orderCondition);
+		args.put("order", order);
+		args.put("start", start);
+		args.put("size", size);
+		List<EBook> list = sqlSession.selectList("selectEBookLimitByClassifyMainReviewCount",args);
+		return list;
 	}
 
 	@Override

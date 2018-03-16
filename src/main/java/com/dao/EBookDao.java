@@ -29,8 +29,6 @@ public interface EBookDao {
 	/**
 	 * 显示根据图书分类查询图书的结果条数
 	 * @param classifyMain 图书分类
-	 * @param orderCondition 用于排序属性
-	 * @param order 排序顺序
 	 * @return
 	 */
 	public int queryEBookByClassifyMainCount(String classifyMain);
@@ -38,8 +36,6 @@ public interface EBookDao {
 	/**
 	 * 显示根据图书分类查询图书的结果条数(图书有评分ratingValue)
 	 * @param classifyMain 图书分类
-	 * @param orderCondition 用于排序属性
-	 * @param order 排序顺序
 	 * @return
 	 */
 	public int queryEBookByClassifyMainCountHasRatingValue(String classifyMain);
@@ -79,4 +75,14 @@ public interface EBookDao {
 	 * @param reviewCount
 	 */
 	public int updateRatingValueAndReviewCount(String eid, double ratingValue, int reviewCount);
+
+	/**
+	 * 根据分类查询冷门高分图书(10 >= reviewCount and ratingValue >= 4)
+	 * @param classifyMain
+	 * @param start
+	 * @param orderCondition
+	 * @param order
+	 * @return
+	 */
+	public List<EBook> queryEBookLimitByClassifyMainReviewCount(String classifyMain, Integer start, String orderCondition, String order);
 }
