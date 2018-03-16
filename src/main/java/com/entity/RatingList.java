@@ -84,5 +84,11 @@ public class RatingList {
 		this.rdescribe = rdescribe;
 	}
 	
-	
+	@Override
+	public  boolean equals(Object obj){
+		if(this.eid.equals(((RatingList)obj).eid))
+			return true;
+		else
+			return false;
+	}
 }

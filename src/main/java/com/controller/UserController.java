@@ -1,18 +1,26 @@
 package com.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.entity.EBook;
+import com.entity.MatrixC;
+import com.util.JSONConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.entity.User;
 import com.service.UserService;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /*
  * 用户相关接口
@@ -168,6 +176,24 @@ public class UserController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	/**
+	 * 根据物品的相似度和用户的历史行为给用户生成推荐列表接口
+	 * http://localhost:8080/EMAN/user/userRecommendedList.htm?uid=131952373
+	 * @param uid
+	 * @param out
+	 * @param request
+	 */
+	@RequestMapping("/userRecommendedList.htm")
+	@ResponseBody
+	public void userRecommendedList(@RequestParam(value="uid")String uid, PrintWriter out, HttpServletRequest request){
+		List<EBook> resultList = this.userService.userRecommendedList(uid);
+
+		String json = "{}";
+		json = JSONConverter.convertToJSONString(resultList);
+		out.print(json);
+		out.flush();
 	}
 	
 	/**

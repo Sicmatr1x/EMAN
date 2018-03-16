@@ -200,7 +200,13 @@ public class EBookServiceImpl implements EBookService {
             Collections.sort(cList);
 
             // 选出前10的图书
-            List<MatrixC> resultList = cList.subList(0, cList.size()-1);
+			List<MatrixC> resultList = null;
+			if(cList.size() > 10){
+				resultList = cList.subList(0, 9);
+			}else{
+				resultList = cList.subList(0, cList.size()-1);
+			}
+
             return resultList;
         }else{
 		    return null;

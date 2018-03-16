@@ -170,13 +170,13 @@
         <div class="panel-body">
             <div class="col-xs-6">
                 <!-- 饼图 -->
-                <div id="canvas-holder" style="width:30% height:0px">
-                    <canvas id="reviewCount-Chart"></canvas>
+                <div id="canvas-holder" style="width:100%">
+                    <canvas id="chart-area" />
                 </div>
             </div>
             <div class="col-xs-6">
                 <!-- 雷达图 -->
-                <div id="canvas-holder-1" style="width:30% height:0px">
+                <div id="canvas-holder-1" style="width:100%">
                     <canvas id="reviewCountAdvance-Chart"></canvas>
                 </div>
             </div>
@@ -236,7 +236,7 @@
     <!-- 推荐面板 -->
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">与这本书相似的书...</h3>
+            <h3 class="panel-title">喜欢这本书的人还喜欢...</h3>
         </div>
         <div class="panel-body">
             <div class="row" id="similarityEBooks-panel">
@@ -378,6 +378,49 @@
 
     }
 
+    function getPie() {
+        /*饼图插件*/
+        var ctx = document.getElementById("chart-area").getContext("2d");
+        // 获取数据
+        $.ajax({
+            url:"/EMAN/ratinglist/getEBookReviewCountPieChartData.htm",
+            type:"get",
+            data:"eid=${ebook.eid}",
+            dataType:"json",
+            success:function(data){
+                window.myPie = new Chart(ctx, data);
+                console.log(data);
+            },
+            error:function(){
+                alert("ajax请求失败");
+            }
+        });
+    }
+
+    function getRader(){
+        /*雷达图插件*/
+        var ctx1 = document.getElementById("reviewCountAdvance-Chart").getContext("2d");
+        // 获取数据
+        $.ajax({
+            url:"/EMAN/ratinglist/getEBookReviewCountRadarChartData.htm",
+            type:"get",
+            data:"eid=${ebook.eid}",
+            dataType:"json",
+            success:function(data){
+                //data.datasets[0].backgroundColor="rgb(255, 99, 132).alpha(0.2).rgbString()";
+                //data.datasets[0].borderColor=window.chartColors.red;
+                //data.datasets[0].pointBackgroundColor=window.chartColors.red;
+                window.myRadar = new Chart(ctx1, data);
+                console.log(data);
+            },
+            error:function(jqXHR, textStatus, errorThrown){
+                console.log("textStatus:"+textStatus+",errorThrown="+errorThrown);
+                // alert("ajax请求失败");
+                //location.reload();// 不知道为什么第一次请求雷达图会报错
+            }
+        });
+    }
+
     $(document).on('ready', function () {
 
         /* 图书评分星星插件 */
@@ -392,42 +435,10 @@
         });
 
 
+        setTimeout(getPie, 10);
+        setTimeout(getRader, 200);
 
-        /*饼图插件*/
-        var ctx = $("#reviewCount-Chart").get(0).getContext("2d");
-        // 获取数据
-        $.ajax({
-            url:"/EMAN/ratinglist/getEBookReviewCountPieChartData.htm",
-            type:"get",
-            data:"eid=${ebook.eid}",
-            dataType:"json",
-            success:function(data){
-                window.myPie = new Chart(ctx, data);
-            },
-            error:function(){
-                alert("ajax请求失败");
-            }
-        });
 
-        /*雷达图插件*/
-        var ctx1 = $("#reviewCountAdvance-Chart").get(0).getContext("2d");
-        // 获取数据
-        $.ajax({
-            url:"/EMAN/ratinglist/getEBookReviewCountRadarChartData.htm",
-            type:"get",
-            data:"eid=${ebook.eid}",
-            dataType:"json",
-            success:function(data){
-                //data.datasets[0].backgroundColor="rgb(255, 99, 132).alpha(0.2).rgbString()";
-                //data.datasets[0].borderColor=window.chartColors.red;
-                //data.datasets[0].pointBackgroundColor=window.chartColors.red;
-                window.myRadar = new Chart(ctx1, data);
-                console.log(data);
-            },
-            error:function(){
-                alert("ajax请求失败");
-            }
-        });
 
 
         /*判断用户登录则可评论*/

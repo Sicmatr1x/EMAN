@@ -47,7 +47,13 @@ public class MatrixC implements Comparable<MatrixC>{
 		if(this.getCos_similarity() == null || c.getCos_similarity() == null){
 			return this.counter - c.getCounter();
 		}else{
-			return (int)(this.getCos_similarity() - c.getCos_similarity());
+			double value = c.getCos_similarity() - this.getCos_similarity();
+			if(value > 0)
+				return 1;
+			else if(value < 0)
+				return -1;
+			else
+				return 0;
 		}
 
 	}

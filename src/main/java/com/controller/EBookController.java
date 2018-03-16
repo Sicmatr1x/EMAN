@@ -283,6 +283,7 @@ public class EBookController {
 				}else{
 					sEid = c.getEida();
 				}
+				System.out.println("ebook/similarityEBooks.htm?eid="+eid+",queryEBookByEid("+sEid+")");
 				resultList.add(eBookService.queryEBookByEid(sEid));
 			}
 		}
@@ -325,4 +326,5 @@ public class EBookController {
 		out.print(json);
 		out.flush();
 	}
+
 }

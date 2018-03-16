@@ -18,6 +18,7 @@
     var randomScalingFactor = function() {
         return Math.round(Math.random() * 100);
     };
+    var data = {"type":"pie","data":{"datasets":[{"data":[4.0,10.0,42.0,59.0,72.0],"backgroundColor":["rgba(255, 99, 132, 0.7)","rgba(255, 159, 64, 0.7)","rgba(255, 205, 86, 0.7)","rgba(75, 192, 192, 0.7)","rgba(54, 162, 235, 0.7)"]}],"labels":["很差","较差","还行","推荐","力荐"]},"options":{"legend":{"position":"left"},"title":{"display":true,"text":"各评分人数占比饼图"},"responsive":true}};
 
     var config = {
         type: 'pie',
@@ -54,7 +55,7 @@
 
     window.onload = function() {
         var ctx = document.getElementById("chart-area").getContext("2d");
-        window.myPie = new Chart(ctx, config);
+        window.myPie = new Chart(ctx, data);
     };
 
     document.getElementById('randomizeData').addEventListener('click', function() {

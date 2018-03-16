@@ -62,6 +62,8 @@ public class RatingListController {
 		this.classifyMainStatisticsDao = classifyMainStatisticsDao;
 	}
 
+	private List<RatingList> ratingListListByEid = null;
+
 
 	/**
 	 * 获取评论接口
@@ -192,10 +194,11 @@ public class RatingListController {
 			@RequestParam(value="eid")String eid,
 			PrintWriter out,
 			HttpServletRequest request){
-		List<RatingList> list = ratingListService.selectRatingListByEid(eid);
+
+		this.ratingListListByEid = ratingListService.selectRatingListByEid(eid);
 		
 		double[] data = {0,0,0,0,0};
-		for(RatingList r : list){
+		for(RatingList r : this.ratingListListByEid){
 			double value = r.getRatingValue();
 			if(value > 4.0){
 				data[4]++;
@@ -255,13 +258,18 @@ public class RatingListController {
 			@RequestParam(value="eid")String eid,
 			PrintWriter out,
 			HttpServletRequest request){
+		try {
+			Thread.sleep(100);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+//		List<RatingList> list = null;
 //		try {
-//			Thread.sleep(100);
-//		} catch (InterruptedException e1) {
-//			// TODO Auto-generated catch block
-//			e1.printStackTrace();
+//			list = ratingListService.selectRatingListByEid(eid);
+//		} catch (java.lang.ClassCastException ex){
+//			list = ratingListService.selectRatingListByEid(eid);
 //		}
-		List<RatingList> list = ratingListService.selectRatingListByEid(eid);
 		// 查询并计算该图书所属主要分类的各个评分的平均数
 		EBook book = eBookService.queryEBookByEid(eid);
 		int sum = eBookService.queryEBookByClassifyMainCountHasRatingValue(book.getClassifyMain());
@@ -275,7 +283,7 @@ public class RatingListController {
 		
 //		double[][] data = {{20,19,158,736,2525},{2,2,2,2,2}};
 		double[][] data = {{0,0,0,0,0},{avgReviewCount1,avgReviewCount2,avgReviewCount3,avgReviewCount4,avgReviewCount5}};
-		for(RatingList r : list){
+		for(RatingList r : this.ratingListListByEid){
 			double value = r.getRatingValue();
 			if(value > 4.0){
 				data[0][4]++;
