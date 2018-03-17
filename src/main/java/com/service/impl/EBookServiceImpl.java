@@ -66,7 +66,7 @@ public class EBookServiceImpl implements EBookService {
 	 * @param list
 	 * @return
 	 */
-	private List<EBook> initEBookImgAddress(List<EBook> list){
+	public static List<EBook> initEBookImgAddress(List<EBook> list){
 		for(EBook book : list){
 			if(book.getImgAddress()!=null){
 				int beg = book.getImgAddress().indexOf("public/");
@@ -86,7 +86,7 @@ public class EBookServiceImpl implements EBookService {
 	 * @param book
 	 * @return
 	 */
-	private EBook initEBookImgAddress(EBook book){
+	public static EBook initEBookImgAddress(EBook book){
 		if(book.getImgAddress()!=null){
 			int beg = book.getImgAddress().indexOf("public/");
 			int end = book.getImgAddress().indexOf("?v=");

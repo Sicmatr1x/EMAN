@@ -18,6 +18,46 @@
             type="text/javascript"></script>
 
 <script>
+    /**
+	 * 根据ajax请求获取到底json将数据放入面板中
+     * @param data json数据
+     * @param panel_id 面板id
+	 * @param num 最多显示多少本
+     */
+	function putDataToPanel(data, panel_id, num){
+        var listObject = data;
+        var clone = example;
+        $("#" + panel_id).empty();
+
+        if (listObject.length < 1) { // 若无数据
+            $("#" + panel_id).append("<p>暂无推荐</p>");
+        }
+
+        if(typeof num == 'undefined')
+            num = 4;
+
+        for (var i = 0; i < listObject.length && i < num; i++) {
+            var cloneDiv = clone.clone();
+            cloneDiv.attr("id", "book" + (i + 1));
+            cloneDiv.find("img").attr("src", "http://localhost:8080/EMANImgs/" + listObject[i].imgAddress);
+            // 格式化图书名称
+            var ename = listObject[i].ename;
+            if(ename.length > 9){
+                ename = ename.substr(0,8)+"..";
+			}
+            cloneDiv.find("#ename").attr("href", "http://localhost:8080/EMAN/ebook/info.htm?eid=" + listObject[i].eid);
+            cloneDiv.find("#ename").text(ename);
+            // 格式化图书名称
+            var author = listObject[i].author;
+            if(author.length > 9){
+                author = author.substr(0,8)+"..";
+            }
+            cloneDiv.find("#author").text(author);
+
+            $("#" + panel_id).append(cloneDiv);
+        }
+	}
+
 	$(document).ready(function() {
 
 	    // 冷门图书推荐
@@ -27,31 +67,31 @@
             // data : "classifyMain=小说",
             dataType : "json",
             success : function(data) {
-                var listObject = data;
-                var clone = example;
-                $("#coldEBook-panel").empty();
-
-                if (listObject.length < 1) { // 若无数据
-                    $("#coldEBook-panel").append("<p>暂无推荐</p>");
-                }
-
-                for (var i = 0; i < listObject.length && i < 4; i++) {
-                    var cloneDiv = clone.clone();
-                    cloneDiv.attr("id", "book" + (i + 1));
-                    cloneDiv.find("img").attr("src", "http://localhost:8080/EMANImgs/" + listObject[i].imgAddress);
-                    cloneDiv.find("#ename").attr("href", "http://localhost:8080/EMAN/ebook/info.htm?eid=" + listObject[i].eid);
-                    cloneDiv.find("#ename").text(listObject[i].ename);
-
-                    cloneDiv.find("#author").text(listObject[i].author);
-
-                    $("#coldEBook-panel").append(cloneDiv);
-                }
+                putDataToPanel(data, "coldEBook-panel");
 
             },
             error : function() {
                 alert("冷门图书推荐ajax请求失败");
             }
         });
+
+        // 猜你喜欢
+        if(uid !== 'null'){ // 若用户已登录
+            $.ajax({
+                url : "/EMAN/user/userRecommendedList.htm",
+                type : "get",
+                data : "uid="+uid,
+                dataType : "json",
+                success : function(data) {
+                    putDataToPanel(data, "userRecommended-panel", 8);
+
+                },
+                error : function() {
+                    alert("猜你喜欢ajax请求失败");
+                }
+            });
+        }
+
 
 	});
 </script>
@@ -170,6 +210,16 @@
 						</div>
 					</div>
 
+					<h3>猜你喜欢</h3>
+					<hr />
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="row" id="userRecommended-panel">
+								<p>登录后显示</p>
+							</div>
+						</div>
+					</div>
+
 					<h3>分区推荐</h3>
 					<hr />
 					<div class="panel panel-default">
@@ -266,26 +316,7 @@
 				data : args,
 				dataType : "json",
 				success : function(data) {
-					var listObject = data;
-					var clone = example;
-					$("#" + panelId).empty();
-	
-					if (listObject.length < 1) { // 若无数据
-						$("#" + panelId).append("<p>暂无推荐</p>");
-					}
-	
-					for (var i = 0; i < listObject.length && i < 4; i++) {
-						var cloneDiv = clone.clone();
-						cloneDiv.attr("id", "book" + (i + 1));
-						cloneDiv.find("img").attr("src", "http://localhost:8080/EMANImgs/" + listObject[i].imgAddress);
-						cloneDiv.find("#ename").attr("href", "http://localhost:8080/EMAN/ebook/info.htm?eid=" + listObject[i].eid);
-						cloneDiv.find("#ename").text(listObject[i].ename);
-	
-						cloneDiv.find("#author").text(listObject[i].author);
-	
-						$("#" + panelId).append(cloneDiv);
-					}
-	
+                    putDataToPanel(data, panelId);
 				},
 				error : function() {
 					alert("ajax请求失败");

@@ -140,7 +140,7 @@ public class UserServiceImpl implements UserService {
 			System.out.println(matrix.get(i).eid+","+eBook.getEname()+",interestValue="+matrix.get(i).interestValue);
 		}
 
-		return resultList;
+		return EBookServiceImpl.initEBookImgAddress(resultList);
 	}
 
 
