@@ -202,31 +202,43 @@
         <div class="row">
             <div class="col-md-1">
                 <div class="panel-body">
-                    <button id="gojd-btn" class="btn btn-primary" type="button">前往京东</button>
+                    <button id="gojd-btn" class="btn btn-primary" type="button">京东</button>
                 </div>
             </div>
 
             <div class="col-md-1">
                 <div class="panel-body">
-                    <button id="gotaobao-btn" class="btn btn-primary" type="button">前往淘宝</button>
+                    <button id="gotaobao-btn" class="btn btn-primary" type="button">淘宝</button>
                 </div>
             </div>
 
             <div class="col-md-1">
                 <div class="panel-body">
-                    <button id="gotianmao-btn" class="btn btn-primary" type="button">前往天猫</button>
+                    <button id="gotianmao-btn" class="btn btn-primary" type="button">天猫</button>
                 </div>
             </div>
 
             <div class="col-md-1">
                 <div class="panel-body">
-                    <button id="douban-btn" class="btn btn-primary" type="button">前往豆瓣</button>
+                    <button id="douban-btn" class="btn btn-primary" type="button">豆瓣</button>
                 </div>
             </div>
 
             <div class="col-md-1">
                 <div class="panel-body">
-                    <button id="gozhangyue-btn" class="btn btn-primary" type="button">前往掌阅书库</button>
+                    <button id="gozhangyue-btn" class="btn btn-primary" type="button">掌阅书库</button>
+                </div>
+            </div>
+
+            <div class="col-md-1">
+                <div class="panel-body">
+                    <button id="wikipedia-btn" class="btn btn-primary" type="button">维基百科</button>
+                </div>
+            </div>
+
+            <div class="col-md-1">
+                <div class="panel-body">
+                    <button id="panc-btn" class="btn btn-primary" type="button">胖次网盘</button>
                 </div>
             </div>
 
@@ -670,7 +682,13 @@
             window.location.href = "https://read.douban.com/ebook/" + "${ebook.eid}";
         });
 
+        $("#panc-btn").click(function(){
+            window.location.href = "http://www.panc.cc/s/" + "${ebook.ename}" + "/td_0";
+        });
 
+        $("#wikipedia-btn").click(function(){
+            window.location.href = "https://en.wikipedia.org/wiki/" + "${ebook.ename}";
+        });
 
     });
 </script>

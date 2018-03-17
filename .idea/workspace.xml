@@ -7,10 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7e8de30-f37b-49e5-80f5-46baaacc8bf9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/impl/EBookServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/service/impl/EBookServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/service/impl/UserServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/chart/samples/charts/pie.html" afterPath="$PROJECT_DIR$/src/main/webapp/resources/chart/samples/charts/pie.html" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/info.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/info.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -115,8 +113,18 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="85" column="67" lean-forward="false" selection-start-line="85" selection-start-column="67" selection-end-line="85" selection-end-column="67" />
+            <state relative-caret-position="167">
+              <caret line="153" column="36" lean-forward="false" selection-start-line="153" selection-start-column="35" selection-end-line="153" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="info.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/info.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="331">
+              <caret line="226" column="32" lean-forward="true" selection-start-line="226" selection-start-column="31" selection-end-line="226" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -199,10 +207,10 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/62e3571b-3193-4e98-8d72-7c81b2d1b608/console_2.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/entity/Item.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/entity/MatrixC.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/info.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/controller/RatingListController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/service/impl/EBookServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/info.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
       </list>
     </option>
@@ -712,12 +720,12 @@
       <workItem from="1520518467992" duration="5621000" />
       <workItem from="1520605010213" duration="2851000" />
       <workItem from="1520651505988" duration="29236000" />
-      <workItem from="1521185836098" duration="17268000" />
+      <workItem from="1521185836098" duration="18385000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76363000" />
+    <option name="totallyTimeSpent" value="77480000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -1196,19 +1204,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/info.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2193">
-          <caret line="178" column="61" lean-forward="true" selection-start-line="178" selection-start-column="61" selection-end-line="178" selection-end-column="61" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="331">
+          <caret line="226" column="32" lean-forward="true" selection-start-line="226" selection-start-column="31" selection-end-line="226" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="85" column="67" lean-forward="false" selection-start-line="85" selection-start-column="67" selection-end-line="85" selection-end-column="67" />
+        <state relative-caret-position="167">
+          <caret line="153" column="36" lean-forward="false" selection-start-line="153" selection-start-column="35" selection-end-line="153" selection-end-column="36" />
           <folding />
         </state>
       </provider>
