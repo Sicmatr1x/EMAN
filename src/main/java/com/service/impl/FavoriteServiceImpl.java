@@ -29,6 +29,13 @@ public class FavoriteServiceImpl implements FavoriteService {
 	}
 
 	@Override
+	public int deleteAllFavoriteByUid(String uid) {
+		Favorite favorite = new Favorite();
+		favorite.setUid(uid);
+		return favoriteDao.deleteAllFavoriteByUid(favorite);
+	}
+
+	@Override
 	public List<Favorite> selectFavoriteByUid(String uid) {
 		return favoriteDao.selectFavoriteByUid(uid);
 	}

@@ -11,6 +11,13 @@ public interface FavoriteService {
 	 * @return
 	 */
 	public int deleteFavoriteByUidAndclassifyMainAndclassifySub(Favorite favorite);
+
+	/**
+	 * 根据用户uid删除分类记录
+	 * @param uid
+	 * @return
+	 */
+	public int deleteAllFavoriteByUid(String uid);
 	
 	/**
 	 * 根据用户uid查询用户喜爱分类

@@ -24,6 +24,22 @@ var state = '<%=session.getAttribute("state")%>';
 	$(document).ready(function() {
 		// 开始写 jQuery 代码...
 
+		// 根据用户uid查询用户喜爱分类
+        $.ajax({
+            url : "/EMAN/favorite/query.htm?",
+            type : "get",
+            data : "uid="+uid,
+            dataType : "json",
+            success : function(data) {
+                console.log(data);
+				for(var i = 0; i < data.length; i++){
+				    $("#checkbox-"+data[i].classifyMain.toString()).attr("checked",true);
+				}
+            },
+            error : function() {
+                alert("用户喜爱分类ajax请求失败");
+            }
+        });
 	});
 </script>
 </head>
@@ -54,48 +70,48 @@ var state = '<%=session.getAttribute("state")%>';
 							<div style="padding: 100px 100px 10px;">
 								<span><h3>选择你感兴趣的分类</h3></span>
 								<form class="bs-example bs-example-form" role="form"
-									method="post" action="http://localhost:8080/EMAN/favorite/add.htm">
+									method="post" action="http://localhost:8080/EMAN/favorite/edit.htm">
 
 									<label>图书主分类</label>
 									<input type="text" style="display:none" name="uid" value="<%=session.getAttribute("uid")%>"></input>
 									<div class="checkbox">
-										<label><input type="checkbox" name="classifyMain" value="0">小说</label>
+										<label><input type="checkbox" id="checkbox-0" name="classifyMain" value="0">小说</label>
 									</div>
 									<div class="checkbox">
-										<label><input type="checkbox" name="classifyMain" value="1">文学</label>
+										<label><input type="checkbox" id="checkbox-1" name="classifyMain" value="1">文学</label>
 									</div>
 									<div class="checkbox">
-										<label><input type="checkbox" name="classifyMain" value="2">人文社科</label>
+										<label><input type="checkbox" id="checkbox-2" name="classifyMain" value="2">人文社科</label>
 									</div>
 									<div class="checkbox">
-										<label><input type="checkbox" name="classifyMain" value="3">经济管理</label>
+										<label><input type="checkbox" id="checkbox-3" name="classifyMain" value="3">经济管理</label>
 									</div>
 									<div class="checkbox">
-										<label><input type="checkbox" name="classifyMain" value="4">科技科普</label>
+										<label><input type="checkbox" id="checkbox-4" name="classifyMain" value="4">科技科普</label>
 									</div>
 									<div class="checkbox">
-										<label><input type="checkbox" name="classifyMain" value="5">计算机与互联网</label>
+										<label><input type="checkbox" id="checkbox-5" name="classifyMain" value="5">计算机与互联网</label>
 									</div>
 									<div class="checkbox">
-										<label><input type="checkbox" name="classifyMain" value="6">成功励志</label>
+										<label><input type="checkbox" id="checkbox-6" name="classifyMain" value="6">成功励志</label>
 									</div>
 									<div class="checkbox">
-										<label><input type="checkbox" name="classifyMain" value="7">生活</label>
+										<label><input type="checkbox" id="checkbox-7" name="classifyMain" value="7">生活</label>
 									</div>
 									<div class="checkbox">
-										<label><input type="checkbox" name="classifyMain" value="8">少儿</label>
+										<label><input type="checkbox" id="checkbox-8" name="classifyMain" value="8">少儿</label>
 									</div>
 									<div class="checkbox">
-										<label><input type="checkbox" name="classifyMain" value="9">艺术设计</label>
+										<label><input type="checkbox" id="checkbox-9" name="classifyMain" value="9">艺术设计</label>
 									</div>
 									<div class="checkbox">
-										<label><input type="checkbox" name="classifyMain" value="10">漫画绘本</label>
+										<label><input type="checkbox" id="checkbox-10" name="classifyMain" value="10">漫画绘本</label>
 									</div>
 									<div class="checkbox">
-										<label><input type="checkbox" name="classifyMain" value="11">教育考试</label>
+										<label><input type="checkbox" id="checkbox-11" name="classifyMain" value="11">教育考试</label>
 									</div>
 									<div class="checkbox">
-										<label><input type="checkbox" name="classifyMain" value="12">杂志</label>
+										<label><input type="checkbox" id="checkbox-12" name="classifyMain" value="12">杂志</label>
 									</div>
 									
 

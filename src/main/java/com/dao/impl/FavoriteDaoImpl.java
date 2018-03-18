@@ -30,6 +30,13 @@ public class FavoriteDaoImpl implements FavoriteDao {
 	}
 
 	@Override
+	public int deleteAllFavoriteByUid(Favorite favorite) {
+		int result = this.sqlSession.delete("deleteAllFavoriteByUid", favorite);
+		this.sqlSession.commit();
+		return result;
+	}
+
+	@Override
 	public List<Favorite> selectFavoriteByUid(String uid) {
 		return sqlSession.selectList("selectFavoriteByUid", uid);
 	}

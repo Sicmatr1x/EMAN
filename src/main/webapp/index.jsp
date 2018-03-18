@@ -60,14 +60,14 @@
 
 	$(document).ready(function() {
 
-	    // 冷门图书推荐
+	    // 新书推荐
         $.ajax({
             url : "/EMAN/ebook/coldEBooks.htm",
             type : "get",
             // data : "classifyMain=小说",
             dataType : "json",
             success : function(data) {
-                putDataToPanel(data, "coldEBook-panel");
+                putDataToPanel(data, "coldEBook-panel", 8);
 
             },
             error : function() {
@@ -189,7 +189,7 @@
 						</div>
 					</div>
 
-					<h3>每日冷门佳作推荐</h3>
+					<h3>新书推荐</h3>
 					<hr />
 					<div class="panel panel-default">
 						<div class="panel-body">
@@ -200,7 +200,7 @@
 					</div>
 
 					
-					<h3>来自你感兴趣的分区...</h3>
+					<h3>来自你感兴趣的分区</h3>
 					<hr />
 					<div class="panel panel-default">
 						<div class="panel-body">
@@ -220,7 +220,7 @@
 						</div>
 					</div>
 
-					<h3>分区推荐</h3>
+					<h3>热门图书</h3>
 					<hr />
 					<div class="panel panel-default">
 						<div class="panel-heading">
@@ -286,6 +286,17 @@
 							</div>
 						</div>
 					</div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">计算机与互联网</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row" id="computer-panel">
+
+                            </div>
+                        </div>
+                    </div>
 					
 					
 
@@ -325,11 +336,12 @@
 		}
 	
 		$(document).on('ready', function() {
-			getlist("classifyMain=小说&start=0&orderCondition=ratingValue&order=desc", "xiaoshou-panel");
-			getlist("classifyMain=文学&start=0&orderCondition=ratingValue&order=desc", "wenxue-panel");
-			getlist("classifyMain=人文社科&start=0&orderCondition=ratingValue&order=desc", "renwensheke-panel");
-			getlist("classifyMain=经济管理&start=0&orderCondition=ratingValue&order=desc", "jinjiguanli-panel");
-			getlist("classifyMain=科技科普&start=0&orderCondition=ratingValue&order=desc", "kejikepu-panel");
+			getlist("classifyMain=小说&start=0&orderCondition=reviewCount&order=desc", "xiaoshou-panel");
+			getlist("classifyMain=文学&start=0&orderCondition=reviewCount&order=desc", "wenxue-panel");
+			getlist("classifyMain=人文社科&start=0&orderCondition=reviewCount&order=desc", "renwensheke-panel");
+			getlist("classifyMain=经济管理&start=0&orderCondition=reviewCount&order=desc", "jinjiguanli-panel");
+			getlist("classifyMain=科技科普&start=0&orderCondition=reviewCount&order=desc", "kejikepu-panel");
+            getlist("classifyMain=计算机与互联网&start=0&orderCondition=reviewCount&order=desc", "computer-panel");
 			if(uid !== 'null'){ // 若用户已登录
                 getlist("uid="+uid, "favorite-panel");
 			}

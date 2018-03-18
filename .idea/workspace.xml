@@ -8,7 +8,21 @@
   <component name="ChangeListManager">
     <list default="true" id="f7e8de30-f37b-49e5-80f5-46baaacc8bf9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/info.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/info.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/EBookController.java" afterPath="$PROJECT_DIR$/src/main/java/com/controller/EBookController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/FavoriteController.java" afterPath="$PROJECT_DIR$/src/main/java/com/controller/FavoriteController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/RatingListController.java" afterPath="$PROJECT_DIR$/src/main/java/com/controller/RatingListController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dao/EBookMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/dao/EBookMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dao/FavoriteDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/dao/FavoriteDao.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dao/FavoriteMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/dao/FavoriteMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dao/impl/EBookDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/dao/impl/EBookDaoImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dao/impl/FavoriteDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/dao/impl/FavoriteDaoImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/Favorite.java" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Favorite.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/EBookService.java" afterPath="$PROJECT_DIR$/src/main/java/com/service/EBookService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/FavoriteService.java" afterPath="$PROJECT_DIR$/src/main/java/com/service/FavoriteService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/impl/FavoriteServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/service/impl/FavoriteServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/service/impl/UserServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,71 +64,68 @@
         <item name="ebookdb@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="ebookdb: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="user: table" type="98d5ac3d:MysqlImplModel$Table" />
+        <item name="ebook: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EBookController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/EBookController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="153" column="87" lean-forward="false" selection-start-line="153" selection-start-column="87" selection-end-line="153" selection-end-column="87" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/service/impl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="142" column="62" lean-forward="false" selection-start-line="142" selection-start-column="62" selection-end-line="142" selection-end-column="62" />
-              <folding>
-                <element signature="e#652#653#0" expanded="true" />
-                <element signature="e#674#675#0" expanded="true" />
-                <element signature="e#721#722#0" expanded="true" />
-                <element signature="e#752#753#0" expanded="true" />
-                <element signature="e#842#843#0" expanded="true" />
-                <element signature="e#866#867#0" expanded="true" />
-                <element signature="e#919#920#0" expanded="true" />
-                <element signature="e#954#955#0" expanded="true" />
-                <element signature="e#1056#1057#0" expanded="true" />
-                <element signature="e#1083#1084#0" expanded="true" />
-                <element signature="e#1145#1146#0" expanded="true" />
-                <element signature="e#1186#1187#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Item.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/entity/Item.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="37" column="21" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="37" selection-end-column="21" />
+            <state relative-caret-position="362">
+              <caret line="147" column="48" lean-forward="true" selection-start-line="147" selection-start-column="48" selection-end-line="147" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MatrixC.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/entity/MatrixC.java">
+      <file leaf-file-name="FavoriteController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/FavoriteController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="55" column="25" lean-forward="true" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+            <state relative-caret-position="242">
+              <caret line="114" column="39" lean-forward="false" selection-start-line="114" selection-start-column="39" selection-end-line="114" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/UserController.java">
+      <file leaf-file-name="console_1.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/62e3571b-3193-4e98-8d72-7c81b2d1b608/console_1.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="187" column="45" lean-forward="true" selection-start-line="187" selection-start-column="22" selection-end-line="187" selection-end-column="45" />
+            <state relative-caret-position="30">
+              <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="153" column="36" lean-forward="false" selection-start-line="153" selection-start-column="35" selection-end-line="153" selection-end-column="36" />
+            <state relative-caret-position="489">
+              <caret line="345" column="51" lean-forward="false" selection-start-line="345" selection-start-column="37" selection-end-line="345" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="72" column="98" lean-forward="false" selection-start-line="72" selection-start-column="98" selection-end-line="72" selection-end-column="98" />
               <folding />
             </state>
           </provider>
@@ -123,8 +134,8 @@
       <file leaf-file-name="info.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/info.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="226" column="32" lean-forward="true" selection-start-line="226" selection-start-column="31" selection-end-line="226" selection-end-column="32" />
+            <state relative-caret-position="186">
+              <caret line="645" column="81" lean-forward="false" selection-start-line="645" selection-start-column="81" selection-end-line="645" selection-end-column="81" />
               <folding />
             </state>
           </provider>
@@ -151,6 +162,10 @@
       <find>canvas-holder</find>
       <find>selectRatingListByEid</find>
       <find>userRecommendedList.htm</find>
+      <find>selectFavoriteByUid</find>
+      <find>System.out</find>
+      <find>你感兴趣</find>
+      <find>favorite-panel</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -185,33 +200,38 @@
         <option value="$PROJECT_DIR$/src/main/java/com/dao/MatrixCMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/dao/MatrixCDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dao/impl/MatrixCDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/controller/FavoriteController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/entity/Favorite.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/util/RandomNumFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/statistics/MatrixWTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/statistics/ItemCollaborationFilter.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/dao/EBookMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/dao/EBookDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/service/EBookService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/dao/impl/EBookDaoImpl.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/62e3571b-3193-4e98-8d72-7c81b2d1b608/console_1.sql" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/main/java/com/controller/EBookController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/entity/RatingList.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/controller/UserController.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/62e3571b-3193-4e98-8d72-7c81b2d1b608/console.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/62e3571b-3193-4e98-8d72-7c81b2d1b608/console_2.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/entity/Item.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/entity/MatrixC.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/controller/RatingListController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/service/impl/EBookServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/info.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/controller/RatingListController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dao/EBookMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/service/EBookService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/62e3571b-3193-4e98-8d72-7c81b2d1b608/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/entity/Favorite.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dao/impl/EBookDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dao/FavoriteMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dao/FavoriteDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dao/impl/FavoriteDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/service/FavoriteService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/service/impl/FavoriteServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/controller/FavoriteController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/controller/EBookController.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/62e3571b-3193-4e98-8d72-7c81b2d1b608/console_1.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/com/service/impl/UserServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -290,6 +310,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -440,10 +464,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -720,19 +740,20 @@
       <workItem from="1520518467992" duration="5621000" />
       <workItem from="1520605010213" duration="2851000" />
       <workItem from="1520651505988" duration="29236000" />
-      <workItem from="1521185836098" duration="18385000" />
+      <workItem from="1521185836098" duration="18966000" />
+      <workItem from="1521357640058" duration="12491000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77480000" />
+    <option name="totallyTimeSpent" value="90552000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35650447" sideWeight="0.2683706" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35650447" sideWeight="0.314164" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.4978701" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08519702" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -741,19 +762,19 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31479642" sideWeight="0.7364217" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31479642" sideWeight="0.73322684" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32770607" sideWeight="0.44728434" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32770607" sideWeight="0.44515443" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35650447" sideWeight="0.7316294" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35650447" sideWeight="0.685836" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.4978701" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32815534" sideWeight="0.49375" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.4765708" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2172524" sideWeight="0.49492016" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32770607" sideWeight="0.4914803" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.44888178" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21938232" sideWeight="0.49492016" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18636848" sideWeight="0.5050798" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -776,59 +797,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/impl/ClassifyMainStatisticsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="31" column="79" lean-forward="true" selection-start-line="31" selection-start-column="79" selection-end-line="31" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/statistics/StatisticsClassifyMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="211" column="12" lean-forward="false" selection-start-line="211" selection-start-column="12" selection-end-line="211" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/impl/ClassifyMainStatisticsDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="29" column="44" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/entity/ClassifyMainStatistics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/util/ChartDataJsonCreater.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7155">
-          <caret line="483" column="26" lean-forward="false" selection-start-line="483" selection-start-column="26" selection-end-line="483" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/head.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="62" lean-forward="true" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/entity/EBookTuple.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/FavoriteController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="19" column="11" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/impl/MatrixCDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="616">
@@ -841,30 +809,6 @@
         <state relative-caret-position="135">
           <caret line="25" column="45" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="45" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/impl/FavoriteServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-447">
-          <caret line="297" column="37" lean-forward="true" selection-start-line="297" selection-start-column="20" selection-end-line="297" selection-end-column="37" />
-          <folding>
-            <marker date="1520517749542" expanded="true" signature="11758:11764" ph="&amp;nbsp;" />
-            <marker date="1520517749542" expanded="true" signature="11764:11770" ph="&amp;nbsp;" />
-            <marker date="1520517749542" expanded="true" signature="12462:12468" ph="&amp;nbsp;" />
-            <marker date="1520517749542" expanded="true" signature="12468:12474" ph="&amp;nbsp;" />
-            <marker date="1520517749542" expanded="true" signature="12523:12529" ph="&amp;nbsp;" />
-            <marker date="1520517749542" expanded="true" signature="12529:12535" ph="&amp;nbsp;" />
-            <marker date="1520517749542" expanded="true" signature="13191:13197" ph="&amp;nbsp;" />
-            <marker date="1520517749542" expanded="true" signature="13197:13203" ph="&amp;nbsp;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -948,24 +892,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/EBookService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://src:table:/2c2991b4/62e3571b-3193-4e98-8d72-7c81b2d1b608/ebookdb.ebook">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/62e3571b-3193-4e98-8d72-7c81b2d1b608/console_1.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -977,19 +907,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="58" column="42" lean-forward="false" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1004,58 +925,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/impl/EBookDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding>
-            <element signature="e#715#716#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/EBookMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="30" column="30" lean-forward="true" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-          <folding>
-            <marker date="1520931452277" expanded="true" signature="268:701" ph="insert into ebook... " />
-            <marker date="1520931452277" expanded="true" signature="791:920" ph="UPDATE ebook... " />
-            <marker date="1520931452277" expanded="true" signature="1003:1025" ph="select * fro... ebook" />
-            <marker date="1520931452277" expanded="true" signature="1123:1167" ph="select * fro... ebook" />
-            <marker date="1520931452277" expanded="true" signature="1288:1413" ph="select * fro... ebook" />
-            <marker date="1520931452277" expanded="true" signature="1494:1563" ph="select count... ebook" />
-            <marker date="1520931452277" expanded="true" signature="1660:1750" ph="select count... ebook" />
-            <marker date="1520931452277" expanded="true" signature="1882:1962" ph="select count... ebook" />
-            <marker date="1520931452277" expanded="true" signature="1882:2046" ph="select * fro... ebook" />
-            <marker date="1520931452277" expanded="true" signature="2177:2404" ph="select * fro... ebook" />
-            <marker date="1520931452277" expanded="true" signature="2509:2718" ph="select count... ebook" />
-            <marker date="1520931452277" expanded="true" signature="2853:3573" ph="select * fro... ebook" />
-            <marker date="1520931452277" expanded="true" signature="3656:3682" ph="select count... ebook" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/impl/RatingListDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="29" column="76" lean-forward="false" selection-start-line="29" selection-start-column="55" selection-end-line="29" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="386">
-            <caret line="166" column="93" lean-forward="false" selection-start-line="166" selection-start-column="93" selection-end-line="166" selection-end-column="93" />
-            <folding />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -1063,6 +932,150 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="34" column="35" lean-forward="false" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/2c2991b4/62e3571b-3193-4e98-8d72-7c81b2d1b608/ebookdb.ratinglist">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/62e3571b-3193-4e98-8d72-7c81b2d1b608/console_2.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="39" lean-forward="false" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/entity/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="21" lean-forward="false" selection-start-line="31" selection-start-column="8" selection-end-line="37" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="385">
+            <caret line="169" column="65" lean-forward="true" selection-start-line="169" selection-start-column="37" selection-end-line="169" selection-end-column="65" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/RatingListController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="288" column="31" lean-forward="false" selection-start-line="288" selection-start-column="31" selection-end-line="288" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/EBookService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/impl/EBookServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="144" column="56" lean-forward="true" selection-start-line="144" selection-start-column="56" selection-end-line="144" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/EBookMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-218">
+          <caret line="56" column="30" lean-forward="true" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
+          <folding>
+            <marker date="1521359632296" expanded="true" signature="268:701" ph="insert into ebook... " />
+            <marker date="1521359632296" expanded="true" signature="791:920" ph="UPDATE ebook... " />
+            <marker date="1521359632296" expanded="true" signature="1003:1025" ph="select * fro... ebook" />
+            <marker date="1521359632296" expanded="true" signature="1123:1167" ph="select * fro... ebook" />
+            <marker date="1521359632296" expanded="true" signature="1288:1413" ph="select * fro... ebook" />
+            <marker date="1521359632296" expanded="true" signature="1494:1563" ph="select count... ebook" />
+            <marker date="1521359632296" expanded="true" signature="1660:1750" ph="select count... ebook" />
+            <marker date="1521359632296" expanded="true" signature="1882:1960" ph="select count... ebook" />
+            <marker date="1521359632296" expanded="true" signature="1882:2023" ph="select * fro... ebook" />
+            <marker date="1521359632296" expanded="true" signature="2154:2381" ph="select * fro... ebook" />
+            <marker date="1521359632296" expanded="true" signature="2486:2695" ph="select count... ebook" />
+            <marker date="1521359632296" expanded="true" signature="2830:3550" ph="select * fro... ebook" />
+            <marker date="1521359632296" expanded="true" signature="3633:3659" ph="select count... ebook" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="194" column="24" lean-forward="true" selection-start-line="194" selection-start-column="24" selection-end-line="194" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/impl/RatingListDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="47" column="69" lean-forward="true" selection-start-line="47" selection-start-column="69" selection-end-line="47" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-38">
+          <caret line="297" column="37" lean-forward="true" selection-start-line="297" selection-start-column="20" selection-end-line="297" selection-end-column="37" />
+          <folding>
+            <marker date="1520517749542" expanded="true" signature="11758:11764" ph="&amp;nbsp;" />
+            <marker date="1520517749542" expanded="true" signature="11764:11770" ph="&amp;nbsp;" />
+            <marker date="1520517749542" expanded="true" signature="12462:12468" ph="&amp;nbsp;" />
+            <marker date="1520517749542" expanded="true" signature="12468:12474" ph="&amp;nbsp;" />
+            <marker date="1520517749542" expanded="true" signature="12523:12529" ph="&amp;nbsp;" />
+            <marker date="1520517749542" expanded="true" signature="12529:12535" ph="&amp;nbsp;" />
+            <marker date="1520517749542" expanded="true" signature="13191:13197" ph="&amp;nbsp;" />
+            <marker date="1520517749542" expanded="true" signature="13197:13203" ph="&amp;nbsp;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/impl/UserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="e#639#640#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/entity/MatrixC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="55" column="25" lean-forward="false" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1075,25 +1088,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/2c2991b4/62e3571b-3193-4e98-8d72-7c81b2d1b608/ebookdb.ratinglist">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/entity/Favorite.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="11" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="11" />
+        <state relative-caret-position="360">
+          <caret line="40" column="23" lean-forward="false" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/RatingListMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="49" column="41" lean-forward="true" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
+        <state relative-caret-position="330">
+          <caret line="43" column="77" lean-forward="true" selection-start-line="43" selection-start-column="68" selection-end-line="43" selection-end-column="77" />
           <folding>
             <marker date="1520418652260" expanded="true" signature="277:384" ph="insert into ratinglist... " />
             <marker date="1520418652260" expanded="true" signature="487:511" ph="select * fro... ratinglist" />
@@ -1109,42 +1115,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/62e3571b-3193-4e98-8d72-7c81b2d1b608/console_2.sql">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/UserMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="39" lean-forward="false" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+        <state relative-caret-position="345">
+          <caret line="23" column="62" lean-forward="false" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="62" />
+          <folding>
+            <marker date="1517742326576" expanded="true" signature="265:378" ph="insert into user... " />
+            <marker date="1517742326576" expanded="true" signature="469:487" ph="select * fro... user" />
+            <marker date="1517742326576" expanded="true" signature="564:607" ph="select * fro... user" />
+            <marker date="1517742326576" expanded="true" signature="686:733" ph="select * fro... user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/FavoriteMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="33" column="74" lean-forward="false" selection-start-line="33" selection-start-column="74" selection-end-line="33" selection-end-column="74" />
+          <folding>
+            <marker date="1521377792002" expanded="true" signature="277:377" ph="insert into favorite... " />
+            <marker date="1521377792002" expanded="true" signature="480:527" ph="select * fro... favorite" />
+            <marker date="1521377792002" expanded="true" signature="963:1004" ph="delete from favorite... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/impl/EBookDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="40" column="33" lean-forward="false" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/impl/FavoriteDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="33" column="67" lean-forward="false" selection-start-line="33" selection-start-column="67" selection-end-line="33" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/entity/Item.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/FavoriteDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="37" column="21" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="37" selection-end-column="21" />
+        <state relative-caret-position="315">
+          <caret line="23" column="57" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="23" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/entity/MatrixC.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/FavoriteService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="55" column="25" lean-forward="true" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+        <state relative-caret-position="210">
+          <caret line="16" column="17" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/EBookController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/impl/FavoriteServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="284" column="17" lean-forward="true" selection-start-line="279" selection-start-column="16" selection-end-line="284" selection-end-column="17" />
+        <state relative-caret-position="345">
+          <caret line="34" column="58" lean-forward="false" selection-start-line="34" selection-start-column="58" selection-end-line="34" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/RatingListController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/FavoriteController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="285" column="51" lean-forward="false" selection-start-line="285" selection-start-column="51" selection-end-line="285" selection-end-column="51" />
+        <state relative-caret-position="242">
+          <caret line="114" column="39" lean-forward="false" selection-start-line="114" selection-start-column="39" selection-end-line="114" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/info.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="645" column="81" lean-forward="false" selection-start-line="645" selection-start-column="81" selection-end-line="645" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="72" column="98" lean-forward="false" selection-start-line="72" selection-start-column="98" selection-end-line="72" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="345" column="51" lean-forward="false" selection-start-line="345" selection-start-column="37" selection-end-line="345" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -1152,68 +1217,31 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/62e3571b-3193-4e98-8d72-7c81b2d1b608/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/UserController.java">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/62e3571b-3193-4e98-8d72-7c81b2d1b608/console_1.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="187" column="45" lean-forward="true" selection-start-line="187" selection-start-column="22" selection-end-line="187" selection-end-column="45" />
+        <state relative-caret-position="30">
+          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/impl/EBookServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/EBookController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="32" />
+        <state relative-caret-position="186">
+          <caret line="153" column="87" lean-forward="false" selection-start-line="153" selection-start-column="87" selection-end-line="153" selection-end-column="87" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/service/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="142" column="62" lean-forward="false" selection-start-line="142" selection-start-column="62" selection-end-line="142" selection-end-column="62" />
-          <folding>
-            <element signature="e#652#653#0" expanded="true" />
-            <element signature="e#674#675#0" expanded="true" />
-            <element signature="e#721#722#0" expanded="true" />
-            <element signature="e#752#753#0" expanded="true" />
-            <element signature="e#842#843#0" expanded="true" />
-            <element signature="e#866#867#0" expanded="true" />
-            <element signature="e#919#920#0" expanded="true" />
-            <element signature="e#954#955#0" expanded="true" />
-            <element signature="e#1056#1057#0" expanded="true" />
-            <element signature="e#1083#1084#0" expanded="true" />
-            <element signature="e#1145#1146#0" expanded="true" />
-            <element signature="e#1186#1187#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/info.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="226" column="32" lean-forward="true" selection-start-line="226" selection-start-column="31" selection-end-line="226" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="153" column="36" lean-forward="false" selection-start-line="153" selection-start-column="35" selection-end-line="153" selection-end-column="36" />
+        <state relative-caret-position="362">
+          <caret line="147" column="48" lean-forward="true" selection-start-line="147" selection-start-column="48" selection-end-line="147" selection-end-column="48" />
           <folding />
         </state>
       </provider>

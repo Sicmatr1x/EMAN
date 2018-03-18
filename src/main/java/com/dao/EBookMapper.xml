@@ -52,7 +52,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectEBookLimitByClassifyMainReviewCount" parameterType="java.util.Map" resultType="com.entity.EBook">
 		select *
 		from ebook
-		where classifyMain=#{classifyMain} and 10 >= reviewCount and ratingValue >= 4
+		where classifyMain=#{classifyMain} and 0 = reviewCount
 		order by ${orderCondition} ${order}
 		limit #{start},#{size}
 	</select>

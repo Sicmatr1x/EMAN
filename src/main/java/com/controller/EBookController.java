@@ -148,9 +148,11 @@ public class EBookController {
 		if(uid != null){ // 若uid参数不为空则根据该用户感兴趣的分类来随机返回图书
 			List<Favorite> favoriteList = this.favoriteService.selectFavoriteByUid(uid);
 			List<EBook> resultList = new ArrayList<>();
-			for(int i = 0; i < favoriteList.size(); i++){
-				List<EBook> list = eBookService.queryEBookLimitByClassifyMain(favoriteList.get(i).getClassifyMain(), 0, "ratingValue", "desc");
-				resultList.add(list.get(RandomNumFactory.randomNum(0, list.size())));
+			while(resultList.size() < 4){
+				for(int i = 0; i < favoriteList.size(); i++){
+					List<EBook> list = eBookService.queryEBookLimitByClassifyMain(favoriteList.get(i).getClassifyMain(), 0, "ratingValue", "desc");
+					resultList.add(list.get(RandomNumFactory.randomNum(0, list.size()-1)));
+				}
 			}
 			String json;
 			json = JSONConverter.convertToJSONString(resultList);
@@ -295,7 +297,7 @@ public class EBookController {
 	}
 
 	/**
-	 * 冷门高分图书推荐接口
+	 * 新书推荐接口
 	 * http://localhost:8080/EMAN/ebook/coldEBooks.htm?classifyMain=小说
 	 * @param out
 	 * @param request
@@ -314,7 +316,7 @@ public class EBookController {
         }
 		List<EBook> list =  eBookService.queryEBookLimitByClassifyMainReviewCount(classifyMain, start, orderCondition, order);
 		// 获取随机图书
-		int[] randomNum = RandomNumFactory.randomCommon(0, 19, 4);
+		int[] randomNum = RandomNumFactory.randomCommon(0, 19, 8);
 		List<EBook> resultList = new ArrayList<>();
 		for(int i = 0; i < randomNum.length; i++){
 			resultList.add(list.get(randomNum[i]));

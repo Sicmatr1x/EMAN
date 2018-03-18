@@ -196,9 +196,10 @@ public class RatingListController {
 			HttpServletRequest request){
 
 		this.ratingListListByEid = ratingListService.selectRatingListByEid(eid);
+		List<RatingList> list = this.ratingListListByEid;
 		
 		double[] data = {0,0,0,0,0};
-		for(RatingList r : this.ratingListListByEid){
+		for(RatingList r : list){
 			double value = r.getRatingValue();
 			if(value > 4.0){
 				data[4]++;
@@ -243,7 +244,7 @@ public class RatingListController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 	
 	/**
@@ -258,13 +259,15 @@ public class RatingListController {
 			@RequestParam(value="eid")String eid,
 			PrintWriter out,
 			HttpServletRequest request){
-		try {
-			Thread.sleep(100);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+		if(this.ratingListListByEid == null){
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
-//		List<RatingList> list = null;
+		List<RatingList> list = this.ratingListListByEid;
+		this.ratingListListByEid = null;
 //		try {
 //			list = ratingListService.selectRatingListByEid(eid);
 //		} catch (java.lang.ClassCastException ex){
@@ -283,7 +286,7 @@ public class RatingListController {
 		
 //		double[][] data = {{20,19,158,736,2525},{2,2,2,2,2}};
 		double[][] data = {{0,0,0,0,0},{avgReviewCount1,avgReviewCount2,avgReviewCount3,avgReviewCount4,avgReviewCount5}};
-		for(RatingList r : this.ratingListListByEid){
+		for(RatingList r : list){
 			double value = r.getRatingValue();
 			if(value > 4.0){
 				data[0][4]++;

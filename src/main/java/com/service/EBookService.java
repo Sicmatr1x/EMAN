@@ -22,7 +22,7 @@ public interface EBookService {
 	public int queryEBookByKeywordCount(String Keyword,  String orderCondition, String order);
 
 	/**
-	 * 根据分类查询冷门高分图书(10 >= reviewCount and ratingValue >= 4)
+	 * 新书查询推荐
 	 * @param classifyMain
 	 * @param start
 	 * @param orderCondition

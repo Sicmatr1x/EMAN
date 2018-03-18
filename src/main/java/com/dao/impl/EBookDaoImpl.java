@@ -34,7 +34,13 @@ public class EBookDaoImpl implements EBookDao{
 
 	@Override
 	public EBook queryEBookByEid(String eid) {
-		return sqlSession.selectOne("selectEBookByEid", eid);
+		Object object = sqlSession.selectOne("selectEBookByEid", eid);
+		if(object instanceof List){
+			return ((List<EBook>)object).get(0);
+		}else{
+			return (EBook)object;
+		}
+
 	}
 	
 	@Override

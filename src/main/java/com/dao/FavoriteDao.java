@@ -15,6 +15,13 @@ public interface FavoriteDao {
 	 * @return
 	 */
 	public int deleteFavoriteByUidAndclassifyMainAndclassifySub(Favorite favorite);
+
+	/**
+	 * 根据用户uid删除分类记录
+	 * @param favorite
+	 * @return
+	 */
+	public int deleteAllFavoriteByUid(Favorite favorite);
 	
 	/**
 	 * 根据用户uid查询用户喜爱分类

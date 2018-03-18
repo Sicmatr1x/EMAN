@@ -1,6 +1,7 @@
 package com.controller;
 
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -50,12 +51,11 @@ public class FavoriteController {
 	
 	/**
 	 * 新增用户喜爱分类数据
-	 * http://localhost:8080/EMAN/favorite/add.htm?uid=100118949&classifyMain=小说
-	 * http://localhost:8080/EMAN/favorite/add.htm?uid=100118949&classifySub=世界名著
+	 * http://localhost:8080/EMAN/favorite/add.htm?uid=131952373&classifyMain=小说
+	 * http://localhost:8080/EMAN/favorite/add.htm?uid=131952373&classifySub=世界名著
 	 * @param uid
 	 * @param classifyMain
 	 * @param classifySub
-	 * @param out
 	 * @param request
 	 */
 	@RequestMapping("/add.htm")
@@ -92,10 +92,61 @@ public class FavoriteController {
 		response.reset();
 		return "success";
 	}
+
+	/**
+	 * 新增用户喜爱分类数据
+	 * http://localhost:8080/EMAN/favorite/edit.htm?uid=131952373&classifyMain=小说
+	 * http://localhost:8080/EMAN/favorite/edit.htm?uid=131952373&classifySub=世界名著
+	 * @param uid
+	 * @param classifyMain
+	 * @param classifySub
+	 * @param request
+	 */
+	@RequestMapping("/edit.htm")
+	public String editFavorite(
+			@RequestParam(value="uid")String uid,
+			@RequestParam(value="classifyMain", required=false)String classifyMain[],
+			@RequestParam(value="classifySub", required=false)String classifySub[],
+			HttpServletRequest request, HttpServletResponse response){
+
+		if(uid == null)
+			return "login";
+
+		System.out.println("uid="+uid);
+
+		// 删除全部记录
+		this.favoriteService.deleteAllFavoriteByUid(uid);
+
+		// 添加新纪录
+		if(classifyMain != null){
+			for(int i = 0; i < classifyMain.length; i++){
+				int index = Integer.valueOf(classifyMain[i]);
+				System.out.println("classifyMain["+i+"]="+index+"->"+this.areaNameList[index]);
+				Favorite favorite = new Favorite();
+				favorite.setUid(uid);
+				favorite.setClassifyMain(this.areaNameList[index]);
+				favoriteService.insertFavorite(favorite);
+			}
+		}
+		if(classifySub != null){
+			for(int i = 0; i < classifySub.length; i++){
+				System.out.println("classifySub["+i+"]="+classifySub[i]);
+				Favorite favorite = new Favorite();
+				favorite.setUid(uid);
+				favorite.setClassifySub(classifySub[i]);
+				favoriteService.insertFavorite(favorite);
+			}
+		}
+
+		return "home";
+
+//		response.reset();
+//		return "success";
+	}
 	
 	/**
 	 * 根据用户uid查询用户喜爱分类
-	 * http://localhost:8080/EMAN/favorite/query.htm?uid=100118949
+	 * http://localhost:8080/EMAN/favorite/query.htm?uid=131952373
 	 * @param uid
 	 * @param out
 	 * @param request
@@ -107,6 +158,15 @@ public class FavoriteController {
 			PrintWriter out,
 			HttpServletRequest request){
 		List<Favorite> favoriteList= favoriteService.selectFavoriteByUid(uid);
+		for(Favorite f : favoriteList){ // 将ClassifyMain名称转换为对应编号
+			for(int i = 0; i < areaNameList.length; i++){
+				if(areaNameList[i].equals(f.getClassifyMain())){
+					f.setClassifyMain(i+"");
+					continue;
+				}
+			}
+
+		}
 		String json;
 		json = JSONConverter.convertToJSONString(favoriteList);
 		out.print(json);
@@ -115,8 +175,8 @@ public class FavoriteController {
 	
 	/**
 	 * 根据用户uid查询用户喜爱分类
-	 * http://localhost:8080/EMAN/favorite/delete.htm?uid=100118949&classifyMain=小说
-	 * http://localhost:8080/EMAN/favorite/delete.htm?uid=100118949&classifySub=世界名著
+	 * http://localhost:8080/EMAN/favorite/delete.htm?uid=131952373&classifyMain=小说
+	 * http://localhost:8080/EMAN/favorite/delete.htm?uid=131952373&classifySub=世界名著
 	 * @param uid
 	 * @param out
 	 * @param request

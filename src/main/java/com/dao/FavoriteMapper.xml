@@ -30,5 +30,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			</if>
 		</where>
     </delete>
+
+	<delete id="deleteAllFavoriteByUid" parameterType="com.entity.Favorite">
+		delete from favorite
+		where uid = #{uid}
+	</delete>
 	
 </mapper>

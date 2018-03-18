@@ -36,6 +36,20 @@ public class Favorite {
 	public void setClassifySub(String classifySub) {
 		this.classifySub = classifySub;
 	}
-	
-	
+
+	/**
+	 * 暂时不支持classifySub
+	 * @param obj
+	 * @return
+	 */
+	@Override
+	public  boolean equals(Object obj){
+
+		if(this.classifyMain.equals(((Favorite)obj).classifyMain))
+			return true;
+		else
+			return false;
+		}
+
+
 }

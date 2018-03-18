@@ -82,6 +82,13 @@ public class UserServiceImpl implements UserService {
 		// 获取用户喜爱图书列表
 		List<RatingList> likeList = this.ratingListDao.selectRatingListByUidAndRatingValue(uid, 4);
 
+		// debug
+		System.out.println("uid="+uid+"用户喜爱图书列表");
+		for(RatingList r : likeList){
+			System.out.println(r.getEid()+","+r.getRatingValue());
+		}
+		System.out.println("likeList.size="+likeList.size());
+
 		// 定义计算用矩阵
 		List<Item> matrix = new ArrayList<>();
 		// 将用户喜爱的图书作为矩阵的列
@@ -127,17 +134,19 @@ public class UserServiceImpl implements UserService {
 
 		// 根据预测兴趣度进行排序
 		Collections.sort(matrix);
-		for(Item item : matrix){
-			System.out.println(item.eid+",interestValue="+item.interestValue);
-		}
+//		for(Item item : matrix){
+//			System.out.println(item.eid+",interestValue="+item.interestValue);
+//		}
 
 		// 返回推荐图书列表
 		List<EBook> resultList = new ArrayList<>();
-		for(int i = 0; i < matrix.size(); i++){
-			EBook eBook = this.eBookDao.queryEBookByEid(matrix.get(i).eid);
-			resultList.add(eBook);
-			// debug
-			System.out.println(matrix.get(i).eid+","+eBook.getEname()+",interestValue="+matrix.get(i).interestValue);
+		for(int i = 0; i < matrix.size() && i < 20; i++){ // 返回排前10的书
+			if(matrix.get(i).interestValue > 0){
+				EBook eBook = this.eBookDao.queryEBookByEid(matrix.get(i).eid);
+				resultList.add(eBook);
+				// debug
+				System.out.println(matrix.get(i).eid+","+eBook.getEname()+",interestValue="+matrix.get(i).interestValue);
+			}
 		}
 
 		return EBookServiceImpl.initEBookImgAddress(resultList);
