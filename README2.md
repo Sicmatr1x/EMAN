@@ -108,7 +108,7 @@ Spring是一个开源框架，Spring是于2003 年兴起的一个轻量级的Jav
 
 Spring 框架是一个分层架构，由 7 个定义良好的模块组成。Spring 模块构建在核心容器之上，核心容器定义了创建、配置和管理 bean 的方式该框架的核心特性可以被任何Java应用程序使用，但是在Java EE（Enterprise Edition）平台之上构建web应用程序的扩展也有扩展。尽管该框架没有强制执行任何特定的编程模型，但是它在Java社区中已经成为了一种流行，甚至可以替代Enterprise JavaBeans（EJB）模型。
 
-<img src="spring_framework.gif">Spring框架</img>
+<img src="img/spring_framework.gif">Spring框架</img>
 
 核心容器：核心容器提供 Spring 框架的基本功能。核心容器的主要组件是 BeanFactory，它是工厂模式的实现。BeanFactory 使用控制反转 （IOC） 模式将应用程序的配置和依赖性规范与实际的应用程序代码分开。
 
@@ -183,13 +183,111 @@ Item-item协作过滤是1998年由Amazon.com发明和使用的。它于2001年�
 
 3.2.1 类与配置文件表
 
-3.2.2 组件需求
+>符号 &#8594; 表示该类为定期手动运行模块
 
-3.2.3 组件结构
+<ol>
+<li>com.controller</li>
+    <ol>
+        <li>EBookController：与图书相关的接口</li>
+        <li>RatingListController：与用户评论、评分相关的接口</li>
+        <li>StatisticsController：统计模块接口</li>
+        <li>UserController：用户相关接口</li>
+        <li>FavoriteController：用户喜爱分类接口</li>
+        <li>ClassifyMainStatisticsController：分类统计相关接口</li>
+    </ol>
+<li>com.dao</li>
+    <ol>
+        <li>DBAccess：用于获取SqlSession数据库连接</li>
+        <li>EBookDao：提供图书表的访问</li>
+        <li>RatingListDao：提供评分评论表的访问</li>
+        <li>UserDao：提供用户表的访问</li>
+        <li>FavoriteDao：用户喜爱分类表的访问</li>
+        <li>ClassifyMainStatisticsDao：分类统计相关数据表的访问</li>
+        <li>MatrixCDao：提供同现矩阵C与余弦相似度矩阵W的访问</li>
+        <li>EBookMapper.xml：提供图书表的访问的sql语句</li>
+        <li>RatingListMapper.xml：提供评分评论表的访问的sql语句</li>
+        <li>UserMapper.xml：提供用户表的访问的sql语句</li>
+        <li>ClassifyMainStatisticsMapper.xml：提供主分区统计表的访问的sql语句</li>
+        <li>FavoriteMapper.xml：用户喜爱分类表的访问的sql语句</li>
+        <li>ClassifyMainStatisticsMapper.xml：分类统计相关数据表的访问的sql语句</li>
+        <li>MatrixCMapper.xml：提供同现矩阵C与余弦相似度矩阵W的访问的sql语句</li>
+    </ol>
+<li>com.entity</li>
+    <ol>
+        <li>EBook：图书 -> ebook表</li>
+        <li>RatingList：评论评分相 -> ratingList表</li>
+        <li>ClassifyMainStatistics：主分区统计模块 -> classifyMainStatistics表</li>
+        <li>User：用户 -> user表</li>
+        <li>Favorite：用户喜爱分类实体 -> favorite表</li>
+        <li>MatrixC：同现矩阵C与余弦相似度矩阵W -> matrixC表</li>
+    </ol>
+<li>com.service</li>
+    <ol>
+        <li>EBookService：图书模块</li>
+        <li>RatingListService：评论评分模块</li>
+        <li>UserService：用户模块</li>
+        <li>FavoriteService：用户喜爱分类模块</li>
+        <li>ClassifyMainStatisticsService：分类统计模块</li>
+    </ol>
+<li>com.statistics</li>
+    <ol>
+        <li>&#8594; ItemCollaborationFilter：用于计算基于物品的协同过滤推荐矩阵</li>
+        <li>&#8594; StatisticsClassifyMain：统计主分类的各个分数的评分人数、平均评分、评分的方差</li>
+        <li>&#8594; StatisticsRatingValue：图书评分信息统计：统计RatingValue表的数据并将统计结果写入到EBook表对应到图书上</li>
+    </ol>
+<li>com.util</li>
+    <ol>
+        <li>ChartDataJsonCreater：提供将数据转换为 Chart.js 插件专用的结构化 Json 数据格式</li>
+        <li>JSONConverter：提供用于将 JavaBeans 对象直接转化为结构化 Json 数据</li>
+        <li>RandomNumFactory：随机数生成工具类</li>
+    </ol>
+<li>spider(爬虫包)</li>
+    <ol>
+        <li>BookInfoSpider：爬取电子书详情页并存入数据库</li>
+        <li>&#8594; EBookListSpider：爬取全部电子书</li>
+        <li>HttpURLConnectionUtil：</li>
+        <li>&#8594; RatingValueListSpider：爬取豆瓣图书评分列表与用户评论(从数据库读取图书信息并爬取图书的评分列表)</li>
+    </ol>
+<li>配置文件</li>
+    <ol>
+        <li>SSM框架配置文件</li>
+        <ol>
+            <li>applicationContext.xml：Spring 框架配置文件</li>
+            <li>jdbc.properties：jdbc 配置文件</li>
+            <li>mybatis-config.xml：MyBatis 框架配置文件</li>
+            <li>web.xml：项目配置文件</li>
+        </ol>
+        <li>爬虫配置文件</li>
+        <ol>
+            <li>setting.properties：电子书爬虫(EBookListSpider)的配置文件</li>
+            <li>user_spider_setting.properties：用户评论评分爬虫(RatingValueListSpider)的配置文件</li>
+            <li>user_spider_exception.log：用户评论评分爬虫(RatingValueListSpider)的错误日志</li>
+        </ol>
+    </ol>
+</ol>
 
-3.2.4 组件类图
+3.2.2 系统需求
 
-3.2.5 关键代码流程图
+系统的主要使用对象为一般用户，次要使用对象为开发者。
+
+系统包括以下功能：
+
+1. 爬虫功能：可以使用爬虫从指定网站上爬取图书与评分评论信息。
+2. 图书分类查询功能：用户可以根据图书分类来查询图书。
+3. 图书关键字搜索功能：用户可根据关键字来搜索图书。
+4. 图书详情展示功能：用户可以查看图书详情。
+5. 评分评论查看功能：用户可以查看图书的评分评论列表。
+6. 评分评论功能：用户可以对图书进行评分与撰写评论。
+7. 用户注册功能：用户可以注册账号。
+8. 用户登录功能：用户可以登录网站来使用其它功能。
+9. 图书推荐功能：可根据用户评分来对用户推荐图书。
+10. 统计功能：开发者可以使用该功能计算并存储与推荐相关的数据。
+
+3.2.3 系统类结构
+
+<img src="img/EMAN类结构.png">EMAN类结构.png</img>
+
+3.2.4 数据库表设计
 
 4 系统的实践与应用
 
@@ -197,20 +295,227 @@ Item-item协作过滤是1998年由Amazon.com发明和使用的。它于2001年�
 
 4.1.1 主页
 
-4.1.2 用户模块
+4.1.2 用户模块User
 
-4.1.3 图书分类模块
+4.1.3 图书模块EBook
 
-4.1.4 图书详情模块
+4.1.4 评分评论模块RatingList
 
-4.1.5 图书推荐模块
+4.1.5 用户喜爱模块Favorite
 
-4.1.6 图书搜索模块
+4.1.6 图书分类模块ClassifyMain
 
-4.1.7 统计模块
+4.1.7 统计模块Statistics
 
 4.1.8 爬虫模块
 
+4.2 算法设计
+
+4.2.1 基于物品的协同过滤算法(Item-item collaborative filtering)简介
+
+建立用户物品倒排表
+
+<table>
+    <tr>
+        <td>A</td>
+        <td>a</td>
+        <td>b</td>
+        <td>d</td>
+    </tr>
+    <tr>
+        <td>B</td>
+        <td>d</td>
+        <td>e</td>
+        <td>f</td>
+    </tr>
+    <tr>
+        <td>C</td>
+        <td>a</td>
+        <td>c</td>
+        <td>d</td>
+    </tr>
+    <tr>
+        <td>D</td>
+        <td>b</td>
+        <td>f</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>E</td>
+        <td>a</td>
+        <td>b</td>
+        <td>d</td>
+    </tr>
+    <tr>
+        <td>F</td>
+        <td>b</td>
+        <td>d</td>
+        <td></td>
+    </tr>
+</table>
+
+计算共现矩阵C
+
+<table>
+    <tr>
+        <td></td>
+        <td>a</td>
+        <td>b</td>
+        <td>c</td>
+        <td>d</td>
+        <td>e</td>
+        <td>f</td>
+    </tr>
+    <tr>
+        <td>a</td>
+        <td></td>
+        <td>2</td>
+        <td>1</td>
+        <td>3</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>b</td>
+        <td>2</td>
+        <td></td>
+        <td></td>
+        <td>3</td>
+        <td></td>
+        <td>1</td>
+    </tr>
+   <tr>
+        <td>c</td>
+        <td>1</td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>d</td>
+        <td>3</td>
+        <td>3</td>
+        <td>1</td>
+        <td></td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>e</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td></td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>f</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>1</td>
+        <td></td>
+    </tr>
+</table>
+
+计算余弦相似度矩阵W：
+
+<table>
+    <tr>
+        <td>a</td>
+        <td>b</td>
+        <td>c</td>
+        <td>d</td>
+        <td>e</td>
+        <td>f</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>4</td>
+        <td>1</td>
+        <td>5</td>
+        <td>1</td>
+        <td>2</td>
+    </tr>
+</table>
+
+
+<table>
+    <tr>
+        <td></td>
+        <td>a</td>
+        <td>b</td>
+        <td>c</td>
+        <td>d</td>
+        <td>e</td>
+        <td>f</td>
+    </tr>
+    <tr>
+        <td>a</td>
+        <td></td>
+        <td>0.58</td>
+        <td>0.58</td>
+        <td>1.0</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>b</td>
+        <td>0.58</td>
+        <td></td>
+        <td></td>
+        <td>1.44</td>
+        <td></td>
+        <td>0.35</td>
+    </tr>
+   <tr>
+        <td>c</td>
+        <td>0.58</td>
+        <td></td>
+        <td></td>
+        <td>0.45</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>d</td>
+        <td>1.0</td>
+        <td>1.44</td>
+        <td>0.45</td>
+        <td></td>
+        <td>0.45</td>
+        <td>0.32</td>
+    </tr>
+    <tr>
+        <td>e</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>0.45</td>
+        <td></td>
+        <td>0.71</td>
+    </tr>
+    <tr>
+        <td>f</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>0.32</td>
+        <td>0.71</td>
+        <td></td>
+    </tr>
+</table>
+
+
+4.3 在图书推荐网站中的应用
+
+4.3.1 图书推荐网站的功能分析
+
+<img src="img/功能.png">EMAN类结构.png</img>
 
 
 5 总结与展望

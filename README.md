@@ -3,19 +3,27 @@
 
 ## 摘要
 
-阅读是通过视觉来从语言文字中获取信息、认识世界、发展思维、并获得审美体验的活动。
-在阅读的过程中，根据所阅读的图书类别不同，人可以获得不同的能力提升或者获得美的享受。
-阅读是一种理解、领悟、吸收、鉴赏、评价和探究文章的思维过程。
+---
 
-现在是一个信息爆炸的时代，如果你想在喧嚣的生活中静下心来进行阅读已属不易。要想从信息爆炸的互联网上找出适合自己阅读的书籍更是难上加难。
-推荐系统是利用用户产生的数据使用算法进行分析之后帮助用户决定应该购买什么产品，个性化推荐是根据用户的兴趣特点和购买行为，向用户推荐用户感兴趣的信息和商品。
-推荐系统的本质就是将内容结构化、标签化，同时将用户行为模型化，再用多种算法予以匹配。
-对于企业来讲，推荐系统的目的很简单：提高用户停留时间、或者提高商品购买率，以辅助产品的主业务，完成相应的业绩目标。目前在许多方面都有应用，如商品推荐、短视频推荐、社交推荐等。
-推荐系统是大数据时代下产生的新型产品，核心意义在于帮助用户在海量数据中更便捷的找到他们最感兴趣的内容。当内容资源越庞大时，推荐系统的存在意义就越大
-一个良好的推荐系统会增加用户粘性，活跃度，及提高各种转化率，而一个推荐系统好坏，其内部算法起到决定性因素。
-本系统会通过图书的分类、评分、用户喜好等来进行图书推荐。使得找到适合自己阅读的书籍不再是一项高成本的任务。
+## 界面截图
 
-关键词：[Java Spring SpringMVC MyBatis AJAX JSP jQuery JavaScript Bootstrap MySQL 基于物品的协同过滤算法(ItemCF) 阅读社区 电纸书]
+<img src="img/首页0.png" alt="img/首页0.png"></img>
+
+<img src="img/首页1感兴趣猜你.png" alt="img/首页1感兴趣猜你.png"></img>
+
+<img src="img/图书分类0.png" alt="img/图书分类0.png"></img>
+
+<img src="img/图书详情页0.png" alt="img/图书详情页0.png"></img>
+
+<img src="img/图书详情页1推荐与评论.png" alt="img/图书详情页1推荐与评论.png"></img>
+
+<img src="img/图书详情页2评论.png" alt="img/图书详情页2评论.png"></img>
+
+<img src="img/图书详情页2评论.png" alt="img/图书详情页1推荐与评论.png"></img>
+
+<img src="img/登录.png" alt="img/登录.png"></img>
+
+<img src="img/搜索页.png" alt="img/搜索页.png"></img>
 
 ---
 
@@ -104,6 +112,8 @@
     </ol>
 </ol>
 
+<img src="img/EMAN类结构.png" alt="img/EMAN类结构.png"></img>
+
 ---
 
 ## 页面列表
@@ -131,6 +141,8 @@
 
 ## 数据库表
 
+<img src="img/ER图.png" alt="img/ER图.png"></img>
+
 <ol>
     <li>ebook：图书详情</li>
     <li>ratinglist：评分评论列表</li>
@@ -144,33 +156,14 @@
 
 ---
 
-## 备忘
+## 爬虫爬取策略
 
-```html
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-
-
-```
-
-<a href="http://hoohtml.com/jQuery/Layout-Interface/2015112221.html">星星组件</a>
+<img src="img/爬虫爬取策略.png" alt="img/爬虫爬取策略.png"></img>
 
 ---
 
-电子书推荐的策略：
 
-针对不同用户群体的推荐方法选择：
-
-1.新用户策略，年龄、性别基础上推荐相关的畅销书籍。
-2.老用户策略，用户点评所占权重50%
-3.复杂的，和你类似人也看了……(依据)推荐的依据：下载量等数据的来源
-
-http://book.163.com/17/0104/23/C9VMAIAP00923P3U.html  2016年度数字阅读报告
-
-版权问题
-
-# BUG
+# 待修复 BUG
 
 1. window.location.href = "https://search.jd.com/Search?keyword=" + "${ebook.ename}" + "&enc=utf-8";若图书名中出现"则会导致注入
 
