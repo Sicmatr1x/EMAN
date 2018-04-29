@@ -67,7 +67,7 @@
             // data : "classifyMain=小说",
             dataType : "json",
             success : function(data) {
-                putDataToPanel(data, "coldEBook-panel", 8);
+                putDataToPanel(data, "coldEBook-panel", 4);
 
             },
             error : function() {
@@ -243,60 +243,60 @@
 						</div>
 					</div>
 
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title">文学</h3>
-						</div>
-						<div class="panel-body">
-							<div class="row" id="wenxue-panel">
+					<%--<div class="panel panel-default">--%>
+						<%--<div class="panel-heading">--%>
+							<%--<h3 class="panel-title">文学</h3>--%>
+						<%--</div>--%>
+						<%--<div class="panel-body">--%>
+							<%--<div class="row" id="wenxue-panel">--%>
 
-							</div>
-						</div>
-					</div>
-					
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title">人文社科</h3>
-						</div>
-						<div class="panel-body">
-							<div class="row" id="renwensheke-panel">
+							<%--</div>--%>
+						<%--</div>--%>
+					<%--</div>--%>
+					<%----%>
+					<%--<div class="panel panel-default">--%>
+						<%--<div class="panel-heading">--%>
+							<%--<h3 class="panel-title">人文社科</h3>--%>
+						<%--</div>--%>
+						<%--<div class="panel-body">--%>
+							<%--<div class="row" id="renwensheke-panel">--%>
 
-							</div>
-						</div>
-					</div>
-					
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title">经济管理</h3>
-						</div>
-						<div class="panel-body">
-							<div class="row" id="jinjiguanli-panel">
+							<%--</div>--%>
+						<%--</div>--%>
+					<%--</div>--%>
+					<%----%>
+					<%--<div class="panel panel-default">--%>
+						<%--<div class="panel-heading">--%>
+							<%--<h3 class="panel-title">经济管理</h3>--%>
+						<%--</div>--%>
+						<%--<div class="panel-body">--%>
+							<%--<div class="row" id="jinjiguanli-panel">--%>
 
-							</div>
-						</div>
-					</div>
-					
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title">科技科普</h3>
-						</div>
-						<div class="panel-body">
-							<div class="row" id="kejikepu-panel">
+							<%--</div>--%>
+						<%--</div>--%>
+					<%--</div>--%>
+					<%----%>
+					<%--<div class="panel panel-default">--%>
+						<%--<div class="panel-heading">--%>
+							<%--<h3 class="panel-title">科技科普</h3>--%>
+						<%--</div>--%>
+						<%--<div class="panel-body">--%>
+							<%--<div class="row" id="kejikepu-panel">--%>
 
-							</div>
-						</div>
-					</div>
+							<%--</div>--%>
+						<%--</div>--%>
+					<%--</div>--%>
 
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">计算机与互联网</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="row" id="computer-panel">
+                    <%--<div class="panel panel-default">--%>
+                        <%--<div class="panel-heading">--%>
+                            <%--<h3 class="panel-title">计算机与互联网</h3>--%>
+                        <%--</div>--%>
+                        <%--<div class="panel-body">--%>
+                            <%--<div class="row" id="computer-panel">--%>
 
-                            </div>
-                        </div>
-                    </div>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
 					
 					
 
@@ -337,11 +337,11 @@
 	
 		$(document).on('ready', function() {
 			getlist("classifyMain=小说&start=0&orderCondition=reviewCount&order=desc", "xiaoshou-panel");
-			getlist("classifyMain=文学&start=0&orderCondition=reviewCount&order=desc", "wenxue-panel");
-			getlist("classifyMain=人文社科&start=0&orderCondition=reviewCount&order=desc", "renwensheke-panel");
-			getlist("classifyMain=经济管理&start=0&orderCondition=reviewCount&order=desc", "jinjiguanli-panel");
-			getlist("classifyMain=科技科普&start=0&orderCondition=reviewCount&order=desc", "kejikepu-panel");
-            getlist("classifyMain=计算机与互联网&start=0&orderCondition=reviewCount&order=desc", "computer-panel");
+            // getlist("classifyMain=文学&start=0&orderCondition=reviewCount&order=desc", "wenxue-panel");
+            // getlist("classifyMain=人文社科&start=0&orderCondition=reviewCount&order=desc", "renwensheke-panel");
+            // getlist("classifyMain=经济管理&start=0&orderCondition=reviewCount&order=desc", "jinjiguanli-panel");
+            // getlist("classifyMain=科技科普&start=0&orderCondition=reviewCount&order=desc", "kejikepu-panel");
+            // getlist("classifyMain=计算机与互联网&start=0&orderCondition=reviewCount&order=desc", "computer-panel");
 			if(uid !== 'null'){ // 若用户已登录
                 getlist("uid="+uid, "favorite-panel");
 			}
