@@ -171,13 +171,13 @@
 <ol>
 <li>index.jsp：主页</li>
 <li>head.jsp：导航栏</li>
-<li>error.jsp：错误信息页(待实现)</li>
+<li>error.jsp：错误信息页(待实现)</li>
 <li>success.jsp：成功操作信息跳转页</li>
 <li>/ebook(图书相关页面)</li>
     <ol>
         <li>list.jsp：主分类图书列表</li>
         <li>info.jsp：图书详情页</li>
-        <li>serrchResult.jsp：图书搜索结果页</li>
+        <li>serrchResult.jsp：图书搜索结果页</li>
     </ol>
 <li>/user(用户相关页面)</li>
     <ol>
@@ -202,7 +202,7 @@
 但是上式有一个缺陷:当物品 j 是一个很热门的商品时，人人都喜欢，那么 wij
 就会很接近于 1，即上式会让很多物品都和热门商品有一个很大的相似度，所以可以改进一下公式:
 
-![计算物品的相似度改进.png](img/计算物品的相似度改进.png)
+![计算物品相似度改进.png](img/计算物品相似度改进.png)
 
 建立用户物品倒排表(设用大写字母表示用户，小写字母表示物品):
 
