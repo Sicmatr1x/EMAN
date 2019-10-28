@@ -1,7 +1,11 @@
 # EMAN
-一个基于SSM框架的简单电子书推荐系统
 
-## 摘要
+![](https://img.shields.io/badge/Algorithm-ItemCF-orange)
+![](https://img.shields.io/badge/License-GPL3.0-blue)
+![](https://img.shields.io/badge/JDK-%3E%3D1.8-blue)
+![](https://img.shields.io/badge/Contains-DB%20Data-lightgrey)
+
+一个基于SSM框架与物品的协同过滤算法(ItemCF)的简单电子书推荐系统
 
 ---
 
